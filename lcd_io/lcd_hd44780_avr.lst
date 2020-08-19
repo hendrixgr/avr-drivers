@@ -1,0 +1,3427 @@
+GAS LISTING /tmp/ccd5pcoP.s 			page 1
+
+
+   1               		.file	"lcd_hd44780_avr.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               	 ;  GNU C (GCC) version 4.9.2 (avr)
+   8               	 ; 	compiled by GNU C version 5.3.1 20151206, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.
+   9               	 ;  warning: MPFR header version 3.1.3 differs from library version 3.1.4.
+  10               	 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  11               	 ;  options passed:  -imultilib avr5 -D__AVR_ATmega328P__
+  12               	 ;  -D__AVR_DEVICE_NAME__=atmega328p -D F_CPU=16000000UL lcd_hd44780_avr.c
+  13               	 ;  -mn-flash=1 -mno-skip-bug -mmcu=avr5 -auxbase-strip lcd_hd44780_avr.o
+  14               	 ;  -g -Os -Wall -Wstrict-prototypes -fverbose-asm -funsigned-char
+  15               	 ;  -funsigned-bitfields -fpack-struct -fshort-enums
+  16               	 ;  options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
+  17               	 ;  -fbranch-count-reg -fcaller-saves -fcombine-stack-adjustments -fcommon
+  18               	 ;  -fcompare-elim -fcprop-registers -fcrossjumping -fcse-follow-jumps
+  19               	 ;  -fdefer-pop -fdevirtualize -fdevirtualize-speculatively
+  20               	 ;  -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  21               	 ;  -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  22               	 ;  -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  23               	 ;  -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  24               	 ;  -findirect-inlining -finline -finline-atomics -finline-functions
+  25               	 ;  -finline-functions-called-once -finline-small-functions -fipa-cp
+  26               	 ;  -fipa-profile -fipa-pure-const -fipa-reference -fipa-sra
+  27               	 ;  -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  28               	 ;  -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  29               	 ;  -fleading-underscore -fmath-errno -fmerge-constants
+  30               	 ;  -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  31               	 ;  -foptimize-sibling-calls -fpack-struct -fpartial-inlining -fpeephole
+  32               	 ;  -fpeephole2 -fprefetch-loop-arrays -freg-struct-return -freorder-blocks
+  33               	 ;  -freorder-functions -frerun-cse-after-loop
+  34               	 ;  -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  35               	 ;  -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  36               	 ;  -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
+  37               	 ;  -fsched-stalled-insns-dep -fshow-column -fshrink-wrap -fsigned-zeros
+  38               	 ;  -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39               	 ;  -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  40               	 ;  -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  41               	 ;  -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  42               	 ;  -ftree-copy-prop -ftree-copyrename -ftree-dce -ftree-dominator-opts
+  43               	 ;  -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  44               	 ;  -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+  45               	 ;  -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  46               	 ;  -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  47               	 ;  -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  48               	 ;  -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  49               	
+  50               		.stabs	"/home/hendrix/Desktop/ACTIVE_306_PROJECTS/general_drivers_project_54/lcd_io/",100,0,2,.Lte
+  51               		.stabs	"lcd_hd44780_avr.c",100,0,2,.Ltext0
+  52               		.text
+  53               	.Ltext0:
+  54               		.stabs	"gcc2_compiled.",60,0,0,0
+  55               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  56               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  57               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+GAS LISTING /tmp/ccd5pcoP.s 			page 2
+
+
+  58               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  59               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  60               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  61               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  62               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  63               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  64               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  65               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  66               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  67               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  68               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  69               		.stabs	"short _Fract:t(0,15)=r(0,1);1;0;",128,0,0,0
+  70               		.stabs	"_Fract:t(0,16)=r(0,1);2;0;",128,0,0,0
+  71               		.stabs	"long _Fract:t(0,17)=r(0,1);4;0;",128,0,0,0
+  72               		.stabs	"long long _Fract:t(0,18)=r(0,1);8;0;",128,0,0,0
+  73               		.stabs	"unsigned short _Fract:t(0,19)=r(0,1);1;0;",128,0,0,0
+  74               		.stabs	"unsigned _Fract:t(0,20)=r(0,1);2;0;",128,0,0,0
+  75               		.stabs	"unsigned long _Fract:t(0,21)=r(0,1);4;0;",128,0,0,0
+  76               		.stabs	"unsigned long long _Fract:t(0,22)=r(0,1);8;0;",128,0,0,0
+  77               		.stabs	"_Sat short _Fract:t(0,23)=r(0,1);1;0;",128,0,0,0
+  78               		.stabs	"_Sat _Fract:t(0,24)=r(0,1);2;0;",128,0,0,0
+  79               		.stabs	"_Sat long _Fract:t(0,25)=r(0,1);4;0;",128,0,0,0
+  80               		.stabs	"_Sat long long _Fract:t(0,26)=r(0,1);8;0;",128,0,0,0
+  81               		.stabs	"_Sat unsigned short _Fract:t(0,27)=r(0,1);1;0;",128,0,0,0
+  82               		.stabs	"_Sat unsigned _Fract:t(0,28)=r(0,1);2;0;",128,0,0,0
+  83               		.stabs	"_Sat unsigned long _Fract:t(0,29)=r(0,1);4;0;",128,0,0,0
+  84               		.stabs	"_Sat unsigned long long _Fract:t(0,30)=r(0,1);8;0;",128,0,0,0
+  85               		.stabs	"short _Accum:t(0,31)=r(0,1);2;0;",128,0,0,0
+  86               		.stabs	"_Accum:t(0,32)=r(0,1);4;0;",128,0,0,0
+  87               		.stabs	"long _Accum:t(0,33)=r(0,1);8;0;",128,0,0,0
+  88               		.stabs	"long long _Accum:t(0,34)=r(0,1);8;0;",128,0,0,0
+  89               		.stabs	"unsigned short _Accum:t(0,35)=r(0,1);2;0;",128,0,0,0
+  90               		.stabs	"unsigned _Accum:t(0,36)=r(0,1);4;0;",128,0,0,0
+  91               		.stabs	"unsigned long _Accum:t(0,37)=r(0,1);8;0;",128,0,0,0
+  92               		.stabs	"unsigned long long _Accum:t(0,38)=r(0,1);8;0;",128,0,0,0
+  93               		.stabs	"_Sat short _Accum:t(0,39)=r(0,1);2;0;",128,0,0,0
+  94               		.stabs	"_Sat _Accum:t(0,40)=r(0,1);4;0;",128,0,0,0
+  95               		.stabs	"_Sat long _Accum:t(0,41)=r(0,1);8;0;",128,0,0,0
+  96               		.stabs	"_Sat long long _Accum:t(0,42)=r(0,1);8;0;",128,0,0,0
+  97               		.stabs	"_Sat unsigned short _Accum:t(0,43)=r(0,1);2;0;",128,0,0,0
+  98               		.stabs	"_Sat unsigned _Accum:t(0,44)=r(0,1);4;0;",128,0,0,0
+  99               		.stabs	"_Sat unsigned long _Accum:t(0,45)=r(0,1);8;0;",128,0,0,0
+ 100               		.stabs	"_Sat unsigned long long _Accum:t(0,46)=r(0,1);8;0;",128,0,0,0
+ 101               		.stabs	"void:t(0,47)=(0,47)",128,0,0,0
+ 102               		.stabs	"/usr/lib/avr/include/avr/io.h",130,0,0,0
+ 103               		.stabs	"/usr/lib/avr/include/avr/sfr_defs.h",130,0,0,0
+ 104               		.stabs	"/usr/lib/avr/include/inttypes.h",130,0,0,0
+ 105               		.stabs	"/usr/lib/gcc/avr/4.9.2/include/stdint.h",130,0,0,0
+ 106               		.stabs	"/usr/lib/avr/include/stdint.h",130,0,0,0
+ 107               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+ 108               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+ 109               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+ 110               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+ 111               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+ 112               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+ 113               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+ 114               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+GAS LISTING /tmp/ccd5pcoP.s 			page 3
+
+
+ 115               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+ 116               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+ 117               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+ 118               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+ 119               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+ 120               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+ 121               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+ 122               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+ 123               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+ 124               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+ 125               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+ 126               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+ 127               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+ 128               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+ 129               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+ 130               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+ 131               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+ 132               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+ 133               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+ 134               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+ 135               		.stabn	162,0,0,0
+ 136               		.stabn	162,0,0,0
+ 137               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
+ 138               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+ 139               		.stabn	162,0,0,0
+ 140               		.stabn	162,0,0,0
+ 141               		.stabs	"/usr/lib/avr/include/avr/fuse.h",130,0,0,0
+ 142               		.stabs	"__fuse_t:t(6,1)=(6,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+ 143               		.stabn	162,0,0,0
+ 144               		.stabn	162,0,0,0
+ 145               		.stabs	"/usr/lib/avr/include/avr/eeprom.h",130,0,0,0
+ 146               		.stabs	"/usr/lib/gcc/avr/4.9.2/include/stddef.h",130,0,0,0
+ 147               		.stabs	"ptrdiff_t:t(8,1)=(0,1)",128,0,147,0
+ 148               		.stabs	"size_t:t(8,2)=(0,4)",128,0,212,0
+ 149               		.stabs	"wchar_t:t(8,3)=(0,1)",128,0,324,0
+ 150               		.stabn	162,0,0,0
+ 151               		.stabn	162,0,0,0
+ 152               		.stabs	"u08:t(0,48)=(0,11)",128,0,174,0
+ 153               		.stabs	"u16:t(0,49)=(0,9)",128,0,175,0
+ 154               		.stabs	"wait_until_busy_flag_is_clear:f(0,47)",36,0,312,wait_until_busy_flag_is_clear
+ 155               		.type	wait_until_busy_flag_is_clear, @function
+ 156               	wait_until_busy_flag_is_clear:
+ 157               		.stabd	46,0,0
+   1:lcd_hd44780_avr.c **** 
+   2:lcd_hd44780_avr.c **** /****************************************************************************
+   3:lcd_hd44780_avr.c ****  Title  :   C  file for the HD44780U LCD library (lcd_io.c)
+   4:lcd_hd44780_avr.c ****  Author:    Chris efstathiou hendrix@vivodinet.gr
+   5:lcd_hd44780_avr.c ****  Date:      6/July/2018
+   6:lcd_hd44780_avr.c ****  Software:  AVR-GCC with AVR-AS
+   7:lcd_hd44780_avr.c ****  Target:    any AVR device
+   8:lcd_hd44780_avr.c ****  Comments:  This software is FREE.
+   9:lcd_hd44780_avr.c ****  
+  10:lcd_hd44780_avr.c **** *****************************************************************************/
+  11:lcd_hd44780_avr.c **** 
+  12:lcd_hd44780_avr.c **** #include <avr/io.h>
+  13:lcd_hd44780_avr.c **** #include <avr/eeprom.h>
+  14:lcd_hd44780_avr.c **** #include <avr/pgmspace.h>
+GAS LISTING /tmp/ccd5pcoP.s 			page 4
+
+
+  15:lcd_hd44780_avr.c **** #include "i2c.h"
+  16:lcd_hd44780_avr.c **** #include "lcd_hd44780_avr.h"
+  17:lcd_hd44780_avr.c **** 
+  18:lcd_hd44780_avr.c **** 
+  19:lcd_hd44780_avr.c **** /**************************************************************************************************
+  20:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 0
+  21:lcd_hd44780_avr.c **** #warning LCD IN 4  BIT MODE
+  22:lcd_hd44780_avr.c **** #elif LCD_PROTOCOL == 1
+  23:lcd_hd44780_avr.c **** #warning LCD IN I2C MODE
+  24:lcd_hd44780_avr.c **** #else
+  25:lcd_hd44780_avr.c **** #error CHOOSE LCD MODE (4bit OR I2C)
+  26:lcd_hd44780_avr.c **** #endif
+  27:lcd_hd44780_avr.c **** 
+  28:lcd_hd44780_avr.c **** // SOME MISCONFIGURATION CHECKING
+  29:lcd_hd44780_avr.c **** /*
+  30:lcd_hd44780_avr.c **** #if defined(LCD_ERROR_DETECTION) && LCD_ERROR_DETECTION == 1
+  31:lcd_hd44780_avr.c **** #if defined(LCD_READ_REQUIRED)) && LCD_READ_REQUIRED == 0
+  32:lcd_hd44780_avr.c **** #undef LCD_READ_REQUIRED
+  33:lcd_hd44780_avr.c **** #define LCD_READ_REQUIRED	1
+  34:lcd_hd44780_avr.c **** #endif
+  35:lcd_hd44780_avr.c **** #endif
+  36:lcd_hd44780_avr.c **** */
+  37:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 0 && LCD_ERROR_DETECTION == 1
+  38:lcd_hd44780_avr.c **** #warning LCD ERROR DETECTION NEEDS LCD READING ACTIVE
+  39:lcd_hd44780_avr.c **** #warning LCD ERROR DETECTION IS TURNED OFF!
+  40:lcd_hd44780_avr.c **** #undef LCD_ERROR_DETECTION
+  41:lcd_hd44780_avr.c **** #define LCD_ERROR_DETECTION	0
+  42:lcd_hd44780_avr.c **** #endif
+  43:lcd_hd44780_avr.c **** /*
+  44:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 0 && READ_LCD_BUSY_FLAG == 1
+  45:lcd_hd44780_avr.c **** #warning READ_LCD_BUSY_FLAG NEEDS LCD READING ACTIVE
+  46:lcd_hd44780_avr.c **** #warning READ_LCD_BUSY_FLAG IS TURNED OFF!
+  47:lcd_hd44780_avr.c **** #undef READ_LCD_BUSY_FLAG
+  48:lcd_hd44780_avr.c **** #define READ_LCD_BUSY_FLAG	0
+  49:lcd_hd44780_avr.c **** #endif
+  50:lcd_hd44780_avr.c **** */
+  51:lcd_hd44780_avr.c **** #if defined(LCD_READ_REQUIRED) && LCD_READ_REQUIRED == 1
+  52:lcd_hd44780_avr.c **** #if defined(LCD_GROUND_RW_PIN_ALSO) &&	LCD_GROUND_RW_PIN_ALSO == 1
+  53:lcd_hd44780_avr.c **** #undef LCD_GROUND_RW_PIN_ALSO
+  54:lcd_hd44780_avr.c **** #define LCD_GROUND_RW_PIN_ALSO	0
+  55:lcd_hd44780_avr.c **** #endif
+  56:lcd_hd44780_avr.c **** #endif
+  57:lcd_hd44780_avr.c **** 
+  58:lcd_hd44780_avr.c **** #define INIT_MODE		2
+  59:lcd_hd44780_avr.c **** #define DATA_MODE		1
+  60:lcd_hd44780_avr.c **** #define CMD_MODE		0
+  61:lcd_hd44780_avr.c **** 
+  62:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1  
+  63:lcd_hd44780_avr.c **** #define BUSY_FLAG		0
+  64:lcd_hd44780_avr.c **** #define ADDRESS_COUNTER		0
+  65:lcd_hd44780_avr.c **** #define DATA			1
+  66:lcd_hd44780_avr.c **** #endif
+  67:lcd_hd44780_avr.c **** 
+  68:lcd_hd44780_avr.c **** /* constants/macros */
+  69:lcd_hd44780_avr.c **** #ifndef CONCAT1
+  70:lcd_hd44780_avr.c **** #define CONCAT1(a, b) CONCAT2(a, b)
+  71:lcd_hd44780_avr.c **** #endif
+GAS LISTING /tmp/ccd5pcoP.s 			page 5
+
+
+  72:lcd_hd44780_avr.c **** 
+  73:lcd_hd44780_avr.c **** #ifndef CONCAT2
+  74:lcd_hd44780_avr.c **** #define CONCAT2(a, b) a ## b
+  75:lcd_hd44780_avr.c **** #endif
+  76:lcd_hd44780_avr.c **** 
+  77:lcd_hd44780_avr.c **** /* Calculation of the LCD_E_PULSE duration in cpu cycles. sbi() and cbi() are taken in to account. 
+  78:lcd_hd44780_avr.c **** 
+  79:lcd_hd44780_avr.c **** #define LCD_E_PULSE_CYCLES          ( (LCD_E_PULSE_WIDTH_US*1000L)/(1000000000/F_CPU) )
+  80:lcd_hd44780_avr.c **** 
+  81:lcd_hd44780_avr.c **** #if   LCD_E_PULSE_CYCLES <= 0
+  82:lcd_hd44780_avr.c **** #warning " LCD_E_PULSE_WIDTH_US in lcd_io.h too small!!"
+  83:lcd_hd44780_avr.c **** #define LCD_E_DELAY()             { }
+  84:lcd_hd44780_avr.c **** 
+  85:lcd_hd44780_avr.c **** #elif LCD_E_PULSE_CYCLES == 1
+  86:lcd_hd44780_avr.c **** #define LCD_E_DELAY()             __asm__ volatile("nop")
+  87:lcd_hd44780_avr.c **** 
+  88:lcd_hd44780_avr.c **** #elif LCD_E_PULSE_CYCLES == 2 
+  89:lcd_hd44780_avr.c **** #define LCD_E_DELAY()             __asm__ volatile("nop \n\t nop \n\t" ::)
+  90:lcd_hd44780_avr.c **** 
+  91:lcd_hd44780_avr.c **** #elif LCD_E_PULSE_CYCLES == 3
+  92:lcd_hd44780_avr.c **** #define LCD_E_DELAY()             __asm__ volatile("nop \n\t nop \n\t nop \n\t" ::)
+  93:lcd_hd44780_avr.c **** 
+  94:lcd_hd44780_avr.c **** #elif LCD_E_PULSE_CYCLES >= 4
+  95:lcd_hd44780_avr.c **** 
+  96:lcd_hd44780_avr.c **** 
+  97:lcd_hd44780_avr.c **** #define LCD_E_DELAY_LOOPS          (LCD_E_PULSE_CYCLES/4)
+  98:lcd_hd44780_avr.c **** 
+  99:lcd_hd44780_avr.c **** #define  LCD_E_DELAY()            { delay_int(LCD_E_DELAY_LOOPS); }
+ 100:lcd_hd44780_avr.c **** 
+ 101:lcd_hd44780_avr.c **** 
+ 102:lcd_hd44780_avr.c **** #endif 
+ 103:lcd_hd44780_avr.c ****                                  
+ 104:lcd_hd44780_avr.c **** 
+ 105:lcd_hd44780_avr.c **** // CONVERSION OF LCD_DELAY_TIME_US TO TRUE MICROSECONDS/
+ 106:lcd_hd44780_avr.c **** #define LCD_DELAY_LOOPS    ( ((LCD_DELAY_TIME_US*1000L)/(1000000000/F_CPU))/4 )
+ 107:lcd_hd44780_avr.c **** #if LCD_DELAY_LOOPS <=0   
+ 108:lcd_hd44780_avr.c **** #undef  LCD_DELAY_LOOPS
+ 109:lcd_hd44780_avr.c **** #define LCD_DELAY_LOOPS    1
+ 110:lcd_hd44780_avr.c **** #warning " LCD_DELAY_TIME_US in lcd_io.h too small!!"
+ 111:lcd_hd44780_avr.c **** #elif LCD_DELAY_LOOPS > 65535
+ 112:lcd_hd44780_avr.c **** #undef  LCD_DELAY_LOOPS
+ 113:lcd_hd44780_avr.c **** #define LCD_DELAY_LOOPS    65535
+ 114:lcd_hd44780_avr.c **** #warning " LCD_DELAY_TIME_US in lcd_io.h too long!!"
+ 115:lcd_hd44780_avr.c **** #endif
+ 116:lcd_hd44780_avr.c **** 
+ 117:lcd_hd44780_avr.c **** // LCD_DELAY_TIME_US (about 100 microseconds)
+ 118:lcd_hd44780_avr.c **** #define LCD_FUNCTION_DELAY_TYP()  { delay_int(LCD_DELAY_LOOPS);  }  
+ 119:lcd_hd44780_avr.c **** 
+ 120:lcd_hd44780_avr.c **** // LCD_DELAY_TIME_US * 40 (about 4 ms)
+ 121:lcd_hd44780_avr.c **** #define LCD_FUNCTION_DELAY_MAX()  { unsigned int delay_multiplier = 40;  \
+ 122:lcd_hd44780_avr.c ****                                     while(delay_multiplier) { LCD_FUNCTION_DELAY_TYP(); delay_multi
+ 123:lcd_hd44780_avr.c ****                                   }      
+ 124:lcd_hd44780_avr.c **** 
+ 125:lcd_hd44780_avr.c **** // LCD_DELAY_TIME_US * 500 (about 50 ms)
+ 126:lcd_hd44780_avr.c **** #define LCD_POWER_ON_DELAY()  { unsigned int delay_multiplier = 500;  \
+ 127:lcd_hd44780_avr.c ****                                 while(delay_multiplier) { LCD_FUNCTION_DELAY_TYP(); delay_multiplie
+ 128:lcd_hd44780_avr.c ****                               }    
+GAS LISTING /tmp/ccd5pcoP.s 			page 6
+
+
+ 129:lcd_hd44780_avr.c **** // LCD_DELAY_TIME_US * 100 (about 10 ms) 
+ 130:lcd_hd44780_avr.c **** #define LCD_INIT_DELAY()      { unsigned int delay_multiplier = 100;  \
+ 131:lcd_hd44780_avr.c ****                                 while(delay_multiplier) { LCD_FUNCTION_DELAY_TYP(); delay_multiplie
+ 132:lcd_hd44780_avr.c ****                               }    
+ 133:lcd_hd44780_avr.c **** 
+ 134:lcd_hd44780_avr.c **** #define lcd_e_high()		{ LCD_E_OUT_REG |= (1<<LCD_E_PIN); LCD_E_DELAY(); }
+ 135:lcd_hd44780_avr.c **** #define lcd_e_low()		{ LCD_E_OUT_REG &= (~(1<<LCD_E_PIN)); LCD_E_DELAY(); }
+ 136:lcd_hd44780_avr.c **** #define lcd_toggle_e()		{ lcd_e_high(); lcd_e_low(); }
+ 137:lcd_hd44780_avr.c **** 
+ 138:lcd_hd44780_avr.c **** #if LCD_LINES == 1 || LCD_LINES == 2 || LCD_LINES == 4
+ 139:lcd_hd44780_avr.c **** #else
+ 140:lcd_hd44780_avr.c **** #error THE LCD LINES MUST BE 1 OR 2 OR 4 !
+ 141:lcd_hd44780_avr.c **** #endif
+ 142:lcd_hd44780_avr.c **** 
+ 143:lcd_hd44780_avr.c **** #define LCD_D4_OUT_REG       CONCAT1(PORT, LCD_DATA4_PORT)
+ 144:lcd_hd44780_avr.c **** #define LCD_D5_OUT_REG       CONCAT1(PORT, LCD_DATA5_PORT)
+ 145:lcd_hd44780_avr.c **** #define LCD_D6_OUT_REG       CONCAT1(PORT, LCD_DATA6_PORT)
+ 146:lcd_hd44780_avr.c **** #define LCD_D7_OUT_REG       CONCAT1(PORT, LCD_DATA7_PORT)
+ 147:lcd_hd44780_avr.c **** #define LCD_RS_OUT_REG       CONCAT1(PORT, LCD_RS_SIGNAL_PORT)
+ 148:lcd_hd44780_avr.c **** #define LCD_RW_OUT_REG       CONCAT1(PORT, LCD_RW_SIGNAL_PORT)
+ 149:lcd_hd44780_avr.c **** #define LCD_E_OUT_REG        CONCAT1(PORT, LCD_E_SIGNAL_PORT)
+ 150:lcd_hd44780_avr.c **** 
+ 151:lcd_hd44780_avr.c **** #define LCD_D4_DDR_REG       CONCAT1(DDR, LCD_DATA4_PORT)
+ 152:lcd_hd44780_avr.c **** #define LCD_D5_DDR_REG       CONCAT1(DDR, LCD_DATA5_PORT)
+ 153:lcd_hd44780_avr.c **** #define LCD_D6_DDR_REG       CONCAT1(DDR, LCD_DATA6_PORT)
+ 154:lcd_hd44780_avr.c **** #define LCD_D7_DDR_REG       CONCAT1(DDR, LCD_DATA7_PORT)
+ 155:lcd_hd44780_avr.c **** #define LCD_RS_DDR_REG       CONCAT1(DDR, LCD_RS_SIGNAL_PORT)
+ 156:lcd_hd44780_avr.c **** #define LCD_RW_DDR_REG       CONCAT1(DDR, LCD_RW_SIGNAL_PORT)
+ 157:lcd_hd44780_avr.c **** #define LCD_E_DDR_REG        CONCAT1(DDR, LCD_E_SIGNAL_PORT)
+ 158:lcd_hd44780_avr.c **** 
+ 159:lcd_hd44780_avr.c **** #if   LCD_READ_REQUIRED == 1
+ 160:lcd_hd44780_avr.c **** 
+ 161:lcd_hd44780_avr.c **** #define LCD_D4_PIN_REG        CONCAT1(PIN, LCD_DATA4_PORT)
+ 162:lcd_hd44780_avr.c **** #define LCD_D5_PIN_REG        CONCAT1(PIN, LCD_DATA5_PORT)
+ 163:lcd_hd44780_avr.c **** #define LCD_D6_PIN_REG        CONCAT1(PIN, LCD_DATA6_PORT)
+ 164:lcd_hd44780_avr.c **** #define LCD_D7_PIN_REG        CONCAT1(PIN, LCD_DATA7_PORT)
+ 165:lcd_hd44780_avr.c **** 
+ 166:lcd_hd44780_avr.c **** #endif
+ 167:lcd_hd44780_avr.c **** 
+ 168:lcd_hd44780_avr.c **** 
+ 169:lcd_hd44780_avr.c **** /*#################################################################################################
+ 170:lcd_hd44780_avr.c **** /*                                        TYPE DEFINITIONS                                         
+ 171:lcd_hd44780_avr.c **** /*#################################################################################################
+ 172:lcd_hd44780_avr.c **** 
+ 173:lcd_hd44780_avr.c **** 
+ 174:lcd_hd44780_avr.c **** typedef unsigned char  u08;
+ 175:lcd_hd44780_avr.c **** typedef unsigned short u16;
+ 176:lcd_hd44780_avr.c **** 
+ 177:lcd_hd44780_avr.c **** 
+ 178:lcd_hd44780_avr.c **** /*#################################################################################################
+ 179:lcd_hd44780_avr.c **** /*                                    LOCAL FUNCTION PROTOTYPES                                    
+ 180:lcd_hd44780_avr.c **** /*#################################################################################################
+ 181:lcd_hd44780_avr.c **** 
+ 182:lcd_hd44780_avr.c **** static inline void delay_int(uint16_t __count) __attribute__((always_inline)); 
+ 183:lcd_hd44780_avr.c **** static inline void lcd_write(unsigned char data, unsigned char rs);
+ 184:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1
+ 185:lcd_hd44780_avr.c **** static inline void          wait_until_busy_flag_is_clear(void);
+GAS LISTING /tmp/ccd5pcoP.s 			page 7
+
+
+ 186:lcd_hd44780_avr.c **** static inline unsigned char lcd_read(unsigned char rs);
+ 187:lcd_hd44780_avr.c **** #endif
+ 188:lcd_hd44780_avr.c ****  
+ 189:lcd_hd44780_avr.c **** 
+ 190:lcd_hd44780_avr.c **** /*#################################################################################################
+ 191:lcd_hd44780_avr.c **** /*                                      GLOBAL VARIABLES                                           
+ 192:lcd_hd44780_avr.c **** /*#################################################################################################
+ 193:lcd_hd44780_avr.c **** 
+ 194:lcd_hd44780_avr.c **** static unsigned char x,y;
+ 195:lcd_hd44780_avr.c **** static unsigned char lcd_line_start[4]={ LCD_START_LINE1,LCD_START_LINE2,
+ 196:lcd_hd44780_avr.c ****                                          LCD_START_LINE3,LCD_START_LINE4
+ 197:lcd_hd44780_avr.c ****                                        };
+ 198:lcd_hd44780_avr.c **** static unsigned char putc_lock=0;
+ 199:lcd_hd44780_avr.c **** //static unsigned char lcd_init_lock=0;
+ 200:lcd_hd44780_avr.c **** static unsigned char lcd_is_busy = 0;
+ 201:lcd_hd44780_avr.c **** unsigned char lcd_error_detected = 0;
+ 202:lcd_hd44780_avr.c **** 
+ 203:lcd_hd44780_avr.c **** #if   LCD_BACKUP_LOCATION == 0 
+ 204:lcd_hd44780_avr.c **** 
+ 205:lcd_hd44780_avr.c **** static unsigned char lcd_backup[LCD_LINES][LCD_CHARS_PER_LINE]__attribute__((section(".eeprom")));
+ 206:lcd_hd44780_avr.c **** 
+ 207:lcd_hd44780_avr.c **** #elif LCD_BACKUP_LOCATION == 1
+ 208:lcd_hd44780_avr.c **** 
+ 209:lcd_hd44780_avr.c **** static unsigned char lcd_backup[LCD_LINES][LCD_CHARS_PER_LINE];
+ 210:lcd_hd44780_avr.c **** 
+ 211:lcd_hd44780_avr.c **** #endif   /* #if   LCD_BACKUP_LOCATION == 0 -> #elif LCD_BACKUP_LOCATION == 1 */
+ 212:lcd_hd44780_avr.c **** 
+ 213:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 1
+ 214:lcd_hd44780_avr.c **** unsigned char lcd_i2c_address  =  LCD_I2C_ADDRESS;
+ 215:lcd_hd44780_avr.c **** unsigned char backlight = 1;
+ 216:lcd_hd44780_avr.c **** #endif	
+ 217:lcd_hd44780_avr.c **** 
+ 218:lcd_hd44780_avr.c **** 
+ 219:lcd_hd44780_avr.c **** /*#################################################################################################
+ 220:lcd_hd44780_avr.c **** /*                                  LOCAL FUNCTION DEFINITIONS                                     
+ 221:lcd_hd44780_avr.c **** /*#################################################################################################
+ 222:lcd_hd44780_avr.c **** 
+ 223:lcd_hd44780_avr.c **** static inline void delay_int(uint16_t __count){
+ 224:lcd_hd44780_avr.c **** 
+ 225:lcd_hd44780_avr.c **** 	__asm__ volatile (
+ 226:lcd_hd44780_avr.c **** 		"1: sbiw %0,1" "\n\t"
+ 227:lcd_hd44780_avr.c **** 		"brne 1b"
+ 228:lcd_hd44780_avr.c **** 		: "=w" (__count)
+ 229:lcd_hd44780_avr.c **** 		: "0" (__count)
+ 230:lcd_hd44780_avr.c **** 	);
+ 231:lcd_hd44780_avr.c **** } 
+ 232:lcd_hd44780_avr.c **** 
+ 233:lcd_hd44780_avr.c **** 
+ 234:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1 
+ 235:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 0
+ 236:lcd_hd44780_avr.c **** /*#################################################################################################
+ 237:lcd_hd44780_avr.c **** /* loops while lcd is busy, reads address counter */
+ 238:lcd_hd44780_avr.c **** static inline void wait_until_busy_flag_is_clear(void){
+ 239:lcd_hd44780_avr.c **** 
+ 240:lcd_hd44780_avr.c **** #if  READ_LCD_BUSY_FLAG == 1    
+ 241:lcd_hd44780_avr.c **** do{
+ 242:lcd_hd44780_avr.c ****     LCD_RS_OUT_REG &= ~(1<<LCD_RS_PIN);     
+GAS LISTING /tmp/ccd5pcoP.s 			page 8
+
+
+ 243:lcd_hd44780_avr.c ****     // configure data pins as input 
+ 244:lcd_hd44780_avr.c ****     LCD_D7_DDR_REG &= ~(1<<LCD_D7_PIN);
+ 245:lcd_hd44780_avr.c ****     LCD_D6_DDR_REG &= ~(1<<LCD_D6_PIN);
+ 246:lcd_hd44780_avr.c ****     LCD_D5_DDR_REG &= ~(1<<LCD_D5_PIN);
+ 247:lcd_hd44780_avr.c ****     LCD_D4_DDR_REG &= ~(1<<LCD_D4_PIN);
+ 248:lcd_hd44780_avr.c ****     // set R/W pin for reading from LCD 
+ 249:lcd_hd44780_avr.c ****     LCD_RW_OUT_REG |= (1<<LCD_RW_PIN);
+ 250:lcd_hd44780_avr.c **** 
+ 251:lcd_hd44780_avr.c ****     lcd_e_high();
+ 252:lcd_hd44780_avr.c ****     //Only bit 7 must be checked.
+ 253:lcd_hd44780_avr.c ****     if(LCD_D7_PIN_REG & (1<<LCD_D7_PIN)) { lcd_is_busy = 1; }else{ lcd_is_busy = 0; }
+ 254:lcd_hd44780_avr.c **** 
+ 255:lcd_hd44780_avr.c ****     lcd_e_low();
+ 256:lcd_hd44780_avr.c ****     lcd_e_high();
+ 257:lcd_hd44780_avr.c ****     lcd_e_low();
+ 258:lcd_hd44780_avr.c **** 
+ 259:lcd_hd44780_avr.c **** 
+ 260:lcd_hd44780_avr.c **** }while(lcd_is_busy);
+ 261:lcd_hd44780_avr.c **** #else
+ 262:lcd_hd44780_avr.c **** 
+ 263:lcd_hd44780_avr.c **** LCD_FUNCTION_DELAY_TYP();
+ 264:lcd_hd44780_avr.c **** 
+ 265:lcd_hd44780_avr.c **** #endif
+ 266:lcd_hd44780_avr.c **** 
+ 267:lcd_hd44780_avr.c **** return;  
+ 268:lcd_hd44780_avr.c **** }
+ 269:lcd_hd44780_avr.c **** 
+ 270:lcd_hd44780_avr.c **** /*#################################################################################################
+ 271:lcd_hd44780_avr.c **** 
+ 272:lcd_hd44780_avr.c **** static inline unsigned char lcd_read(unsigned char rs){
+ 273:lcd_hd44780_avr.c **** 
+ 274:lcd_hd44780_avr.c **** unsigned char data=0;
+ 275:lcd_hd44780_avr.c **** /* RS=1: read data, RS=0: read busy flag and address counter, RW=1  read mode */  
+ 276:lcd_hd44780_avr.c ****     
+ 277:lcd_hd44780_avr.c ****     if(rs){ LCD_RS_OUT_REG |= (1<<LCD_RS_PIN); }else{ LCD_RS_OUT_REG &= ~(1<<LCD_RS_PIN); }     
+ 278:lcd_hd44780_avr.c ****     // configure data pins as input 
+ 279:lcd_hd44780_avr.c ****     LCD_D7_DDR_REG &= ~(1<<LCD_D7_PIN);
+ 280:lcd_hd44780_avr.c ****     LCD_D6_DDR_REG &= ~(1<<LCD_D6_PIN);
+ 281:lcd_hd44780_avr.c ****     LCD_D5_DDR_REG &= ~(1<<LCD_D5_PIN);
+ 282:lcd_hd44780_avr.c ****     LCD_D4_DDR_REG &= ~(1<<LCD_D4_PIN);
+ 283:lcd_hd44780_avr.c ****     // set R/W pin for reading from LCD 
+ 284:lcd_hd44780_avr.c ****     LCD_RW_OUT_REG |= (1<<LCD_RW_PIN);
+ 285:lcd_hd44780_avr.c **** 
+ 286:lcd_hd44780_avr.c ****     lcd_e_high();
+ 287:lcd_hd44780_avr.c **** 
+ 288:lcd_hd44780_avr.c ****     if(LCD_D7_PIN_REG & (1<<LCD_D7_PIN)) { data|=(1<<7); }
+ 289:lcd_hd44780_avr.c ****     if(LCD_D6_PIN_REG & (1<<LCD_D6_PIN)) { data|=(1<<6); }
+ 290:lcd_hd44780_avr.c ****     if(LCD_D5_PIN_REG & (1<<LCD_D5_PIN)) { data|=(1<<5); }
+ 291:lcd_hd44780_avr.c ****     if(LCD_D4_PIN_REG & (1<<LCD_D4_PIN)) { data|=(1<<4); }
+ 292:lcd_hd44780_avr.c ****    
+ 293:lcd_hd44780_avr.c ****     lcd_e_low();
+ 294:lcd_hd44780_avr.c ****     lcd_e_high();
+ 295:lcd_hd44780_avr.c **** 
+ 296:lcd_hd44780_avr.c ****     if(LCD_D7_PIN_REG & (1<<LCD_D7_PIN)) { data|=(1<<3); }
+ 297:lcd_hd44780_avr.c ****     if(LCD_D6_PIN_REG & (1<<LCD_D6_PIN)) { data|=(1<<2); }
+ 298:lcd_hd44780_avr.c ****     if(LCD_D5_PIN_REG & (1<<LCD_D5_PIN)) { data|=(1<<1); }
+ 299:lcd_hd44780_avr.c ****     if(LCD_D4_PIN_REG & (1<<LCD_D4_PIN)) { data|=(1<<0); }
+GAS LISTING /tmp/ccd5pcoP.s 			page 9
+
+
+ 300:lcd_hd44780_avr.c ****     
+ 301:lcd_hd44780_avr.c ****     lcd_e_low();
+ 302:lcd_hd44780_avr.c **** 
+ 303:lcd_hd44780_avr.c ****     if(rs) { wait_until_busy_flag_is_clear(); }  
+ 304:lcd_hd44780_avr.c **** 
+ 305:lcd_hd44780_avr.c **** return(data);
+ 306:lcd_hd44780_avr.c **** }
+ 307:lcd_hd44780_avr.c **** 
+ 308:lcd_hd44780_avr.c **** #elif LCD_PROTOCOL == 1
+ 309:lcd_hd44780_avr.c **** /*#################################################################################################
+ 310:lcd_hd44780_avr.c **** 
+ 311:lcd_hd44780_avr.c **** /* loops while lcd is busy, reads address counter */
+ 312:lcd_hd44780_avr.c **** static inline void wait_until_busy_flag_is_clear(void){
+ 158               		.stabn	68,0,312,.LM0-.LFBB1
+ 159               	.LM0:
+ 160               	.LFBB1:
+ 161 0000 CF93      		push r28	 ; 
+ 162 0002 DF93      		push r29	 ; 
+ 163               	/* prologue: function */
+ 164               	/* frame size = 0 */
+ 165               	/* stack size = 2 */
+ 166               	.L__stack_usage = 2
+ 313:lcd_hd44780_avr.c **** 
+ 314:lcd_hd44780_avr.c **** #if  READ_LCD_BUSY_FLAG == 1    
+ 315:lcd_hd44780_avr.c **** #warning LCD READ BUSY FLAG ACTIVE
+ 316:lcd_hd44780_avr.c **** unsigned char i2c_tx_data = 0, i2c_rx_data = 0;
+ 317:lcd_hd44780_avr.c **** 
+ 318:lcd_hd44780_avr.c **** //i2c_stop();
+ 319:lcd_hd44780_avr.c **** // Configure the i2c data byte.
+ 320:lcd_hd44780_avr.c **** i2c_tx_data = 0;
+ 321:lcd_hd44780_avr.c **** i2c_tx_data &= (~(1<<LCD_RS_PIN)); //COMMAND TO BE SEND: READ BUSY FLAG 
+ 322:lcd_hd44780_avr.c **** i2c_tx_data |= (1<<LCD_RW_PIN);    // LCD IN READ MODE
+ 323:lcd_hd44780_avr.c **** i2c_tx_data |= (backlight<<LCD_BT_PIN);  
+ 167               		.stabn	68,0,323,.LM1-.LFBB1
+ 168               	.LM1:
+ 169 0004 8091 0000 		lds r24,backlight	 ;  backlight, backlight
+ 170 0008 28E0      		ldi r18,lo8(8)	 ; ,
+ 171 000a 829F      		mul r24,r18	 ;  backlight,
+ 172 000c C001      		movw r24,r0	 ;  D.2302
+ 173 000e 1124      		clr __zero_reg__
+ 324:lcd_hd44780_avr.c **** // PUT THE pca8574 4 bits in input mode.
+ 325:lcd_hd44780_avr.c **** i2c_tx_data |= ((1<<LCD_D4_PIN)|(1<<LCD_D5_PIN)|(1<<LCD_D6_PIN)|(1<<LCD_D7_PIN)); 
+ 174               		.stabn	68,0,325,.LM2-.LFBB1
+ 175               	.LM2:
+ 176 0010 C82F      		mov r28,r24	 ;  i2c_tx_data,
+ 177 0012 C26F      		ori r28,lo8(-14)	 ;  i2c_tx_data,
+ 326:lcd_hd44780_avr.c **** I2C_START_TX(lcd_i2c_address);
+ 178               		.stabn	68,0,326,.LM3-.LFBB1
+ 179               	.LM3:
+ 180 0014 0E94 0000 		call i2c_start	 ; 
+ 181 0018 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 182 001c 0E94 0000 		call i2c_put_byte	 ; 
+ 327:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data );
+ 183               		.stabn	68,0,327,.LM4-.LFBB1
+ 184               	.LM4:
+ 185 0020 8C2F      		mov r24,r28	 ; , i2c_tx_data
+ 186 0022 0E94 0000 		call i2c_put_byte	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 10
+
+
+ 328:lcd_hd44780_avr.c **** 
+ 329:lcd_hd44780_avr.c **** do{
+ 330:lcd_hd44780_avr.c ****        I2C_START_TX(lcd_i2c_address);
+ 331:lcd_hd44780_avr.c ****        i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high()
+ 332:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data );
+ 333:lcd_hd44780_avr.c ****        I2C_START_RX(lcd_i2c_address);
+ 334:lcd_hd44780_avr.c ****        i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 335:lcd_hd44780_avr.c ****        if(i2c_rx_data & (1<<LCD_D7_PIN)) { lcd_is_busy = 1; }else{ lcd_is_busy = 0; }        
+ 187               		.stabn	68,0,335,.LM5-.LFBB1
+ 188               	.LM5:
+ 189 0026 D1E0      		ldi r29,lo8(1)	 ;  tmp68,
+ 190               	.L4:
+ 330:lcd_hd44780_avr.c ****        i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high()
+ 191               		.stabn	68,0,330,.LM6-.LFBB1
+ 192               	.LM6:
+ 193 0028 0E94 0000 		call i2c_start	 ; 
+ 194 002c 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 195 0030 0E94 0000 		call i2c_put_byte	 ; 
+ 332:lcd_hd44780_avr.c ****        I2C_START_RX(lcd_i2c_address);
+ 196               		.stabn	68,0,332,.LM7-.LFBB1
+ 197               	.LM7:
+ 198 0034 8C2F      		mov r24,r28	 ; , i2c_tx_data
+ 199 0036 8460      		ori r24,lo8(4)	 ; ,
+ 200 0038 0E94 0000 		call i2c_put_byte	 ; 
+ 333:lcd_hd44780_avr.c ****        i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 201               		.stabn	68,0,333,.LM8-.LFBB1
+ 202               	.LM8:
+ 203 003c 0E94 0000 		call i2c_start	 ; 
+ 204 0040 8091 0000 		lds r24,lcd_i2c_address	 ;  lcd_i2c_address, lcd_i2c_address
+ 205 0044 8160      		ori r24,lo8(1)	 ; ,
+ 206 0046 0E94 0000 		call i2c_put_byte	 ; 
+ 334:lcd_hd44780_avr.c ****        if(i2c_rx_data & (1<<LCD_D7_PIN)) { lcd_is_busy = 1; }else{ lcd_is_busy = 0; }        
+ 207               		.stabn	68,0,334,.LM9-.LFBB1
+ 208               	.LM9:
+ 209 004a 80E0      		ldi r24,0	 ; 
+ 210 004c 0E94 0000 		call i2c_get_byte	 ; 
+ 211               		.stabn	68,0,335,.LM10-.LFBB1
+ 212               	.LM10:
+ 213 0050 880F      		lsl r24	 ;  tmp70
+ 214 0052 880B      		sbc r24,r24	 ;  tmp70
+ 215 0054 8D23      		and r24,r29	 ;  tmp71, tmp68
+ 216 0056 8093 0000 		sts lcd_is_busy,r24	 ;  lcd_is_busy, tmp69
+ 336:lcd_hd44780_avr.c ****        I2C_START_TX(lcd_i2c_address);
+ 217               		.stabn	68,0,336,.LM11-.LFBB1
+ 218               	.LM11:
+ 219 005a 0E94 0000 		call i2c_start	 ; 
+ 220 005e 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 221 0062 0E94 0000 		call i2c_put_byte	 ; 
+ 337:lcd_hd44780_avr.c ****        i2c_tx_data |= ((1<<LCD_D4_PIN)|(1<<LCD_D5_PIN)|(1<<LCD_D6_PIN)|(1<<LCD_D7_PIN)); 
+ 338:lcd_hd44780_avr.c ****        i2c_tx_data &= ~(1<<LCD_E_PIN); // lcd_e_low()
+ 222               		.stabn	68,0,338,.LM12-.LFBB1
+ 223               	.LM12:
+ 224 0066 CB7F      		andi r28,lo8(-5)	 ;  i2c_tx_data,
+ 339:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data );
+ 225               		.stabn	68,0,339,.LM13-.LFBB1
+ 226               	.LM13:
+ 227 0068 8C2F      		mov r24,r28	 ; , i2c_tx_data
+GAS LISTING /tmp/ccd5pcoP.s 			page 11
+
+
+ 228 006a 0E94 0000 		call i2c_put_byte	 ; 
+ 340:lcd_hd44780_avr.c ****        i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high()
+ 341:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data );
+ 229               		.stabn	68,0,341,.LM14-.LFBB1
+ 230               	.LM14:
+ 231 006e 8C2F      		mov r24,r28	 ; , i2c_tx_data
+ 232 0070 846F      		ori r24,lo8(-12)	 ; ,
+ 233 0072 0E94 0000 		call i2c_put_byte	 ; 
+ 342:lcd_hd44780_avr.c ****        i2c_tx_data &= ~(1<<LCD_E_PIN); // lcd_e_low()
+ 343:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data );
+ 234               		.stabn	68,0,343,.LM15-.LFBB1
+ 235               	.LM15:
+ 236 0076 8C2F      		mov r24,r28	 ; , i2c_tx_data
+ 237 0078 0E94 0000 		call i2c_put_byte	 ; 
+ 344:lcd_hd44780_avr.c **** 
+ 345:lcd_hd44780_avr.c **** 
+ 346:lcd_hd44780_avr.c **** }while(lcd_is_busy);
+ 238               		.stabn	68,0,346,.LM16-.LFBB1
+ 239               	.LM16:
+ 240 007c 8091 0000 		lds r24,lcd_is_busy	 ;  lcd_is_busy, lcd_is_busy
+ 241 0080 8111      		cpse r24,__zero_reg__	 ;  lcd_is_busy,
+ 242 0082 00C0      		rjmp .L4	 ; 
+ 243               	/* epilogue start */
+ 347:lcd_hd44780_avr.c **** 
+ 348:lcd_hd44780_avr.c **** #else
+ 349:lcd_hd44780_avr.c **** 
+ 350:lcd_hd44780_avr.c **** LCD_FUNCTION_DELAY_TYP();
+ 351:lcd_hd44780_avr.c **** 
+ 352:lcd_hd44780_avr.c **** #endif
+ 353:lcd_hd44780_avr.c **** i2c_stop();
+ 354:lcd_hd44780_avr.c **** 
+ 355:lcd_hd44780_avr.c **** return;  
+ 356:lcd_hd44780_avr.c **** }
+ 244               		.stabn	68,0,356,.LM17-.LFBB1
+ 245               	.LM17:
+ 246 0084 DF91      		pop r29	 ; 
+ 247 0086 CF91      		pop r28	 ; 
+ 353:lcd_hd44780_avr.c **** 
+ 248               		.stabn	68,0,353,.LM18-.LFBB1
+ 249               	.LM18:
+ 250 0088 0C94 0000 		jmp i2c_stop	 ; 
+ 251               		.size	wait_until_busy_flag_is_clear, .-wait_until_busy_flag_is_clear
+ 252               	.Lscope1:
+ 253               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 254               		.stabd	78,0,0
+ 255               		.stabs	"lcd_write:f(0,47)",36,0,462,lcd_write
+ 256               		.stabs	"data:P(0,11)",64,0,462,16
+ 257               		.stabs	"rs:P(0,11)",64,0,462,22
+ 258               		.type	lcd_write, @function
+ 259               	lcd_write:
+ 260               		.stabd	46,0,0
+ 357:lcd_hd44780_avr.c **** 
+ 358:lcd_hd44780_avr.c **** /*#################################################################################################
+ 359:lcd_hd44780_avr.c **** 
+ 360:lcd_hd44780_avr.c **** /* RS=1: read data, RS=0: read busy flag and address counter, RW=1  read mode */
+ 361:lcd_hd44780_avr.c **** static inline unsigned char lcd_read(unsigned char rs){
+ 362:lcd_hd44780_avr.c **** 
+GAS LISTING /tmp/ccd5pcoP.s 			page 12
+
+
+ 363:lcd_hd44780_avr.c **** unsigned char i2c_tx_data = 0, i2c_rx_data = 0, data = 0;
+ 364:lcd_hd44780_avr.c **** 
+ 365:lcd_hd44780_avr.c **** i2c_tx_data = 0; // reset the i2c data byte.  
+ 366:lcd_hd44780_avr.c **** 
+ 367:lcd_hd44780_avr.c **** if(rs) { wait_until_busy_flag_is_clear(); i2c_tx_data |= (1<<LCD_RS_PIN);  } 
+ 368:lcd_hd44780_avr.c **** 
+ 369:lcd_hd44780_avr.c **** i2c_tx_data |= 1<<LCD_RW_PIN; 
+ 370:lcd_hd44780_avr.c **** i2c_tx_data |= (backlight<<LCD_BT_PIN);
+ 371:lcd_hd44780_avr.c **** i2c_tx_data |= ((1<<LCD_D4_PIN)|(1<<LCD_D5_PIN)|(1<<LCD_D6_PIN)|(1<<LCD_D7_PIN));
+ 372:lcd_hd44780_avr.c **** I2C_START_TX(lcd_i2c_address);
+ 373:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data);
+ 374:lcd_hd44780_avr.c **** i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high() 
+ 375:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data);
+ 376:lcd_hd44780_avr.c **** 
+ 377:lcd_hd44780_avr.c **** I2C_START_RX(lcd_i2c_address);
+ 378:lcd_hd44780_avr.c **** i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 379:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D7_PIN)) { data|=(1<<7); }
+ 380:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D6_PIN)) { data|=(1<<6); }
+ 381:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<5); }
+ 382:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<4); }
+ 383:lcd_hd44780_avr.c **** 
+ 384:lcd_hd44780_avr.c **** I2C_START_TX(lcd_i2c_address);
+ 385:lcd_hd44780_avr.c **** i2c_tx_data &= (~(1<<LCD_E_PIN)); // lcd_e_low()
+ 386:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data ); 
+ 387:lcd_hd44780_avr.c **** i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high()
+ 388:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data );    
+ 389:lcd_hd44780_avr.c **** 
+ 390:lcd_hd44780_avr.c **** I2C_START_RX(lcd_i2c_address);
+ 391:lcd_hd44780_avr.c **** i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 392:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D7_PIN)) { data|=(1<<3); }
+ 393:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D6_PIN)) { data|=(1<<2); }
+ 394:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<1); }
+ 395:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<0); }
+ 396:lcd_hd44780_avr.c **** 
+ 397:lcd_hd44780_avr.c **** i2c_tx_data &= (~(1<<LCD_E_PIN)); // lcd_e_low()
+ 398:lcd_hd44780_avr.c **** I2C_START_TX(lcd_i2c_address);
+ 399:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data ); 
+ 400:lcd_hd44780_avr.c **** 
+ 401:lcd_hd44780_avr.c **** if(rs) { wait_until_busy_flag_is_clear(); }  
+ 402:lcd_hd44780_avr.c **** i2c_stop();
+ 403:lcd_hd44780_avr.c **** 
+ 404:lcd_hd44780_avr.c **** 
+ 405:lcd_hd44780_avr.c **** 
+ 406:lcd_hd44780_avr.c **** return(data);
+ 407:lcd_hd44780_avr.c **** }
+ 408:lcd_hd44780_avr.c **** #endif   // #if LCD_PROTOCOL == 0 , #elif LCD_PROTOCOL == 1
+ 409:lcd_hd44780_avr.c **** 
+ 410:lcd_hd44780_avr.c **** #endif  /* #if LCD_READ_REQUIRED == 1  */
+ 411:lcd_hd44780_avr.c **** 
+ 412:lcd_hd44780_avr.c **** /*#################################################################################################
+ 413:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 0
+ 414:lcd_hd44780_avr.c **** static inline void lcd_write(unsigned char data, unsigned char rs){
+ 415:lcd_hd44780_avr.c **** 
+ 416:lcd_hd44780_avr.c **** //if(lcd_init_lock == 0) { lcd_init(); }
+ 417:lcd_hd44780_avr.c **** 
+ 418:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1 
+ 419:lcd_hd44780_avr.c ****        LCD_RW_OUT_REG &= ~(1<<LCD_RW_PIN);  
+GAS LISTING /tmp/ccd5pcoP.s 			page 13
+
+
+ 420:lcd_hd44780_avr.c ****        LCD_D4_DDR_REG |= (1<<LCD_D4_PIN);
+ 421:lcd_hd44780_avr.c ****        LCD_D5_DDR_REG |= (1<<LCD_D5_PIN);
+ 422:lcd_hd44780_avr.c ****        LCD_D6_DDR_REG |= (1<<LCD_D6_PIN);
+ 423:lcd_hd44780_avr.c ****        LCD_D7_DDR_REG |= (1<<LCD_D7_PIN);
+ 424:lcd_hd44780_avr.c ****        //LCD_E_DELAY();
+ 425:lcd_hd44780_avr.c **** #endif
+ 426:lcd_hd44780_avr.c ****        /* output high nibble first */ 
+ 427:lcd_hd44780_avr.c ****        /* Make all data pins & rs pin go low */
+ 428:lcd_hd44780_avr.c ****        if(rs==DATA_MODE){ LCD_RS_OUT_REG |= (1<<LCD_RS_PIN); }else{ LCD_RS_OUT_REG &= ~(1<<LCD_RS_P
+ 429:lcd_hd44780_avr.c ****        //LCD_E_DELAY();
+ 430:lcd_hd44780_avr.c ****        lcd_e_high();
+ 431:lcd_hd44780_avr.c ****        if(data&0x10){ LCD_D4_OUT_REG |= (1<<LCD_D4_PIN); }else{ LCD_D4_OUT_REG &= ~(1<<LCD_D4_PIN);
+ 432:lcd_hd44780_avr.c ****        if(data&0x20){ LCD_D5_OUT_REG |= (1<<LCD_D5_PIN); }else{ LCD_D5_OUT_REG &= ~(1<<LCD_D5_PIN);
+ 433:lcd_hd44780_avr.c ****        if(data&0x40){ LCD_D6_OUT_REG |= (1<<LCD_D6_PIN); }else{ LCD_D6_OUT_REG &= ~(1<<LCD_D6_PIN);
+ 434:lcd_hd44780_avr.c ****        if(data&0x80){ LCD_D7_OUT_REG |= (1<<LCD_D7_PIN); }else{ LCD_D7_OUT_REG &= ~(1<<LCD_D7_PIN);
+ 435:lcd_hd44780_avr.c **** 
+ 436:lcd_hd44780_avr.c ****        /* Strobe E pin (Time is defined in lcd_io.h) */
+ 437:lcd_hd44780_avr.c ****        lcd_e_low();
+ 438:lcd_hd44780_avr.c ****        lcd_e_high()
+ 439:lcd_hd44780_avr.c **** 
+ 440:lcd_hd44780_avr.c ****        /* output low nibble */
+ 441:lcd_hd44780_avr.c ****        /* if INIT_MODE skip this section else execute it */
+ 442:lcd_hd44780_avr.c ****        if (rs != INIT_MODE){
+ 443:lcd_hd44780_avr.c ****           if(data&0x01){ LCD_D4_OUT_REG |= (1<<LCD_D4_PIN); }else{ LCD_D4_OUT_REG &= ~(1<<LCD_D4_PI
+ 444:lcd_hd44780_avr.c ****           if(data&0x02){ LCD_D5_OUT_REG |= (1<<LCD_D5_PIN); }else{ LCD_D5_OUT_REG &= ~(1<<LCD_D5_PI
+ 445:lcd_hd44780_avr.c ****           if(data&0x04){ LCD_D6_OUT_REG |= (1<<LCD_D6_PIN); }else{ LCD_D6_OUT_REG &= ~(1<<LCD_D6_PI
+ 446:lcd_hd44780_avr.c ****           if(data&0x08){ LCD_D7_OUT_REG |= (1<<LCD_D7_PIN); }else{ LCD_D7_OUT_REG &= ~(1<<LCD_D7_PI
+ 447:lcd_hd44780_avr.c ****           /* Strobe E pin (Time is defined in lcd_io.h) */
+ 448:lcd_hd44780_avr.c ****           lcd_e_low();
+ 449:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1
+ 450:lcd_hd44780_avr.c ****           wait_until_busy_flag_is_clear(); /* Check Busy Flag. */
+ 451:lcd_hd44780_avr.c ****        }
+ 452:lcd_hd44780_avr.c ****        else{ LCD_FUNCTION_DELAY_TYP(); }   //when INIT_MODE add a delay since busy flag cannot be c
+ 453:lcd_hd44780_avr.c **** #elif LCD_READ_REQUIRED == 0
+ 454:lcd_hd44780_avr.c ****        }
+ 455:lcd_hd44780_avr.c ****        LCD_FUNCTION_DELAY_TYP(); 
+ 456:lcd_hd44780_avr.c **** #endif
+ 457:lcd_hd44780_avr.c **** 
+ 458:lcd_hd44780_avr.c **** return;
+ 459:lcd_hd44780_avr.c **** }
+ 460:lcd_hd44780_avr.c **** 
+ 461:lcd_hd44780_avr.c **** #elif LCD_PROTOCOL == 1
+ 462:lcd_hd44780_avr.c **** static inline void lcd_write(unsigned char data, unsigned char rs){
+ 261               		.stabn	68,0,462,.LM19-.LFBB2
+ 262               	.LM19:
+ 263               	.LFBB2:
+ 264 008c 0F93      		push r16	 ; 
+ 265 008e 1F93      		push r17	 ; 
+ 266 0090 CF93      		push r28	 ; 
+ 267 0092 DF93      		push r29	 ; 
+ 268               		 ; SP -= 1	 ; 
+ 269 0094 1F92      		push __zero_reg__
+ 270 0096 CDB7      		in r28,__SP_L__	 ; 
+ 271 0098 DEB7      		in r29,__SP_H__	 ; 
+ 272               	/* prologue: function */
+ 273               	/* frame size = 1 */
+ 274               	/* stack size = 5 */
+GAS LISTING /tmp/ccd5pcoP.s 			page 14
+
+
+ 275               	.L__stack_usage = 5
+ 276 009a 082F      		mov r16,r24	 ;  data, data
+ 463:lcd_hd44780_avr.c **** 
+ 464:lcd_hd44780_avr.c **** unsigned char i2c_tx_data=0;
+ 465:lcd_hd44780_avr.c **** 
+ 466:lcd_hd44780_avr.c ****        /* INITIALIZATION */
+ 467:lcd_hd44780_avr.c ****        /* Set clock and data pins as outputs, at low state and set rs value */ 
+ 468:lcd_hd44780_avr.c ****        i2c_tx_data = 0; // reset the i2c data byte.
+ 469:lcd_hd44780_avr.c ****        i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high() 
+ 470:lcd_hd44780_avr.c ****        i2c_tx_data |= (backlight<<LCD_BT_PIN);
+ 277               		.stabn	68,0,470,.LM20-.LFBB2
+ 278               	.LM20:
+ 279 009c 8091 0000 		lds r24,backlight	 ;  backlight, backlight
+ 280 00a0 28E0      		ldi r18,lo8(8)	 ; ,
+ 281 00a2 829F      		mul r24,r18	 ;  backlight,
+ 282 00a4 C001      		movw r24,r0	 ;  D.2307
+ 283 00a6 1124      		clr __zero_reg__
+ 284 00a8 182F      		mov r17,r24	 ;  i2c_tx_data,
+ 285 00aa 1460      		ori r17,lo8(4)	 ;  i2c_tx_data,
+ 471:lcd_hd44780_avr.c ****        if(rs==DATA_MODE) { i2c_tx_data |= (1<<LCD_RS_PIN); } 
+ 286               		.stabn	68,0,471,.LM21-.LFBB2
+ 287               	.LM21:
+ 288 00ac 6130      		cpi r22,lo8(1)	 ;  rs,
+ 289 00ae 01F4      		brne .L8	 ; ,
+ 290               		.stabn	68,0,471,.LM22-.LFBB2
+ 291               	.LM22:
+ 292 00b0 182F      		mov r17,r24	 ;  i2c_tx_data,
+ 293 00b2 1560      		ori r17,lo8(5)	 ;  i2c_tx_data,
+ 294               	.L8:
+ 472:lcd_hd44780_avr.c ****        if(data&0x10) i2c_tx_data |= (1<<LCD_D4_PIN);  
+ 295               		.stabn	68,0,472,.LM23-.LFBB2
+ 296               	.LM23:
+ 297 00b4 04FD      		sbrc r16,4	 ;  data,
+ 298               		.stabn	68,0,472,.LM24-.LFBB2
+ 299               	.LM24:
+ 300 00b6 1061      		ori r17,lo8(16)	 ;  i2c_tx_data,
+ 301               	.L9:
+ 473:lcd_hd44780_avr.c ****        if(data&0x20) i2c_tx_data |= (1<<LCD_D5_PIN);   
+ 302               		.stabn	68,0,473,.LM25-.LFBB2
+ 303               	.LM25:
+ 304 00b8 05FD      		sbrc r16,5	 ;  data,
+ 305               		.stabn	68,0,473,.LM26-.LFBB2
+ 306               	.LM26:
+ 307 00ba 1062      		ori r17,lo8(32)	 ;  i2c_tx_data,
+ 308               	.L10:
+ 474:lcd_hd44780_avr.c ****        if(data&0x40) i2c_tx_data |= (1<<LCD_D6_PIN);   
+ 309               		.stabn	68,0,474,.LM27-.LFBB2
+ 310               	.LM27:
+ 311 00bc 06FD      		sbrc r16,6	 ;  data,
+ 312               		.stabn	68,0,474,.LM28-.LFBB2
+ 313               	.LM28:
+ 314 00be 1064      		ori r17,lo8(64)	 ;  i2c_tx_data,
+ 315               	.L11:
+ 475:lcd_hd44780_avr.c ****        if(data&0x80) i2c_tx_data |= (1<<LCD_D7_PIN);  
+ 316               		.stabn	68,0,475,.LM29-.LFBB2
+ 317               	.LM29:
+ 318 00c0 07FD      		sbrc r16,7	 ;  data,
+GAS LISTING /tmp/ccd5pcoP.s 			page 15
+
+
+ 319               		.stabn	68,0,475,.LM30-.LFBB2
+ 320               	.LM30:
+ 321 00c2 1068      		ori r17,lo8(-128)	 ;  i2c_tx_data,
+ 322               	.L12:
+ 476:lcd_hd44780_avr.c ****         
+ 477:lcd_hd44780_avr.c ****        //i2c_put_byte( i2c_tx_data | (1<<LCD_E_PIN) ); // THIS DOES NOT WORK, IT NEEDS TWO SEPARATE
+ 478:lcd_hd44780_avr.c ****        I2C_START_TX(lcd_i2c_address);
+ 323               		.stabn	68,0,478,.LM31-.LFBB2
+ 324               	.LM31:
+ 325 00c4 6983      		std Y+1,r22	 ; ,
+ 326 00c6 0E94 0000 		call i2c_start	 ; 
+ 327 00ca 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 328 00ce 0E94 0000 		call i2c_put_byte	 ; 
+ 479:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data);
+ 329               		.stabn	68,0,479,.LM32-.LFBB2
+ 330               	.LM32:
+ 331 00d2 812F      		mov r24,r17	 ; , i2c_tx_data
+ 332 00d4 0E94 0000 		call i2c_put_byte	 ; 
+ 480:lcd_hd44780_avr.c ****        //i2c_tx_data &= (~(1<<LCD_E_PIN)); // lcd_e_low()
+ 481:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data & (~(1<<LCD_E_PIN)) ); 
+ 333               		.stabn	68,0,481,.LM33-.LFBB2
+ 334               	.LM33:
+ 335 00d8 812F      		mov r24,r17	 ; , i2c_tx_data
+ 336 00da 8B7F      		andi r24,lo8(-5)	 ; ,
+ 337 00dc 0E94 0000 		call i2c_put_byte	 ; 
+ 482:lcd_hd44780_avr.c ****        //i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high() 
+ 483:lcd_hd44780_avr.c ****        i2c_put_byte( i2c_tx_data | (1<<LCD_E_PIN) );
+ 338               		.stabn	68,0,483,.LM34-.LFBB2
+ 339               	.LM34:
+ 340 00e0 812F      		mov r24,r17	 ; , i2c_tx_data
+ 341 00e2 8460      		ori r24,lo8(4)	 ; ,
+ 342 00e4 0E94 0000 		call i2c_put_byte	 ; 
+ 484:lcd_hd44780_avr.c ****        //LCD_E_DELAY();
+ 485:lcd_hd44780_avr.c ****  
+ 486:lcd_hd44780_avr.c ****     
+ 487:lcd_hd44780_avr.c ****        /* IF MODE IS NOT "INIT_MODE" SEND LOW NIBBLE AND THE APPROPRIATE CONTROL SIGNALS */
+ 488:lcd_hd44780_avr.c ****        if(rs != INIT_MODE)
+ 343               		.stabn	68,0,488,.LM35-.LFBB2
+ 344               	.LM35:
+ 345 00e8 6981      		ldd r22,Y+1	 ; ,
+ 346 00ea 6230      		cpi r22,lo8(2)	 ;  rs,
+ 347 00ec 01F0      		breq .L13	 ; ,
+ 489:lcd_hd44780_avr.c ****         {       
+ 490:lcd_hd44780_avr.c ****            /* Reset the data bits */
+ 491:lcd_hd44780_avr.c ****            i2c_tx_data &= (~((1<<LCD_D4_PIN)|(1<<LCD_D5_PIN)|(1<<LCD_D6_PIN)|(1<<LCD_D7_PIN)));
+ 348               		.stabn	68,0,491,.LM36-.LFBB2
+ 349               	.LM36:
+ 350 00ee 1F70      		andi r17,lo8(15)	 ;  i2c_tx_data,
+ 492:lcd_hd44780_avr.c ****            if(data&0x01) i2c_tx_data |= (1<<LCD_D4_PIN);  
+ 351               		.stabn	68,0,492,.LM37-.LFBB2
+ 352               	.LM37:
+ 353 00f0 00FD      		sbrc r16,0	 ;  data,
+ 354               		.stabn	68,0,492,.LM38-.LFBB2
+ 355               	.LM38:
+ 356 00f2 1061      		ori r17,lo8(16)	 ;  i2c_tx_data,
+ 357               	.L14:
+ 493:lcd_hd44780_avr.c ****            if(data&0x02) i2c_tx_data |= (1<<LCD_D5_PIN);   
+GAS LISTING /tmp/ccd5pcoP.s 			page 16
+
+
+ 358               		.stabn	68,0,493,.LM39-.LFBB2
+ 359               	.LM39:
+ 360 00f4 01FD      		sbrc r16,1	 ;  data,
+ 361               		.stabn	68,0,493,.LM40-.LFBB2
+ 362               	.LM40:
+ 363 00f6 1062      		ori r17,lo8(32)	 ;  i2c_tx_data,
+ 364               	.L15:
+ 494:lcd_hd44780_avr.c ****            if(data&0x04) i2c_tx_data |= (1<<LCD_D6_PIN);   
+ 365               		.stabn	68,0,494,.LM41-.LFBB2
+ 366               	.LM41:
+ 367 00f8 02FD      		sbrc r16,2	 ;  data,
+ 368               		.stabn	68,0,494,.LM42-.LFBB2
+ 369               	.LM42:
+ 370 00fa 1064      		ori r17,lo8(64)	 ;  i2c_tx_data,
+ 371               	.L16:
+ 495:lcd_hd44780_avr.c ****            if(data&0x08) i2c_tx_data |= (1<<LCD_D7_PIN);    
+ 372               		.stabn	68,0,495,.LM43-.LFBB2
+ 373               	.LM43:
+ 374 00fc 03FD      		sbrc r16,3	 ;  data,
+ 375               		.stabn	68,0,495,.LM44-.LFBB2
+ 376               	.LM44:
+ 377 00fe 1068      		ori r17,lo8(-128)	 ;  i2c_tx_data,
+ 378               	.L17:
+ 496:lcd_hd44780_avr.c **** 
+ 497:lcd_hd44780_avr.c ****            i2c_put_byte(i2c_tx_data);                    
+ 379               		.stabn	68,0,497,.LM45-.LFBB2
+ 380               	.LM45:
+ 381 0100 812F      		mov r24,r17	 ; , i2c_tx_data
+ 382 0102 0E94 0000 		call i2c_put_byte	 ; 
+ 498:lcd_hd44780_avr.c ****            i2c_put_byte( i2c_tx_data & (~(1<<LCD_E_PIN)) ); // lcd_e_low()
+ 383               		.stabn	68,0,498,.LM46-.LFBB2
+ 384               	.LM46:
+ 385 0106 812F      		mov r24,r17	 ; , i2c_tx_data
+ 386 0108 8B7F      		andi r24,lo8(-5)	 ; ,
+ 387 010a 0E94 0000 		call i2c_put_byte	 ; 
+ 499:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1
+ 500:lcd_hd44780_avr.c ****            wait_until_busy_flag_is_clear(); /* Check Busy Flag. */
+ 388               		.stabn	68,0,500,.LM47-.LFBB2
+ 389               	.LM47:
+ 390 010e 0E94 0000 		call wait_until_busy_flag_is_clear	 ; 
+ 391 0112 00C0      		rjmp .L18	 ; 
+ 392               	.L13:
+ 393               	.LBB16:
+ 394               	.LBB17:
+ 225:lcd_hd44780_avr.c **** 		"1: sbiw %0,1" "\n\t"
+ 395               		.stabn	68,0,225,.LM48-.LFBB2
+ 396               	.LM48:
+ 397 0114 86E2      		ldi r24,lo8(38)	 ;  __count,
+ 398 0116 93E0      		ldi r25,lo8(3)	 ;  __count,
+ 399               	/* #APP */
+ 400               	 ;  225 "lcd_hd44780_avr.c" 1
+ 401 0118 0197      		1: sbiw r24,1	 ;  __count
+ 402 011a 01F4      		brne 1b
+ 403               	 ;  0 "" 2
+ 404               	/* #NOAPP */
+ 405               	.L18:
+ 406               	/* epilogue start */
+GAS LISTING /tmp/ccd5pcoP.s 			page 17
+
+
+ 407               	.LBE17:
+ 408               	.LBE16:
+ 501:lcd_hd44780_avr.c **** #else
+ 502:lcd_hd44780_avr.c ****            LCD_FUNCTION_DELAY_TYP(); 
+ 503:lcd_hd44780_avr.c **** #endif
+ 504:lcd_hd44780_avr.c ****        }
+ 505:lcd_hd44780_avr.c ****        else{ LCD_FUNCTION_DELAY_TYP(); }   //when INIT_MODE add a delay since busy flag cannot be c
+ 506:lcd_hd44780_avr.c **** 
+ 507:lcd_hd44780_avr.c **** i2c_stop();
+ 508:lcd_hd44780_avr.c **** 
+ 509:lcd_hd44780_avr.c **** 
+ 510:lcd_hd44780_avr.c **** 
+ 511:lcd_hd44780_avr.c **** return;      
+ 512:lcd_hd44780_avr.c **** }
+ 409               		.stabn	68,0,512,.LM49-.LFBB2
+ 410               	.LM49:
+ 411               		 ; SP += 1	 ; 
+ 412 011c 0F90      		pop __tmp_reg__
+ 413 011e DF91      		pop r29	 ; 
+ 414 0120 CF91      		pop r28	 ; 
+ 415 0122 1F91      		pop r17	 ; 
+ 416 0124 0F91      		pop r16	 ; 
+ 507:lcd_hd44780_avr.c **** 
+ 417               		.stabn	68,0,507,.LM50-.LFBB2
+ 418               	.LM50:
+ 419 0126 0C94 0000 		jmp i2c_stop	 ; 
+ 420               		.size	lcd_write, .-lcd_write
+ 421               	.Lscope2:
+ 422               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 423               		.stabd	78,0,0
+ 424               		.stabs	"lcd_read:f(0,11)",36,0,361,lcd_read
+ 425               		.stabs	"rs:P(0,11)",64,0,361,17
+ 426               		.type	lcd_read, @function
+ 427               	lcd_read:
+ 428               		.stabd	46,0,0
+ 361:lcd_hd44780_avr.c **** 
+ 429               		.stabn	68,0,361,.LM51-.LFBB3
+ 430               	.LM51:
+ 431               	.LFBB3:
+ 432 012a 0F93      		push r16	 ; 
+ 433 012c 1F93      		push r17	 ; 
+ 434 012e CF93      		push r28	 ; 
+ 435 0130 DF93      		push r29	 ; 
+ 436               	/* prologue: function */
+ 437               	/* frame size = 0 */
+ 438               	/* stack size = 4 */
+ 439               	.L__stack_usage = 4
+ 440 0132 182F      		mov r17,r24	 ;  rs, rs
+ 367:lcd_hd44780_avr.c **** 
+ 441               		.stabn	68,0,367,.LM52-.LFBB3
+ 442               	.LM52:
+ 443 0134 8823      		tst r24	 ;  rs
+ 444 0136 01F0      		breq .L51	 ; ,
+ 367:lcd_hd44780_avr.c **** 
+ 445               		.stabn	68,0,367,.LM53-.LFBB3
+ 446               	.LM53:
+ 447 0138 0E94 0000 		call wait_until_busy_flag_is_clear	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 18
+
+
+ 448 013c 21E0      		ldi r18,lo8(1)	 ;  i2c_tx_data,
+ 449 013e 00C0      		rjmp .L41	 ; 
+ 450               	.L51:
+ 365:lcd_hd44780_avr.c **** 
+ 451               		.stabn	68,0,365,.LM54-.LFBB3
+ 452               	.LM54:
+ 453 0140 20E0      		ldi r18,0	 ;  i2c_tx_data
+ 454               	.L41:
+ 369:lcd_hd44780_avr.c **** i2c_tx_data |= (backlight<<LCD_BT_PIN);
+ 455               		.stabn	68,0,369,.LM55-.LFBB3
+ 456               	.LM55:
+ 457 0142 D22F      		mov r29,r18	 ;  i2c_tx_data, i2c_tx_data
+ 458 0144 D260      		ori r29,lo8(2)	 ;  i2c_tx_data,
+ 370:lcd_hd44780_avr.c **** i2c_tx_data |= ((1<<LCD_D4_PIN)|(1<<LCD_D5_PIN)|(1<<LCD_D6_PIN)|(1<<LCD_D7_PIN));
+ 459               		.stabn	68,0,370,.LM56-.LFBB3
+ 460               	.LM56:
+ 461 0146 9091 0000 		lds r25,backlight	 ;  backlight, backlight
+ 462 014a 88E0      		ldi r24,lo8(8)	 ; ,
+ 463 014c 989F      		mul r25,r24	 ;  backlight,
+ 464 014e 9001      		movw r18,r0	 ;  D.2314
+ 465 0150 1124      		clr __zero_reg__
+ 466 0152 D22B      		or r29,r18	 ;  i2c_tx_data, D.2314
+ 372:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data);
+ 467               		.stabn	68,0,372,.LM57-.LFBB3
+ 468               	.LM57:
+ 469 0154 0E94 0000 		call i2c_start	 ; 
+ 470 0158 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 471 015c 0E94 0000 		call i2c_put_byte	 ; 
+ 373:lcd_hd44780_avr.c **** i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high() 
+ 472               		.stabn	68,0,373,.LM58-.LFBB3
+ 473               	.LM58:
+ 474 0160 8D2F      		mov r24,r29	 ; , i2c_tx_data
+ 475 0162 806F      		ori r24,lo8(-16)	 ; ,
+ 476 0164 0E94 0000 		call i2c_put_byte	 ; 
+ 374:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data);
+ 477               		.stabn	68,0,374,.LM59-.LFBB3
+ 478               	.LM59:
+ 479 0168 0D2F      		mov r16,r29	 ;  i2c_tx_data, i2c_tx_data
+ 480 016a 046F      		ori r16,lo8(-12)	 ;  i2c_tx_data,
+ 375:lcd_hd44780_avr.c **** 
+ 481               		.stabn	68,0,375,.LM60-.LFBB3
+ 482               	.LM60:
+ 483 016c 802F      		mov r24,r16	 ; , i2c_tx_data
+ 484 016e 0E94 0000 		call i2c_put_byte	 ; 
+ 377:lcd_hd44780_avr.c **** i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 485               		.stabn	68,0,377,.LM61-.LFBB3
+ 486               	.LM61:
+ 487 0172 0E94 0000 		call i2c_start	 ; 
+ 488 0176 8091 0000 		lds r24,lcd_i2c_address	 ;  lcd_i2c_address, lcd_i2c_address
+ 489 017a 8160      		ori r24,lo8(1)	 ; ,
+ 490 017c 0E94 0000 		call i2c_put_byte	 ; 
+ 378:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D7_PIN)) { data|=(1<<7); }
+ 491               		.stabn	68,0,378,.LM62-.LFBB3
+ 492               	.LM62:
+ 493 0180 80E0      		ldi r24,0	 ; 
+ 494 0182 0E94 0000 		call i2c_get_byte	 ; 
+ 379:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D6_PIN)) { data|=(1<<6); }
+GAS LISTING /tmp/ccd5pcoP.s 			page 19
+
+
+ 495               		.stabn	68,0,379,.LM63-.LFBB3
+ 496               	.LM63:
+ 497 0186 87FF      		sbrs r24,7	 ;  i2c_rx_data,
+ 498 0188 00C0      		rjmp .L52	 ; 
+ 499 018a C0E8      		ldi r28,lo8(-128)	 ;  data,
+ 500 018c 00C0      		rjmp .L42	 ; 
+ 501               	.L52:
+ 363:lcd_hd44780_avr.c **** 
+ 502               		.stabn	68,0,363,.LM64-.LFBB3
+ 503               	.LM64:
+ 504 018e C0E0      		ldi r28,0	 ;  data
+ 505               	.L42:
+ 380:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<5); }
+ 506               		.stabn	68,0,380,.LM65-.LFBB3
+ 507               	.LM65:
+ 508 0190 86FD      		sbrc r24,6	 ;  i2c_rx_data,
+ 380:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<5); }
+ 509               		.stabn	68,0,380,.LM66-.LFBB3
+ 510               	.LM66:
+ 511 0192 C064      		ori r28,lo8(64)	 ;  data,
+ 512               	.L43:
+ 381:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<4); }
+ 513               		.stabn	68,0,381,.LM67-.LFBB3
+ 514               	.LM67:
+ 515 0194 85FD      		sbrc r24,5	 ;  i2c_rx_data,
+ 381:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<4); }
+ 516               		.stabn	68,0,381,.LM68-.LFBB3
+ 517               	.LM68:
+ 518 0196 C062      		ori r28,lo8(32)	 ;  data,
+ 519               	.L44:
+ 382:lcd_hd44780_avr.c **** 
+ 520               		.stabn	68,0,382,.LM69-.LFBB3
+ 521               	.LM69:
+ 522 0198 84FD      		sbrc r24,4	 ;  i2c_rx_data,
+ 382:lcd_hd44780_avr.c **** 
+ 523               		.stabn	68,0,382,.LM70-.LFBB3
+ 524               	.LM70:
+ 525 019a C061      		ori r28,lo8(16)	 ;  data,
+ 526               	.L45:
+ 384:lcd_hd44780_avr.c **** i2c_tx_data &= (~(1<<LCD_E_PIN)); // lcd_e_low()
+ 527               		.stabn	68,0,384,.LM71-.LFBB3
+ 528               	.LM71:
+ 529 019c 0E94 0000 		call i2c_start	 ; 
+ 530 01a0 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 531 01a4 0E94 0000 		call i2c_put_byte	 ; 
+ 385:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data ); 
+ 532               		.stabn	68,0,385,.LM72-.LFBB3
+ 533               	.LM72:
+ 534 01a8 DB7F      		andi r29,lo8(-5)	 ;  D.2312,
+ 535 01aa D06F      		ori r29,lo8(-16)	 ;  i2c_tx_data,
+ 386:lcd_hd44780_avr.c **** i2c_tx_data |= (1<<LCD_E_PIN); // lcd_e_high()
+ 536               		.stabn	68,0,386,.LM73-.LFBB3
+ 537               	.LM73:
+ 538 01ac 8D2F      		mov r24,r29	 ; , i2c_tx_data
+ 539 01ae 0E94 0000 		call i2c_put_byte	 ; 
+ 388:lcd_hd44780_avr.c **** 
+ 540               		.stabn	68,0,388,.LM74-.LFBB3
+GAS LISTING /tmp/ccd5pcoP.s 			page 20
+
+
+ 541               	.LM74:
+ 542 01b2 802F      		mov r24,r16	 ; , i2c_tx_data
+ 543 01b4 0E94 0000 		call i2c_put_byte	 ; 
+ 390:lcd_hd44780_avr.c **** i2c_rx_data=i2c_get_byte(I2C_QUIT);
+ 544               		.stabn	68,0,390,.LM75-.LFBB3
+ 545               	.LM75:
+ 546 01b8 0E94 0000 		call i2c_start	 ; 
+ 547 01bc 8091 0000 		lds r24,lcd_i2c_address	 ;  lcd_i2c_address, lcd_i2c_address
+ 548 01c0 8160      		ori r24,lo8(1)	 ; ,
+ 549 01c2 0E94 0000 		call i2c_put_byte	 ; 
+ 391:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D7_PIN)) { data|=(1<<3); }
+ 550               		.stabn	68,0,391,.LM76-.LFBB3
+ 551               	.LM76:
+ 552 01c6 80E0      		ldi r24,0	 ; 
+ 553 01c8 0E94 0000 		call i2c_get_byte	 ; 
+ 392:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D6_PIN)) { data|=(1<<2); }
+ 554               		.stabn	68,0,392,.LM77-.LFBB3
+ 555               	.LM77:
+ 556 01cc 87FD      		sbrc r24,7	 ;  i2c_rx_data,
+ 392:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D6_PIN)) { data|=(1<<2); }
+ 557               		.stabn	68,0,392,.LM78-.LFBB3
+ 558               	.LM78:
+ 559 01ce C860      		ori r28,lo8(8)	 ;  data,
+ 560               	.L46:
+ 393:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<1); }
+ 561               		.stabn	68,0,393,.LM79-.LFBB3
+ 562               	.LM79:
+ 563 01d0 86FD      		sbrc r24,6	 ;  i2c_rx_data,
+ 393:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D5_PIN)) { data|=(1<<1); }
+ 564               		.stabn	68,0,393,.LM80-.LFBB3
+ 565               	.LM80:
+ 566 01d2 C460      		ori r28,lo8(4)	 ;  data,
+ 567               	.L47:
+ 394:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<0); }
+ 568               		.stabn	68,0,394,.LM81-.LFBB3
+ 569               	.LM81:
+ 570 01d4 85FD      		sbrc r24,5	 ;  i2c_rx_data,
+ 394:lcd_hd44780_avr.c **** if(i2c_rx_data&(1<<LCD_D4_PIN)) { data|=(1<<0); }
+ 571               		.stabn	68,0,394,.LM82-.LFBB3
+ 572               	.LM82:
+ 573 01d6 C260      		ori r28,lo8(2)	 ;  data,
+ 574               	.L48:
+ 395:lcd_hd44780_avr.c **** 
+ 575               		.stabn	68,0,395,.LM83-.LFBB3
+ 576               	.LM83:
+ 577 01d8 84FD      		sbrc r24,4	 ;  i2c_rx_data,
+ 395:lcd_hd44780_avr.c **** 
+ 578               		.stabn	68,0,395,.LM84-.LFBB3
+ 579               	.LM84:
+ 580 01da C160      		ori r28,lo8(1)	 ;  data,
+ 581               	.L49:
+ 398:lcd_hd44780_avr.c **** i2c_put_byte( i2c_tx_data ); 
+ 582               		.stabn	68,0,398,.LM85-.LFBB3
+ 583               	.LM85:
+ 584 01dc 0E94 0000 		call i2c_start	 ; 
+ 585 01e0 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 586 01e4 0E94 0000 		call i2c_put_byte	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 21
+
+
+ 399:lcd_hd44780_avr.c **** 
+ 587               		.stabn	68,0,399,.LM86-.LFBB3
+ 588               	.LM86:
+ 589 01e8 8D2F      		mov r24,r29	 ; , i2c_tx_data
+ 590 01ea 0E94 0000 		call i2c_put_byte	 ; 
+ 401:lcd_hd44780_avr.c **** i2c_stop();
+ 591               		.stabn	68,0,401,.LM87-.LFBB3
+ 592               	.LM87:
+ 593 01ee 1111      		cpse r17,__zero_reg__	 ;  rs
+ 401:lcd_hd44780_avr.c **** i2c_stop();
+ 594               		.stabn	68,0,401,.LM88-.LFBB3
+ 595               	.LM88:
+ 596 01f0 0E94 0000 		call wait_until_busy_flag_is_clear	 ; 
+ 597               	.L50:
+ 402:lcd_hd44780_avr.c **** 
+ 598               		.stabn	68,0,402,.LM89-.LFBB3
+ 599               	.LM89:
+ 600 01f4 0E94 0000 		call i2c_stop	 ; 
+ 407:lcd_hd44780_avr.c **** #endif   // #if LCD_PROTOCOL == 0 , #elif LCD_PROTOCOL == 1
+ 601               		.stabn	68,0,407,.LM90-.LFBB3
+ 602               	.LM90:
+ 603 01f8 8C2F      		mov r24,r28	 ; , data
+ 604               	/* epilogue start */
+ 605 01fa DF91      		pop r29	 ; 
+ 606 01fc CF91      		pop r28	 ; 
+ 607 01fe 1F91      		pop r17	 ; 
+ 608 0200 0F91      		pop r16	 ; 
+ 609 0202 0895      		ret
+ 610               		.size	lcd_read, .-lcd_read
+ 611               		.stabs	"data:r(0,11)",64,0,363,28
+ 612               		.stabn	192,0,0,.LFBB3-.LFBB3
+ 613               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 614               	.Lscope3:
+ 615               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 616               		.stabd	78,0,0
+ 617               		.stabs	"lcd_command:F(0,47)",36,0,551,lcd_command
+ 618               		.stabs	"cmd:P(0,11)",64,0,551,28
+ 619               	.global	lcd_command
+ 620               		.type	lcd_command, @function
+ 621               	lcd_command:
+ 622               		.stabd	46,0,0
+ 513:lcd_hd44780_avr.c **** 
+ 514:lcd_hd44780_avr.c **** #endif
+ 515:lcd_hd44780_avr.c **** 
+ 516:lcd_hd44780_avr.c **** 
+ 517:lcd_hd44780_avr.c **** /*#################################################################################################
+ 518:lcd_hd44780_avr.c **** /*                                 PUBLIC FUNCTION DEFINITIONS                                     
+ 519:lcd_hd44780_avr.c **** /*#################################################################################################
+ 520:lcd_hd44780_avr.c **** 
+ 521:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 1
+ 522:lcd_hd44780_avr.c **** inline void  lcd_backlight_off(void){
+ 523:lcd_hd44780_avr.c **** uint16_t address = 0;
+ 524:lcd_hd44780_avr.c **** uint8_t x_column = 0, y_row = 0;
+ 525:lcd_hd44780_avr.c **** 
+ 526:lcd_hd44780_avr.c **** address = lcd_getxy();
+ 527:lcd_hd44780_avr.c **** y_row = address /100;
+ 528:lcd_hd44780_avr.c **** x_column = address - (y*100);
+GAS LISTING /tmp/ccd5pcoP.s 			page 22
+
+
+ 529:lcd_hd44780_avr.c **** backlight = 0;
+ 530:lcd_hd44780_avr.c **** lcd_gotoxy(x_column, y_row);
+ 531:lcd_hd44780_avr.c **** 
+ 532:lcd_hd44780_avr.c **** return;
+ 533:lcd_hd44780_avr.c **** }
+ 534:lcd_hd44780_avr.c **** 
+ 535:lcd_hd44780_avr.c **** inline void  lcd_backlight_on(void){
+ 536:lcd_hd44780_avr.c **** uint16_t address = 0;
+ 537:lcd_hd44780_avr.c **** uint8_t x_column = 0, y_row = 0;
+ 538:lcd_hd44780_avr.c **** 
+ 539:lcd_hd44780_avr.c **** address = lcd_getxy();
+ 540:lcd_hd44780_avr.c **** y_row = address /100;
+ 541:lcd_hd44780_avr.c **** x_column = address - (y*100);
+ 542:lcd_hd44780_avr.c **** backlight = 1;
+ 543:lcd_hd44780_avr.c **** lcd_gotoxy(x_column, y_row);
+ 544:lcd_hd44780_avr.c **** 
+ 545:lcd_hd44780_avr.c **** return;
+ 546:lcd_hd44780_avr.c **** }
+ 547:lcd_hd44780_avr.c **** 
+ 548:lcd_hd44780_avr.c **** #endif
+ 549:lcd_hd44780_avr.c **** 
+ 550:lcd_hd44780_avr.c **** // send command <cmd> to LCD 
+ 551:lcd_hd44780_avr.c **** void lcd_command(unsigned char cmd){
+ 623               		.stabn	68,0,551,.LM91-.LFBB4
+ 624               	.LM91:
+ 625               	.LFBB4:
+ 626 0204 CF93      		push r28	 ; 
+ 627               	/* prologue: function */
+ 628               	/* frame size = 0 */
+ 629               	/* stack size = 1 */
+ 630               	.L__stack_usage = 1
+ 631 0206 C82F      		mov r28,r24	 ;  cmd, cmd
+ 552:lcd_hd44780_avr.c **** 
+ 553:lcd_hd44780_avr.c ****    lcd_write(cmd,CMD_MODE);
+ 632               		.stabn	68,0,553,.LM92-.LFBB4
+ 633               	.LM92:
+ 634 0208 60E0      		ldi r22,0	 ; 
+ 635 020a 0E94 0000 		call lcd_write	 ; 
+ 554:lcd_hd44780_avr.c ****    //this command needs more waiting time to execute
+ 555:lcd_hd44780_avr.c ****    if (cmd==(1<<LCD_CLR) || cmd==(1<<LCD_HOME)){ 
+ 636               		.stabn	68,0,555,.LM93-.LFBB4
+ 637               	.LM93:
+ 638 020e C150      		subi r28,lo8(-(-1))	 ;  D.2325,
+ 639 0210 C230      		cpi r28,lo8(2)	 ;  D.2325,
+ 640 0212 00F4      		brsh .L74	 ; ,
+ 641 0214 88E2      		ldi r24,lo8(40)	 ;  D.2326,
+ 642 0216 90E0      		ldi r25,0	 ;  D.2326
+ 643               	.LBB24:
+ 644               	.LBB25:
+ 645               	.LBB26:
+ 646               	.LBB27:
+ 647               	.LBB28:
+ 225:lcd_hd44780_avr.c **** 		"1: sbiw %0,1" "\n\t"
+ 648               		.stabn	68,0,225,.LM94-.LFBB4
+ 649               	.LM94:
+ 650 0218 26E2      		ldi r18,lo8(38)	 ;  tmp49,
+ 651 021a 33E0      		ldi r19,lo8(3)	 ; ,
+GAS LISTING /tmp/ccd5pcoP.s 			page 23
+
+
+ 652               	.L76:
+ 653 021c F901      		movw r30,r18	 ;  __count, tmp49
+ 654               	/* #APP */
+ 655               	 ;  225 "lcd_hd44780_avr.c" 1
+ 656 021e 3197      		1: sbiw r30,1	 ;  __count
+ 657 0220 01F4      		brne 1b
+ 658               	 ;  0 "" 2
+ 659               	/* #NOAPP */
+ 660 0222 0197      		sbiw r24,1	 ;  D.2326,
+ 661               	.LBE28:
+ 662               	.LBE27:
+ 556:lcd_hd44780_avr.c **** //#if LCD_READ_REQUIRED == 0 || READ_LCD_BUSY_FLAG == 0
+ 557:lcd_hd44780_avr.c ****       LCD_FUNCTION_DELAY_MAX();
+ 663               		.stabn	68,0,557,.LM95-.LFBB4
+ 664               	.LM95:
+ 665 0224 01F4      		brne .L76	 ; ,
+ 666               	.LBE26:
+ 558:lcd_hd44780_avr.c **** //#endif
+ 559:lcd_hd44780_avr.c ****       x=0;
+ 667               		.stabn	68,0,559,.LM96-.LFBB4
+ 668               	.LM96:
+ 669 0226 1092 0000 		sts x,__zero_reg__	 ;  x,
+ 560:lcd_hd44780_avr.c ****       y=0;
+ 670               		.stabn	68,0,560,.LM97-.LFBB4
+ 671               	.LM97:
+ 672 022a 1092 0000 		sts y,__zero_reg__	 ;  y,
+ 673               	.L74:
+ 674               	/* epilogue start */
+ 675               	.LBE25:
+ 676               	.LBE24:
+ 561:lcd_hd44780_avr.c ****    }       
+ 562:lcd_hd44780_avr.c **** 
+ 563:lcd_hd44780_avr.c **** return;    
+ 564:lcd_hd44780_avr.c **** }
+ 677               		.stabn	68,0,564,.LM98-.LFBB4
+ 678               	.LM98:
+ 679 022e CF91      		pop r28	 ; 
+ 680 0230 0895      		ret
+ 681               		.size	lcd_command, .-lcd_command
+ 682               	.Lscope4:
+ 683               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 684               		.stabd	78,0,0
+ 685               		.stabs	"lcd_gotoxy:F(0,47)",36,0,567,lcd_gotoxy
+ 686               		.stabs	"lcd_x:P(0,11)",64,0,567,24
+ 687               		.stabs	"lcd_y:P(0,11)",64,0,567,22
+ 688               	.global	lcd_gotoxy
+ 689               		.type	lcd_gotoxy, @function
+ 690               	lcd_gotoxy:
+ 691               		.stabd	46,0,0
+ 565:lcd_hd44780_avr.c **** /*#################################################################################################
+ 566:lcd_hd44780_avr.c **** /* goto position (x,y) */
+ 567:lcd_hd44780_avr.c **** void lcd_gotoxy(unsigned char lcd_x, unsigned char lcd_y){
+ 692               		.stabn	68,0,567,.LM99-.LFBB5
+ 693               	.LM99:
+ 694               	.LFBB5:
+ 695 0232 CF93      		push r28	 ; 
+ 696 0234 DF93      		push r29	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 24
+
+
+ 697               	/* prologue: function */
+ 698               	/* frame size = 0 */
+ 699               	/* stack size = 2 */
+ 700               	.L__stack_usage = 2
+ 568:lcd_hd44780_avr.c **** 
+ 569:lcd_hd44780_avr.c ****    /* If out of range values for the lcd coordinates are given, lock lcd_putc() and return */
+ 570:lcd_hd44780_avr.c ****    putc_lock=0;
+ 701               		.stabn	68,0,570,.LM100-.LFBB5
+ 702               	.LM100:
+ 703 0236 1092 0000 		sts putc_lock,__zero_reg__	 ;  putc_lock,
+ 571:lcd_hd44780_avr.c ****    if(lcd_x >= LCD_CHARS_PER_LINE || lcd_y >= LCD_LINES) { putc_lock=1; return; }
+ 704               		.stabn	68,0,571,.LM101-.LFBB5
+ 705               	.LM101:
+ 706 023a 8431      		cpi r24,lo8(20)	 ;  lcd_x,
+ 707 023c 00F4      		brsh .L79	 ; ,
+ 708               		.stabn	68,0,571,.LM102-.LFBB5
+ 709               	.LM102:
+ 710 023e 6430      		cpi r22,lo8(4)	 ;  lcd_y,
+ 711 0240 00F0      		brlo .L80	 ; ,
+ 712               	.L79:
+ 713               		.stabn	68,0,571,.LM103-.LFBB5
+ 714               	.LM103:
+ 715 0242 81E0      		ldi r24,lo8(1)	 ;  tmp48,
+ 716 0244 8093 0000 		sts putc_lock,r24	 ;  putc_lock, tmp48
+ 717 0248 00C0      		rjmp .L78	 ; 
+ 718               	.L80:
+ 719 024a C62F      		mov r28,r22	 ;  lcd_y, lcd_y
+ 720 024c D82F      		mov r29,r24	 ;  lcd_x, lcd_x
+ 721 024e 90E8      		ldi r25,lo8(-128)	 ;  D.2333,
+ 722 0250 980F      		add r25,r24	 ;  D.2333, lcd_x
+ 723               	.LBB31:
+ 724               	.LBB32:
+ 572:lcd_hd44780_avr.c ****    lcd_command((1<<LCD_DDRAM)+lcd_line_start[lcd_y]+lcd_x);
+ 725               		.stabn	68,0,572,.LM104-.LFBB5
+ 726               	.LM104:
+ 727 0252 E62F      		mov r30,r22	 ;  D.2332, lcd_y
+ 728 0254 F0E0      		ldi r31,0	 ;  D.2332
+ 729 0256 E050      		subi r30,lo8(-(lcd_line_start))	 ;  tmp52,
+ 730 0258 F040      		sbci r31,hi8(-(lcd_line_start))	 ;  tmp52,
+ 731 025a 8081      		ld r24,Z	 ;  tmp54, lcd_line_start
+ 732 025c 890F      		add r24,r25	 ; , D.2333
+ 733 025e 0E94 0000 		call lcd_command	 ; 
+ 573:lcd_hd44780_avr.c ****    x=lcd_x;
+ 734               		.stabn	68,0,573,.LM105-.LFBB5
+ 735               	.LM105:
+ 736 0262 D093 0000 		sts x,r29	 ;  x, lcd_x
+ 574:lcd_hd44780_avr.c ****    y=lcd_y;
+ 737               		.stabn	68,0,574,.LM106-.LFBB5
+ 738               	.LM106:
+ 739 0266 C093 0000 		sts y,r28	 ;  y, lcd_y
+ 740               	.L78:
+ 741               	/* epilogue start */
+ 742               	.LBE32:
+ 743               	.LBE31:
+ 575:lcd_hd44780_avr.c **** 
+ 576:lcd_hd44780_avr.c **** return;
+ 577:lcd_hd44780_avr.c **** }
+GAS LISTING /tmp/ccd5pcoP.s 			page 25
+
+
+ 744               		.stabn	68,0,577,.LM107-.LFBB5
+ 745               	.LM107:
+ 746 026a DF91      		pop r29	 ; 
+ 747 026c CF91      		pop r28	 ; 
+ 748 026e 0895      		ret
+ 749               		.size	lcd_gotoxy, .-lcd_gotoxy
+ 750               	.Lscope5:
+ 751               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 752               		.stabd	78,0,0
+ 753               		.stabs	"lcd_putc:F(0,47)",36,0,580,lcd_putc
+ 754               		.stabs	"c:P(0,11)",64,0,580,24
+ 755               	.global	lcd_putc
+ 756               		.type	lcd_putc, @function
+ 757               	lcd_putc:
+ 758               		.stabd	46,0,0
+ 578:lcd_hd44780_avr.c **** /*#################################################################################################
+ 579:lcd_hd44780_avr.c **** /* print character at current cursor position */
+ 580:lcd_hd44780_avr.c **** void lcd_putc(unsigned char c){
+ 759               		.stabn	68,0,580,.LM108-.LFBB6
+ 760               	.LM108:
+ 761               	.LFBB6:
+ 762               	/* prologue: function */
+ 763               	/* frame size = 0 */
+ 764               	/* stack size = 0 */
+ 765               	.L__stack_usage = 0
+ 581:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1 && LCD_ERROR_DETECTION == 1
+ 582:lcd_hd44780_avr.c **** static unsigned char cnt1 = 0;
+ 583:lcd_hd44780_avr.c **** #endif
+ 584:lcd_hd44780_avr.c **** 
+ 585:lcd_hd44780_avr.c ****  if (!putc_lock)
+ 766               		.stabn	68,0,585,.LM109-.LFBB6
+ 767               	.LM109:
+ 768 0270 9091 0000 		lds r25,putc_lock	 ;  putc_lock, putc_lock
+ 769 0274 9111      		cpse r25,__zero_reg__	 ;  putc_lock,
+ 770 0276 00C0      		rjmp .L82	 ; 
+ 586:lcd_hd44780_avr.c ****     {
+ 587:lcd_hd44780_avr.c **** #if LCD_LINES!=1
+ 588:lcd_hd44780_avr.c ****        if (c=='\n'){
+ 771               		.stabn	68,0,588,.LM110-.LFBB6
+ 772               	.LM110:
+ 773 0278 8A30      		cpi r24,lo8(10)	 ;  c,
+ 774 027a 01F4      		brne .L84	 ; ,
+ 775               	.LBB35:
+ 776               	.LBB36:
+ 589:lcd_hd44780_avr.c ****           if(y<LCD_LINES-1){ lcd_gotoxy(0,(y+1)); }
+ 777               		.stabn	68,0,589,.LM111-.LFBB6
+ 778               	.LM111:
+ 779 027c 6091 0000 		lds r22,y	 ;  D.2337, y
+ 780 0280 6330      		cpi r22,lo8(3)	 ;  D.2337,
+ 781 0282 00F4      		brsh .L82	 ; ,
+ 782 0284 6F5F      		subi r22,lo8(-(1))	 ;  D.2337,
+ 783 0286 80E0      		ldi r24,0	 ; 
+ 784 0288 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 785               	.L84:
+ 786               	.LBE36:
+ 787               	.LBE35:
+ 590:lcd_hd44780_avr.c ****   
+GAS LISTING /tmp/ccd5pcoP.s 			page 26
+
+
+ 591:lcd_hd44780_avr.c ****        }else if (x<LCD_CHARS_PER_LINE){
+ 788               		.stabn	68,0,591,.LM112-.LFBB6
+ 789               	.LM112:
+ 790 028c 9091 0000 		lds r25,x	 ;  x, x
+ 791 0290 9431      		cpi r25,lo8(20)	 ;  x,
+ 792 0292 00F4      		brsh .L82	 ; ,
+ 592:lcd_hd44780_avr.c ****                  lcd_write(c, DATA_MODE);
+ 793               		.stabn	68,0,592,.LM113-.LFBB6
+ 794               	.LM113:
+ 795 0294 61E0      		ldi r22,lo8(1)	 ; ,
+ 796 0296 0E94 0000 		call lcd_write	 ; 
+ 593:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1 && LCD_ERROR_DETECTION == 1
+ 594:lcd_hd44780_avr.c **** #warning LCD SCREEN VERIFICATION IS ACTIVE
+ 595:lcd_hd44780_avr.c ****                  lcd_gotoxy(x, y);
+ 596:lcd_hd44780_avr.c ****                  if(lcd_read(DATA) != c){ lcd_error_detected = 1; }else{ lcd_error_detected = 0; cn
+ 597:lcd_hd44780_avr.c **** #endif
+ 598:lcd_hd44780_avr.c ****                  x++;
+ 797               		.stabn	68,0,598,.LM114-.LFBB6
+ 798               	.LM114:
+ 799 029a 8091 0000 		lds r24,x	 ;  x, x
+ 800 029e 8F5F      		subi r24,lo8(-(1))	 ;  D.2337,
+ 801 02a0 8093 0000 		sts x,r24	 ;  x, D.2337
+ 802               	.L82:
+ 803 02a4 0895      		ret
+ 804               		.size	lcd_putc, .-lcd_putc
+ 805               	.Lscope6:
+ 806               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 807               		.stabd	78,0,0
+ 808               		.stabs	"lcd_putc_cgram:F(0,47)",36,0,639,lcd_putc_cgram
+ 809               		.stabs	"user_char:P(0,50)=*(0,51)=k(0,11)",64,0,639,14
+ 810               		.stabs	"char_position:P(0,11)",64,0,639,22
+ 811               	.global	lcd_putc_cgram
+ 812               		.type	lcd_putc_cgram, @function
+ 813               	lcd_putc_cgram:
+ 814               		.stabd	46,0,0
+ 599:lcd_hd44780_avr.c ****               }
+ 600:lcd_hd44780_avr.c **** #if LCD_AUTO_LINE_FEED == 1
+ 601:lcd_hd44780_avr.c ****                else if (y<LCD_LINES-1){ 
+ 602:lcd_hd44780_avr.c ****                         lcd_gotoxy(0,(y+1)); 
+ 603:lcd_hd44780_avr.c ****                         lcd_write(c, DATA_MODE);
+ 604:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1 && LCD_ERROR_DETECTION == 1
+ 605:lcd_hd44780_avr.c ****                         lcd_gotoxy(x, y);
+ 606:lcd_hd44780_avr.c ****                         if(lcd_read(DATA) != c){ lcd_error_detected = 1; }else{ lcd_error_detected 
+ 607:lcd_hd44780_avr.c **** #endif
+ 608:lcd_hd44780_avr.c ****                         x++;
+ 609:lcd_hd44780_avr.c ****                    
+ 610:lcd_hd44780_avr.c ****                      }else { 
+ 611:lcd_hd44780_avr.c ****                                lcd_gotoxy(0,0); 
+ 612:lcd_hd44780_avr.c ****                                lcd_write(c, DATA_MODE); 
+ 613:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1 && LCD_ERROR_DETECTION == 1
+ 614:lcd_hd44780_avr.c ****                                lcd_gotoxy(x, y);
+ 615:lcd_hd44780_avr.c ****                                if(lcd_read(DATA) != c){ lcd_error_detected = 1; }else{lcd_error_det
+ 616:lcd_hd44780_avr.c **** #endif
+ 617:lcd_hd44780_avr.c ****                                x++;
+ 618:lcd_hd44780_avr.c ****                             }
+ 619:lcd_hd44780_avr.c **** #endif
+ 620:lcd_hd44780_avr.c **** 
+GAS LISTING /tmp/ccd5pcoP.s 			page 27
+
+
+ 621:lcd_hd44780_avr.c **** #else
+ 622:lcd_hd44780_avr.c ****        if(c=='\n') { return; }
+ 623:lcd_hd44780_avr.c ****        if(x<LCD_CHARS_PER_LINE) { lcd_write(c, DATA_MODE); x++; }
+ 624:lcd_hd44780_avr.c **** #endif
+ 625:lcd_hd44780_avr.c ****   }
+ 626:lcd_hd44780_avr.c **** #if  LCD_READ_REQUIRED == 1 && LCD_ERROR_DETECTION == 1
+ 627:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 0
+ 628:lcd_hd44780_avr.c **** if (lcd_error_detected && cnt1 <= 4){
+ 629:lcd_hd44780_avr.c ****    lcd_toggle_e();
+ 630:lcd_hd44780_avr.c ****    lcd_init();
+ 631:lcd_hd44780_avr.c ****    cnt1++;
+ 632:lcd_hd44780_avr.c **** }
+ 633:lcd_hd44780_avr.c **** #endif
+ 634:lcd_hd44780_avr.c **** #endif
+ 635:lcd_hd44780_avr.c **** 
+ 636:lcd_hd44780_avr.c **** return;
+ 637:lcd_hd44780_avr.c **** }
+ 638:lcd_hd44780_avr.c **** /*#################################################################################################
+ 639:lcd_hd44780_avr.c **** void lcd_putc_cgram(const unsigned char *user_char, unsigned char char_position){
+ 815               		.stabn	68,0,639,.LM115-.LFBB7
+ 816               	.LM115:
+ 817               	.LFBB7:
+ 818 02a6 EF92      		push r14	 ; 
+ 819 02a8 FF92      		push r15	 ; 
+ 820 02aa 0F93      		push r16	 ; 
+ 821 02ac 1F93      		push r17	 ; 
+ 822 02ae CF93      		push r28	 ; 
+ 823 02b0 DF93      		push r29	 ; 
+ 824               		 ; SP -= 1	 ; 
+ 825 02b2 1F92      		push __zero_reg__
+ 826 02b4 CDB7      		in r28,__SP_L__	 ; 
+ 827 02b6 DEB7      		in r29,__SP_H__	 ; 
+ 828               	/* prologue: function */
+ 829               	/* frame size = 1 */
+ 830               	/* stack size = 7 */
+ 831               	.L__stack_usage = 7
+ 832 02b8 7C01      		movw r14,r24	 ;  user_char, user_char
+ 640:lcd_hd44780_avr.c **** 
+ 641:lcd_hd44780_avr.c **** unsigned char x1=0;
+ 642:lcd_hd44780_avr.c **** 
+ 643:lcd_hd44780_avr.c **** if(char_position<=7)
+ 833               		.stabn	68,0,643,.LM116-.LFBB7
+ 834               	.LM116:
+ 835 02ba 6830      		cpi r22,lo8(8)	 ;  char_position,
+ 836 02bc 00F4      		brsh .L86	 ; ,
+ 644:lcd_hd44780_avr.c ****  {    
+ 645:lcd_hd44780_avr.c ****    lcd_command((1<<LCD_CGRAM)+(char_position*8));
+ 837               		.stabn	68,0,645,.LM117-.LFBB7
+ 838               	.LM117:
+ 839 02be 862F      		mov r24,r22	 ;  D.2357, char_position
+ 840 02c0 880F      		lsl r24	 ;  D.2357
+ 841 02c2 880F      		lsl r24	 ;  D.2357
+ 842 02c4 880F      		lsl r24	 ;  D.2357
+ 843 02c6 805C      		subi r24,lo8(-(64))	 ; ,
+ 844 02c8 0E94 0000 		call lcd_command	 ; 
+ 845 02cc 8701      		movw r16,r14	 ;  D.2358, user_char
+ 846 02ce 085F      		subi r16,-8	 ;  D.2358,
+GAS LISTING /tmp/ccd5pcoP.s 			page 28
+
+
+ 847 02d0 1F4F      		sbci r17,-1	 ;  D.2358,
+ 848               	.L87:
+ 849               	.LBB37:
+ 646:lcd_hd44780_avr.c ****    for(x1=0; x1<=7; x1++)
+ 647:lcd_hd44780_avr.c ****      {
+ 648:lcd_hd44780_avr.c ****         lcd_write(pgm_read_byte(user_char++), DATA_MODE); 
+ 850               		.stabn	68,0,648,.LM118-.LFBB7
+ 851               	.LM118:
+ 852 02d2 F701      		movw r30,r14	 ; , __addr16
+ 853               	/* #APP */
+ 854               	 ;  648 "lcd_hd44780_avr.c" 1
+ 855 02d4 8491      		lpm r24, Z	 ;  __result
+ 856               		
+ 857               	 ;  0 "" 2
+ 858               	/* #NOAPP */
+ 859               	.LBE37:
+ 860 02d6 61E0      		ldi r22,lo8(1)	 ; ,
+ 861 02d8 0E94 0000 		call lcd_write	 ; 
+ 862 02dc FFEF      		ldi r31,-1	 ; ,
+ 863 02de EF1A      		sub r14,r31	 ;  __addr16,
+ 864 02e0 FF0A      		sbc r15,r31	 ;  __addr16,
+ 646:lcd_hd44780_avr.c ****    for(x1=0; x1<=7; x1++)
+ 865               		.stabn	68,0,646,.LM119-.LFBB7
+ 866               	.LM119:
+ 867 02e2 E016      		cp r14,r16	 ;  __addr16, D.2358
+ 868 02e4 F106      		cpc r15,r17	 ;  __addr16, D.2358
+ 869 02e6 01F4      		brne .L87	 ; ,
+ 870               	.L89:
+ 649:lcd_hd44780_avr.c ****      }
+ 650:lcd_hd44780_avr.c ****  }
+ 651:lcd_hd44780_avr.c **** else{
+ 652:lcd_hd44780_avr.c ****        lcd_command((1<<LCD_CGRAM));
+ 653:lcd_hd44780_avr.c ****        for(x1=0; x1<char_position; x1++)
+ 654:lcd_hd44780_avr.c ****          { 
+ 655:lcd_hd44780_avr.c ****             if(x1>=64) { break; } 
+ 656:lcd_hd44780_avr.c ****             lcd_write(pgm_read_byte(user_char++), DATA_MODE); 
+ 657:lcd_hd44780_avr.c ****          }
+ 658:lcd_hd44780_avr.c ****     }     
+ 659:lcd_hd44780_avr.c **** 
+ 660:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 871               		.stabn	68,0,660,.LM120-.LFBB7
+ 872               	.LM120:
+ 873 02e8 6091 0000 		lds r22,y	 ; , y
+ 874 02ec 8091 0000 		lds r24,x	 ; , x
+ 875               	/* epilogue start */
+ 661:lcd_hd44780_avr.c **** 
+ 662:lcd_hd44780_avr.c **** return;
+ 663:lcd_hd44780_avr.c **** }
+ 876               		.stabn	68,0,663,.LM121-.LFBB7
+ 877               	.LM121:
+ 878               		 ; SP += 1	 ; 
+ 879 02f0 0F90      		pop __tmp_reg__
+ 880 02f2 DF91      		pop r29	 ; 
+ 881 02f4 CF91      		pop r28	 ; 
+ 882 02f6 1F91      		pop r17	 ; 
+ 883 02f8 0F91      		pop r16	 ; 
+ 884 02fa FF90      		pop r15	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 29
+
+
+ 885 02fc EF90      		pop r14	 ; 
+ 660:lcd_hd44780_avr.c **** 
+ 886               		.stabn	68,0,660,.LM122-.LFBB7
+ 887               	.LM122:
+ 888 02fe 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 889               	.L86:
+ 652:lcd_hd44780_avr.c ****        for(x1=0; x1<char_position; x1++)
+ 890               		.stabn	68,0,652,.LM123-.LFBB7
+ 891               	.LM123:
+ 892 0302 80E4      		ldi r24,lo8(64)	 ; ,
+ 893 0304 6983      		std Y+1,r22	 ; ,
+ 894 0306 0E94 0000 		call lcd_command	 ; 
+ 895 030a 01E4      		ldi r16,lo8(65)	 ;  tmp91,
+ 896 030c 6981      		ldd r22,Y+1	 ; ,
+ 897 030e 061B      		sub r16,r22	 ;  D.2356, char_position
+ 898 0310 10E4      		ldi r17,lo8(64)	 ;  D.2356,
+ 899               	.L88:
+ 900               	.LBB38:
+ 656:lcd_hd44780_avr.c ****          }
+ 901               		.stabn	68,0,656,.LM124-.LFBB7
+ 902               	.LM124:
+ 903 0312 F701      		movw r30,r14	 ; , __addr16
+ 904               	/* #APP */
+ 905               	 ;  656 "lcd_hd44780_avr.c" 1
+ 906 0314 8491      		lpm r24, Z	 ;  __result
+ 907               		
+ 908               	 ;  0 "" 2
+ 909               	/* #NOAPP */
+ 910               	.LBE38:
+ 911 0316 61E0      		ldi r22,lo8(1)	 ; ,
+ 912 0318 0E94 0000 		call lcd_write	 ; 
+ 653:lcd_hd44780_avr.c ****          { 
+ 913               		.stabn	68,0,653,.LM125-.LFBB7
+ 914               	.LM125:
+ 915 031c 1017      		cp r17,r16	 ;  D.2356, D.2356
+ 916 031e 01F0      		breq .L89	 ; ,
+ 917 0320 1150      		subi r17,lo8(-(-1))	 ;  D.2356,
+ 918 0322 8FEF      		ldi r24,-1	 ; ,
+ 919 0324 E81A      		sub r14,r24	 ;  __addr16,
+ 920 0326 F80A      		sbc r15,r24	 ;  __addr16,
+ 655:lcd_hd44780_avr.c ****             lcd_write(pgm_read_byte(user_char++), DATA_MODE); 
+ 921               		.stabn	68,0,655,.LM126-.LFBB7
+ 922               	.LM126:
+ 923 0328 1111      		cpse r17,__zero_reg__	 ;  D.2356,
+ 924 032a 00C0      		rjmp .L88	 ; 
+ 925 032c 00C0      		rjmp .L89	 ; 
+ 926               		.size	lcd_putc_cgram, .-lcd_putc_cgram
+ 927               		.stabs	"__addr16:r(5,4)",64,0,648,14
+ 928               		.stabn	192,0,0,.LBB37-.LFBB7
+ 929               		.stabn	224,0,0,.LBE37-.LFBB7
+ 930               		.stabs	"__addr16:r(5,4)",64,0,656,14
+ 931               		.stabn	192,0,0,.LBB38-.LFBB7
+ 932               		.stabn	224,0,0,.LBE38-.LFBB7
+ 933               	.Lscope7:
+ 934               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 935               		.stabd	78,0,0
+ 936               		.section	.rodata
+GAS LISTING /tmp/ccd5pcoP.s 			page 30
+
+
+ 937               	.LC0:
+ 938 0000 20        		.byte	32
+ 939 0001 20        		.byte	32
+ 940 0002 20        		.byte	32
+ 941 0003 20        		.byte	32
+ 942 0004 20        		.byte	32
+ 943 0005 20        		.byte	32
+ 944 0006 20        		.byte	32
+ 945 0007 20        		.byte	32
+ 946 0008 20        		.byte	32
+ 947               		.text
+ 948               		.stabs	"lcd_put_i:F(0,47)",36,0,669,lcd_put_i
+ 949               		.stabs	"value:P(0,1)",64,0,669,24
+ 950               		.stabs	"dot_position:P(0,11)",64,0,669,12
+ 951               		.stabs	"number_of_chars:P(0,11)",64,0,669,20
+ 952               	.global	lcd_put_i
+ 953               		.type	lcd_put_i, @function
+ 954               	lcd_put_i:
+ 955               		.stabd	46,0,0
+ 664:lcd_hd44780_avr.c **** 
+ 665:lcd_hd44780_avr.c **** 
+ 666:lcd_hd44780_avr.c **** 
+ 667:lcd_hd44780_avr.c **** 
+ 668:lcd_hd44780_avr.c **** /* print signed integer on lcd with or without comma (no auto linefeed) */
+ 669:lcd_hd44780_avr.c **** void lcd_put_i(int value, unsigned char dot_position, unsigned char number_of_chars){
+ 956               		.stabn	68,0,669,.LM127-.LFBB8
+ 957               	.LM127:
+ 958               	.LFBB8:
+ 959 032e 8F92      		push r8	 ; 
+ 960 0330 9F92      		push r9	 ; 
+ 961 0332 AF92      		push r10	 ; 
+ 962 0334 BF92      		push r11	 ; 
+ 963 0336 CF92      		push r12	 ; 
+ 964 0338 DF92      		push r13	 ; 
+ 965 033a EF92      		push r14	 ; 
+ 966 033c FF92      		push r15	 ; 
+ 967 033e 0F93      		push r16	 ; 
+ 968 0340 1F93      		push r17	 ; 
+ 969 0342 CF93      		push r28	 ; 
+ 970 0344 DF93      		push r29	 ; 
+ 971 0346 CDB7      		in r28,__SP_L__	 ; 
+ 972 0348 DEB7      		in r29,__SP_H__	 ; 
+ 973 034a 2997      		sbiw r28,9	 ; ,
+ 974 034c 0FB6      		in __tmp_reg__,__SREG__
+ 975 034e F894      		cli
+ 976 0350 DEBF      		out __SP_H__,r29	 ; ,
+ 977 0352 0FBE      		out __SREG__,__tmp_reg__
+ 978 0354 CDBF      		out __SP_L__,r28	 ; ,
+ 979               	/* prologue: function */
+ 980               	/* frame size = 9 */
+ 981               	/* stack size = 21 */
+ 982               	.L__stack_usage = 21
+ 983 0356 C62E      		mov r12,r22	 ;  dot_position, dot_position
+ 670:lcd_hd44780_avr.c **** 
+ 671:lcd_hd44780_avr.c ****    unsigned char lcd_data[9]={' ',' ',' ',' ',' ',' ',' ',' ',' ' }; 
+ 984               		.stabn	68,0,671,.LM128-.LFBB8
+ 985               	.LM128:
+GAS LISTING /tmp/ccd5pcoP.s 			page 31
+
+
+ 986 0358 29E0      		ldi r18,lo8(9)	 ;  tmp130,
+ 987 035a E0E0      		ldi r30,lo8(.LC0)	 ; ,
+ 988 035c F0E0      		ldi r31,hi8(.LC0)	 ; ,
+ 989 035e BE01      		movw r22,r28	 ; ,
+ 990 0360 6F5F      		subi r22,-1	 ; ,
+ 991 0362 7F4F      		sbci r23,-1	 ; ,
+ 992 0364 7B01      		movw r14,r22	 ;  tmp167,
+ 993 0366 DB01      		movw r26,r22	 ; , tmp167
+ 994               		0:
+ 995 0368 0190      		ld r0,Z+	 ; 
+ 996 036a 0D92      		st X+,r0	 ; 
+ 997 036c 2A95      		dec r18	 ;  tmp130
+ 998 036e 01F4      		brne 0b
+ 672:lcd_hd44780_avr.c ****    unsigned char negative=0, position=sizeof(lcd_data), radix=10, digits_needed = 0, zeros_needed =
+ 673:lcd_hd44780_avr.c ****    unsigned char options = 0;
+ 674:lcd_hd44780_avr.c **** 
+ 675:lcd_hd44780_avr.c ****    // The three lower bits are for declaring how many digits to reserve on the lcd screen.
+ 676:lcd_hd44780_avr.c ****    // The remaining bits are reserved for options
+ 677:lcd_hd44780_avr.c ****    options = number_of_chars;
+ 678:lcd_hd44780_avr.c ****    //options &= (~(7<<0));
+ 679:lcd_hd44780_avr.c ****    number_of_chars &= (7<<0);       
+ 999               		.stabn	68,0,679,.LM129-.LFBB8
+ 1000               	.LM129:
+ 1001 0370 742F      		mov r23,r20	 ; , number_of_chars
+ 1002 0372 7770      		andi r23,lo8(7)	 ; ,
+ 1003 0374 D72E      		mov r13,r23	 ;  number_of_chars,
+ 680:lcd_hd44780_avr.c **** 
+ 681:lcd_hd44780_avr.c ****    /* Some adjustments if the number is negative */
+ 682:lcd_hd44780_avr.c ****    if(value<0) { value=-value; *(lcd_data)='-'; negative=1; digits_needed++; } 
+ 1004               		.stabn	68,0,682,.LM130-.LFBB8
+ 1005               	.LM130:
+ 1006 0376 97FF      		sbrs r25,7	 ;  value,
+ 1007 0378 00C0      		rjmp .L114	 ; 
+ 1008               		.stabn	68,0,682,.LM131-.LFBB8
+ 1009               	.LM131:
+ 1010 037a 9195      		neg r25	 ;  value
+ 1011 037c 8195      		neg r24	 ;  value
+ 1012 037e 9109      		sbc r25,__zero_reg__	 ;  value
+ 1013 0380 2DE2      		ldi r18,lo8(45)	 ;  tmp131,
+ 1014 0382 2983      		std Y+1,r18	 ;  lcd_data, tmp131
+ 1015 0384 9924      		clr r9	 ;  number_of_chars
+ 1016 0386 9394      		inc r9	 ;  number_of_chars
+ 1017 0388 00C0      		rjmp .L96	 ; 
+ 1018               	.L114:
+ 672:lcd_hd44780_avr.c ****    unsigned char negative=0, position=sizeof(lcd_data), radix=10, digits_needed = 0, zeros_needed =
+ 1019               		.stabn	68,0,672,.LM132-.LFBB8
+ 1020               	.LM132:
+ 1021 038a 912C      		mov r9,__zero_reg__	 ;  number_of_chars
+ 1022               	.L96:
+ 1023               		.stabn	68,0,682,.LM133-.LFBB8
+ 1024               	.LM133:
+ 1025 038c 092D      		mov r16,r9	 ;  number_of_chars, number_of_chars
+ 1026 038e 19E0      		ldi r17,lo8(9)	 ;  position,
+ 683:lcd_hd44780_avr.c **** 
+ 684:lcd_hd44780_avr.c **** /*
+ 685:lcd_hd44780_avr.c ****    Convert 16 bit positive now made number to ascii algorithm. Position starts at array position 8
+ 686:lcd_hd44780_avr.c ****    so in the extreme case of lcd_puti(-32767,5,8); the display should show -0,32767 (8 chars) which
+GAS LISTING /tmp/ccd5pcoP.s 			page 32
+
+
+ 687:lcd_hd44780_avr.c ****    means that the position variable will count down to 2.
+ 688:lcd_hd44780_avr.c ****    Since the sign is always in array position 0 there is always an empty slot in position 1 at leas
+ 689:lcd_hd44780_avr.c ****    This empty slot is essential for left allignment.
+ 690:lcd_hd44780_avr.c ****    Also note that position 8 gets the least significant digit.
+ 691:lcd_hd44780_avr.c ****    I have tried varius code schemes but this one yields the smaller code. 
+ 692:lcd_hd44780_avr.c **** */
+ 693:lcd_hd44780_avr.c ****    do{
+ 694:lcd_hd44780_avr.c ****         if (dot_position){
+ 695:lcd_hd44780_avr.c ****            if ((sizeof(lcd_data)-position)>=dot_position){
+ 1027               		.stabn	68,0,695,.LM134-.LFBB8
+ 1028               	.LM134:
+ 1029 0390 29E0      		ldi r18,lo8(9)	 ;  tmp178,
+ 1030 0392 30E0      		ldi r19,0	 ; 
+ 696:lcd_hd44780_avr.c ****               position--;
+ 697:lcd_hd44780_avr.c ****               digits_needed++;
+ 698:lcd_hd44780_avr.c ****               *(lcd_data+position)=',';
+ 1031               		.stabn	68,0,698,.LM135-.LFBB8
+ 1032               	.LM135:
+ 1033 0394 5CE2      		ldi r21,lo8(44)	 ; ,
+ 1034 0396 852E      		mov r8,r21	 ;  tmp179,
+ 699:lcd_hd44780_avr.c ****               dot_position=0;
+ 700:lcd_hd44780_avr.c ****            }
+ 701:lcd_hd44780_avr.c ****         } 
+ 702:lcd_hd44780_avr.c ****         position--;
+ 703:lcd_hd44780_avr.c ****         digits_needed++;
+ 704:lcd_hd44780_avr.c ****         *(lcd_data+position)=(value%radix)+'0';
+ 1035               		.stabn	68,0,704,.LM136-.LFBB8
+ 1036               	.LM136:
+ 1037 0398 EAE0      		ldi r30,lo8(10)	 ;  tmp181,
+ 1038 039a F0E0      		ldi r31,0	 ; 
+ 1039               	.L101:
+ 694:lcd_hd44780_avr.c ****            if ((sizeof(lcd_data)-position)>=dot_position){
+ 1040               		.stabn	68,0,694,.LM137-.LFBB8
+ 1041               	.LM137:
+ 1042 039c CC20      		tst r12	 ;  dot_position
+ 1043 039e 01F0      		breq .L97	 ; ,
+ 695:lcd_hd44780_avr.c ****               position--;
+ 1044               		.stabn	68,0,695,.LM138-.LFBB8
+ 1045               	.LM138:
+ 1046 03a0 AC2D      		mov r26,r12	 ;  D.2407, dot_position
+ 1047 03a2 B0E0      		ldi r27,0	 ;  D.2407
+ 1048 03a4 B901      		movw r22,r18	 ;  D.2407, tmp178
+ 1049 03a6 611B      		sub r22,r17	 ;  D.2407, position
+ 1050 03a8 7109      		sbc r23,__zero_reg__	 ;  D.2407
+ 1051 03aa 6A17      		cp r22,r26	 ;  D.2407, D.2407
+ 1052 03ac 7B07      		cpc r23,r27	 ;  D.2407, D.2407
+ 1053 03ae 00F0      		brlo .L97	 ; ,
+ 696:lcd_hd44780_avr.c ****               digits_needed++;
+ 1054               		.stabn	68,0,696,.LM139-.LFBB8
+ 1055               	.LM139:
+ 1056 03b0 1150      		subi r17,lo8(-(-1))	 ;  position,
+ 697:lcd_hd44780_avr.c ****               *(lcd_data+position)=',';
+ 1057               		.stabn	68,0,697,.LM140-.LFBB8
+ 1058               	.LM140:
+ 1059 03b2 0F5F      		subi r16,lo8(-(1))	 ;  number_of_chars,
+ 698:lcd_hd44780_avr.c ****               dot_position=0;
+ 1060               		.stabn	68,0,698,.LM141-.LFBB8
+GAS LISTING /tmp/ccd5pcoP.s 			page 33
+
+
+ 1061               	.LM141:
+ 1062 03b4 D701      		movw r26,r14	 ;  tmp137, tmp167
+ 1063 03b6 A10F      		add r26,r17	 ;  tmp137, position
+ 1064 03b8 B11D      		adc r27,__zero_reg__	 ;  tmp137
+ 1065 03ba 8C92      		st X,r8	 ;  *_42, tmp179
+ 699:lcd_hd44780_avr.c ****            }
+ 1066               		.stabn	68,0,699,.LM142-.LFBB8
+ 1067               	.LM142:
+ 1068 03bc C12C      		mov r12,__zero_reg__	 ;  dot_position
+ 1069               	.L97:
+ 702:lcd_hd44780_avr.c ****         digits_needed++;
+ 1070               		.stabn	68,0,702,.LM143-.LFBB8
+ 1071               	.LM143:
+ 1072 03be 1150      		subi r17,lo8(-(-1))	 ;  position,
+ 703:lcd_hd44780_avr.c ****         *(lcd_data+position)=(value%radix)+'0';
+ 1073               		.stabn	68,0,703,.LM144-.LFBB8
+ 1074               	.LM144:
+ 1075 03c0 0F5F      		subi r16,lo8(-(1))	 ;  number_of_chars,
+ 1076               		.stabn	68,0,704,.LM145-.LFBB8
+ 1077               	.LM145:
+ 1078 03c2 5701      		movw r10,r14	 ;  tmp140, tmp167
+ 1079 03c4 A10E      		add r10,r17	 ;  tmp140, position
+ 1080 03c6 B11C      		adc r11,__zero_reg__	 ;  tmp140
+ 1081 03c8 BF01      		movw r22,r30	 ; , tmp181
+ 1082 03ca 0E94 0000 		call __divmodhi4
+ 1083 03ce 805D      		subi r24,lo8(-(48))	 ;  D.2406,
+ 1084 03d0 D501      		movw r26,r10	 ; , tmp140
+ 1085 03d2 8C93      		st X,r24	 ;  *_47, D.2406
+ 705:lcd_hd44780_avr.c ****         value/=radix;
+ 1086               		.stabn	68,0,705,.LM146-.LFBB8
+ 1087               	.LM146:
+ 1088 03d4 CB01      		movw r24,r22	 ; ,
+ 706:lcd_hd44780_avr.c **** 
+ 707:lcd_hd44780_avr.c ****    }while((value || dot_position) && dot_position <= 5); 
+ 1089               		.stabn	68,0,707,.LM147-.LFBB8
+ 1090               	.LM147:
+ 1091 03d6 0097      		sbiw r24,0	 ;  value,
+ 1092 03d8 01F4      		brne .L98	 ; ,
+ 1093               		.stabn	68,0,707,.LM148-.LFBB8
+ 1094               	.LM148:
+ 1095 03da C110      		cpse r12,__zero_reg__	 ;  dot_position,
+ 1096 03dc 00C0      		rjmp .L98	 ; 
+ 1097               	.L102:
+ 708:lcd_hd44780_avr.c **** 
+ 709:lcd_hd44780_avr.c ****    /* Move the array contents to the start of the array filling the rest with spaces (Left align da
+ 710:lcd_hd44780_avr.c ****    /* radix has no meaning from here on, it is just used as a counter. */
+ 711:lcd_hd44780_avr.c ****    if (options & LCD_ADD_ZEROS){
+ 1098               		.stabn	68,0,711,.LM149-.LFBB8
+ 1099               	.LM149:
+ 1100 03de 46FD      		sbrc r20,6	 ;  number_of_chars,
+ 1101 03e0 00C0      		rjmp .L99	 ; 
+ 1102 03e2 00C0      		rjmp .L100	 ; 
+ 1103               	.L98:
+ 707:lcd_hd44780_avr.c **** 
+ 1104               		.stabn	68,0,707,.LM150-.LFBB8
+ 1105               	.LM150:
+ 1106 03e4 B5E0      		ldi r27,lo8(5)	 ; ,
+GAS LISTING /tmp/ccd5pcoP.s 			page 34
+
+
+ 1107 03e6 BC15      		cp r27,r12	 ; , dot_position
+ 1108 03e8 00F4      		brsh .L101	 ; ,
+ 1109 03ea 00C0      		rjmp .L102	 ; 
+ 1110               	.L99:
+ 712:lcd_hd44780_avr.c ****       if (number_of_chars > digits_needed){ 
+ 1111               		.stabn	68,0,712,.LM151-.LFBB8
+ 1112               	.LM151:
+ 1113 03ec 0D15      		cp r16,r13	 ;  number_of_chars, number_of_chars
+ 1114 03ee 00F4      		brsh .L100	 ; ,
+ 713:lcd_hd44780_avr.c ****          zeros_needed = number_of_chars-digits_needed; 
+ 1115               		.stabn	68,0,713,.LM152-.LFBB8
+ 1116               	.LM152:
+ 1117 03f0 8D2D      		mov r24,r13	 ;  zeros_needed, number_of_chars
+ 1118 03f2 801B      		sub r24,r16	 ;  zeros_needed, number_of_chars
+ 1119 03f4 E12F      		mov r30,r17	 ; , position
+ 1120 03f6 E81B      		sub r30,r24	 ; , zeros_needed
+ 1121 03f8 8E2F      		mov r24,r30	 ;  position,
+ 714:lcd_hd44780_avr.c ****          do{
+ 715:lcd_hd44780_avr.c ****               position--; 
+ 716:lcd_hd44780_avr.c ****               zeros_needed--;
+ 717:lcd_hd44780_avr.c ****               *(lcd_data+position)='0';
+ 1122               		.stabn	68,0,717,.LM153-.LFBB8
+ 1123               	.LM153:
+ 1124 03fa 90E3      		ldi r25,lo8(48)	 ;  tmp177,
+ 1125               	.L103:
+ 715:lcd_hd44780_avr.c ****               zeros_needed--;
+ 1126               		.stabn	68,0,715,.LM154-.LFBB8
+ 1127               	.LM154:
+ 1128 03fc 1150      		subi r17,lo8(-(-1))	 ;  position,
+ 1129               		.stabn	68,0,717,.LM155-.LFBB8
+ 1130               	.LM155:
+ 1131 03fe F701      		movw r30,r14	 ;  tmp153, tmp167
+ 1132 0400 E10F      		add r30,r17	 ;  tmp153, position
+ 1133 0402 F11D      		adc r31,__zero_reg__	 ;  tmp153
+ 1134 0404 9083      		st Z,r25	 ;  *_57, tmp177
+ 718:lcd_hd44780_avr.c **** 
+ 719:lcd_hd44780_avr.c ****          }while(zeros_needed > 0);
+ 1135               		.stabn	68,0,719,.LM156-.LFBB8
+ 1136               	.LM156:
+ 1137 0406 1813      		cpse r17,r24	 ;  position, position
+ 1138 0408 00C0      		rjmp .L103	 ; 
+ 1139               	.L100:
+ 720:lcd_hd44780_avr.c ****       }
+ 721:lcd_hd44780_avr.c ****    }
+ 722:lcd_hd44780_avr.c **** 
+ 723:lcd_hd44780_avr.c ****    if ((options & LCD_RJUST) == 0){   // LEFT JUSTIFIED
+ 1140               		.stabn	68,0,723,.LM157-.LFBB8
+ 1141               	.LM157:
+ 1142 040a 47FD      		sbrc r20,7	 ;  number_of_chars,
+ 1143 040c 00C0      		rjmp .L104	 ; 
+ 1144 040e 911A      		sub r9,r17	 ;  D.2406, position
+ 724:lcd_hd44780_avr.c ****       for (radix=negative; position<sizeof(lcd_data); radix++,position++){
+ 725:lcd_hd44780_avr.c ****           *(lcd_data+radix)=*(lcd_data+position);
+ 726:lcd_hd44780_avr.c ****           *(lcd_data+position)=' ';
+ 1145               		.stabn	68,0,726,.LM158-.LFBB8
+ 1146               	.LM158:
+ 1147 0410 90E2      		ldi r25,lo8(32)	 ;  tmp176,
+GAS LISTING /tmp/ccd5pcoP.s 			page 35
+
+
+ 1148               	.L105:
+ 1149 0412 892D      		mov r24,r9	 ;  D.2406, D.2406
+ 1150 0414 810F      		add r24,r17	 ;  D.2406, position
+ 724:lcd_hd44780_avr.c ****       for (radix=negative; position<sizeof(lcd_data); radix++,position++){
+ 1151               		.stabn	68,0,724,.LM159-.LFBB8
+ 1152               	.LM159:
+ 1153 0416 1930      		cpi r17,lo8(9)	 ;  position,
+ 1154 0418 00F4      		brsh .L120	 ; ,
+ 725:lcd_hd44780_avr.c ****           *(lcd_data+position)=' ';
+ 1155               		.stabn	68,0,725,.LM160-.LFBB8
+ 1156               	.LM160:
+ 1157 041a F701      		movw r30,r14	 ;  D.2409, tmp167
+ 1158 041c E10F      		add r30,r17	 ;  D.2409, position
+ 1159 041e F11D      		adc r31,__zero_reg__	 ;  D.2409
+ 1160 0420 2081      		ld r18,Z	 ;  D.2406, *_81
+ 1161 0422 D701      		movw r26,r14	 ;  tmp157, tmp167
+ 1162 0424 A80F      		add r26,r24	 ;  tmp157, D.2406
+ 1163 0426 B11D      		adc r27,__zero_reg__	 ;  tmp157
+ 1164 0428 2C93      		st X,r18	 ;  *_79, D.2406
+ 1165               		.stabn	68,0,726,.LM161-.LFBB8
+ 1166               	.LM161:
+ 1167 042a 9083      		st Z,r25	 ;  *_81, tmp176
+ 724:lcd_hd44780_avr.c ****       for (radix=negative; position<sizeof(lcd_data); radix++,position++){
+ 1168               		.stabn	68,0,724,.LM162-.LFBB8
+ 1169               	.LM162:
+ 1170 042c 1F5F      		subi r17,lo8(-(1))	 ;  position,
+ 1171 042e 00C0      		rjmp .L105	 ; 
+ 1172               	.L120:
+ 724:lcd_hd44780_avr.c ****       for (radix=negative; position<sizeof(lcd_data); radix++,position++){
+ 1173               		.stabn	68,0,724,.LM163-.LFBB8
+ 1174               	.LM163:
+ 1175 0430 8701      		movw r16,r14	 ;  ivtmp.126, tmp167
+ 1176               	.L107:
+ 1177 0432 802F      		mov r24,r16	 ;  position,
+ 1178 0434 8E19      		sub r24,r14	 ;  position, tmp167
+ 727:lcd_hd44780_avr.c ****       }
+ 728:lcd_hd44780_avr.c ****       // Adjust the number of reserved lcd char positions 
+ 729:lcd_hd44780_avr.c ****       if(number_of_chars<sizeof(lcd_data)) { radix=number_of_chars; }  
+ 730:lcd_hd44780_avr.c ****       // Display the number on the LCD screen 
+ 731:lcd_hd44780_avr.c ****       for(position=0; position<radix; position++){ lcd_putc(lcd_data[position]); }
+ 1179               		.stabn	68,0,731,.LM164-.LFBB8
+ 1180               	.LM164:
+ 1181 0436 8D15      		cp r24,r13	 ;  position, number_of_chars
+ 1182 0438 00F4      		brsh .L95	 ; ,
+ 1183               		.stabn	68,0,731,.LM165-.LFBB8
+ 1184               	.LM165:
+ 1185 043a D801      		movw r26,r16	 ; , ivtmp.126
+ 1186 043c 8D91      		ld r24,X+	 ; , MEM[base: _116, offset: 0B]
+ 1187 043e 8D01      		movw r16,r26	 ;  ivtmp.126,
+ 1188 0440 0E94 0000 		call lcd_putc	 ; 
+ 1189 0444 00C0      		rjmp .L107	 ; 
+ 1190               	.L104:
+ 732:lcd_hd44780_avr.c **** 
+ 733:lcd_hd44780_avr.c ****    }else{   // RIGHT JUSTIFIED
+ 734:lcd_hd44780_avr.c ****             if( (int8_t)x-number_of_chars >= 0){ lcd_gotoxy(x-number_of_chars, y); }else{ x = 0; }
+ 1191               		.stabn	68,0,734,.LM166-.LFBB8
+ 1192               	.LM166:
+GAS LISTING /tmp/ccd5pcoP.s 			page 36
+
+
+ 1193 0446 8091 0000 		lds r24,x	 ;  D.2406, x
+ 1194 044a 282F      		mov r18,r24	 ;  D.2410, D.2406
+ 1195 044c 082E      		mov __tmp_reg__,r24	 ; 
+ 1196 044e 000C      		lsl r0	 ; 
+ 1197 0450 330B      		sbc r19,r19	 ; 
+ 1198 0452 2D19      		sub r18,r13	 ;  D.2410, number_of_chars
+ 1199 0454 3109      		sbc r19,__zero_reg__	 ;  D.2410
+ 1200 0456 37FD      		sbrc r19,7	 ;  D.2410,
+ 1201 0458 00C0      		rjmp .L109	 ; 
+ 1202               		.stabn	68,0,734,.LM167-.LFBB8
+ 1203               	.LM167:
+ 1204 045a 6091 0000 		lds r22,y	 ; , y
+ 1205 045e 8D19      		sub r24,r13	 ; , number_of_chars
+ 1206 0460 0E94 0000 		call lcd_gotoxy	 ; 
+ 1207 0464 00C0      		rjmp .L110	 ; 
+ 1208               	.L109:
+ 1209               		.stabn	68,0,734,.LM168-.LFBB8
+ 1210               	.LM168:
+ 1211 0466 1092 0000 		sts x,__zero_reg__	 ;  x,
+ 1212               	.L110:
+ 735:lcd_hd44780_avr.c ****             // Adjust the number of reserved lcd char positions 
+ 736:lcd_hd44780_avr.c ****             if (digits_needed <= sizeof(lcd_data)){
+ 1213               		.stabn	68,0,736,.LM169-.LFBB8
+ 1214               	.LM169:
+ 1215 046a 0A30      		cpi r16,lo8(10)	 ;  number_of_chars,
+ 1216 046c 00F4      		brsh .L95	 ; ,
+ 1217 046e 010F      		add r16,r17	 ;  D.2406, position
+ 1218               	.L112:
+ 737:lcd_hd44780_avr.c ****                for(; digits_needed > 0; digits_needed--, position++){ lcd_putc(lcd_data[position]);
+ 1219               		.stabn	68,0,737,.LM170-.LFBB8
+ 1220               	.LM170:
+ 1221 0470 1017      		cp r17,r16	 ;  position, D.2406
+ 1222 0472 01F0      		breq .L95	 ; ,
+ 1223               		.stabn	68,0,737,.LM171-.LFBB8
+ 1224               	.LM171:
+ 1225 0474 F701      		movw r30,r14	 ;  tmp166, tmp167
+ 1226 0476 E10F      		add r30,r17	 ;  tmp166, position
+ 1227 0478 F11D      		adc r31,__zero_reg__	 ;  tmp166
+ 1228 047a 8081      		ld r24,Z	 ; , lcd_data
+ 1229 047c 0E94 0000 		call lcd_putc	 ; 
+ 1230 0480 1F5F      		subi r17,lo8(-(1))	 ;  position,
+ 1231 0482 00C0      		rjmp .L112	 ; 
+ 1232               	.L95:
+ 1233               	/* epilogue start */
+ 738:lcd_hd44780_avr.c ****             }  
+ 739:lcd_hd44780_avr.c ****          }
+ 740:lcd_hd44780_avr.c **** 
+ 741:lcd_hd44780_avr.c **** return;
+ 742:lcd_hd44780_avr.c **** }
+ 1234               		.stabn	68,0,742,.LM172-.LFBB8
+ 1235               	.LM172:
+ 1236 0484 2996      		adiw r28,9	 ; ,
+ 1237 0486 0FB6      		in __tmp_reg__,__SREG__
+ 1238 0488 F894      		cli
+ 1239 048a DEBF      		out __SP_H__,r29	 ; ,
+ 1240 048c 0FBE      		out __SREG__,__tmp_reg__
+ 1241 048e CDBF      		out __SP_L__,r28	 ; ,
+GAS LISTING /tmp/ccd5pcoP.s 			page 37
+
+
+ 1242 0490 DF91      		pop r29	 ; 
+ 1243 0492 CF91      		pop r28	 ; 
+ 1244 0494 1F91      		pop r17	 ; 
+ 1245 0496 0F91      		pop r16	 ; 
+ 1246 0498 FF90      		pop r15	 ; 
+ 1247 049a EF90      		pop r14	 ; 
+ 1248 049c DF90      		pop r13	 ; 
+ 1249 049e CF90      		pop r12	 ; 
+ 1250 04a0 BF90      		pop r11	 ; 
+ 1251 04a2 AF90      		pop r10	 ; 
+ 1252 04a4 9F90      		pop r9	 ; 
+ 1253 04a6 8F90      		pop r8	 ; 
+ 1254 04a8 0895      		ret
+ 1255               		.size	lcd_put_i, .-lcd_put_i
+ 1256               		.stabs	"lcd_data:(0,52)=ar(0,53)=r(0,53);0;0177777;;0;8;(0,11)",128,0,671,1
+ 1257               		.stabn	192,0,0,.LFBB8-.LFBB8
+ 1258               		.stabn	224,0,0,.Lscope8-.LFBB8
+ 1259               	.Lscope8:
+ 1260               		.stabs	"",36,0,0,.Lscope8-.LFBB8
+ 1261               		.stabd	78,0,0
+ 1262               		.stabs	"lcd_clrline:F(0,47)",36,0,747,lcd_clrline
+ 1263               		.stabs	"line:P(0,11)",64,0,747,24
+ 1264               	.global	lcd_clrline
+ 1265               		.type	lcd_clrline, @function
+ 1266               	lcd_clrline:
+ 1267               		.stabd	46,0,0
+ 743:lcd_hd44780_avr.c **** 
+ 744:lcd_hd44780_avr.c **** 
+ 745:lcd_hd44780_avr.c **** /*#################################################################################################
+ 746:lcd_hd44780_avr.c **** /* clear a specific lcd line and set cursor at the start of the line */
+ 747:lcd_hd44780_avr.c **** void lcd_clrline(unsigned char line){
+ 1268               		.stabn	68,0,747,.LM173-.LFBB9
+ 1269               	.LM173:
+ 1270               	.LFBB9:
+ 1271 04aa CF93      		push r28	 ; 
+ 1272               	/* prologue: function */
+ 1273               	/* frame size = 0 */
+ 1274               	/* stack size = 1 */
+ 1275               	.L__stack_usage = 1
+ 748:lcd_hd44780_avr.c **** #if LCD_LINES == 1
+ 749:lcd_hd44780_avr.c ****   lcd_gotoxy(0,0);
+ 750:lcd_hd44780_avr.c ****   while(x<LCD_CHARS_PER_LINE) { lcd_putc(' '); }
+ 751:lcd_hd44780_avr.c ****   lcd_gotoxy(0,0);
+ 752:lcd_hd44780_avr.c **** #elif (LCD_LINES == 2 || LCD_LINES == 4)  
+ 753:lcd_hd44780_avr.c ****   if(line<LCD_LINES)
+ 1276               		.stabn	68,0,753,.LM174-.LFBB9
+ 1277               	.LM174:
+ 1278 04ac 8430      		cpi r24,lo8(4)	 ;  line,
+ 1279 04ae 00F4      		brsh .L121	 ; ,
+ 1280 04b0 C82F      		mov r28,r24	 ;  line, line
+ 754:lcd_hd44780_avr.c ****    {
+ 755:lcd_hd44780_avr.c ****       lcd_gotoxy(0,line);
+ 1281               		.stabn	68,0,755,.LM175-.LFBB9
+ 1282               	.LM175:
+ 1283 04b2 682F      		mov r22,r24	 ; , line
+ 1284 04b4 80E0      		ldi r24,0	 ; 
+ 1285 04b6 0E94 0000 		call lcd_gotoxy	 ; 
+GAS LISTING /tmp/ccd5pcoP.s 			page 38
+
+
+ 1286               	.L123:
+ 756:lcd_hd44780_avr.c ****       while(x<LCD_CHARS_PER_LINE) { lcd_putc(' '); }
+ 1287               		.stabn	68,0,756,.LM176-.LFBB9
+ 1288               	.LM176:
+ 1289 04ba 8091 0000 		lds r24,x	 ;  x, x
+ 1290 04be 8431      		cpi r24,lo8(20)	 ;  x,
+ 1291 04c0 00F4      		brsh .L125	 ; ,
+ 1292               		.stabn	68,0,756,.LM177-.LFBB9
+ 1293               	.LM177:
+ 1294 04c2 80E2      		ldi r24,lo8(32)	 ; ,
+ 1295 04c4 0E94 0000 		call lcd_putc	 ; 
+ 1296 04c8 00C0      		rjmp .L123	 ; 
+ 1297               	.L125:
+ 757:lcd_hd44780_avr.c ****       lcd_gotoxy(0,line);
+ 1298               		.stabn	68,0,757,.LM178-.LFBB9
+ 1299               	.LM178:
+ 1300 04ca 6C2F      		mov r22,r28	 ; , line
+ 1301 04cc 80E0      		ldi r24,0	 ; 
+ 1302               	/* epilogue start */
+ 758:lcd_hd44780_avr.c ****    }   
+ 759:lcd_hd44780_avr.c **** #endif  /*  #if LCD_LINES == 1 -> #elif (LCD_LINES == 2 || LCD_LINES == 4) */
+ 760:lcd_hd44780_avr.c **** 
+ 761:lcd_hd44780_avr.c **** return;
+ 762:lcd_hd44780_avr.c **** }
+ 1303               		.stabn	68,0,762,.LM179-.LFBB9
+ 1304               	.LM179:
+ 1305 04ce CF91      		pop r28	 ; 
+ 757:lcd_hd44780_avr.c ****       lcd_gotoxy(0,line);
+ 1306               		.stabn	68,0,757,.LM180-.LFBB9
+ 1307               	.LM180:
+ 1308 04d0 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1309               	.L121:
+ 1310               	/* epilogue start */
+ 1311               		.stabn	68,0,762,.LM181-.LFBB9
+ 1312               	.LM181:
+ 1313 04d4 CF91      		pop r28	 ; 
+ 1314 04d6 0895      		ret
+ 1315               		.size	lcd_clrline, .-lcd_clrline
+ 1316               	.Lscope9:
+ 1317               		.stabs	"",36,0,0,.Lscope9-.LFBB9
+ 1318               		.stabd	78,0,0
+ 1319               		.stabs	"lcd_getxy:F(0,4)",36,0,766,lcd_getxy
+ 1320               	.global	lcd_getxy
+ 1321               		.type	lcd_getxy, @function
+ 1322               	lcd_getxy:
+ 1323               		.stabd	46,0,0
+ 763:lcd_hd44780_avr.c **** 
+ 764:lcd_hd44780_avr.c **** /*#################################################################################################
+ 765:lcd_hd44780_avr.c **** 
+ 766:lcd_hd44780_avr.c **** unsigned int lcd_getxy(void)
+ 767:lcd_hd44780_avr.c **** {
+ 1324               		.stabn	68,0,767,.LM182-.LFBB10
+ 1325               	.LM182:
+ 1326               	.LFBB10:
+ 1327               	/* prologue: function */
+ 1328               	/* frame size = 0 */
+ 1329               	/* stack size = 0 */
+GAS LISTING /tmp/ccd5pcoP.s 			page 39
+
+
+ 1330               	.L__stack_usage = 0
+ 768:lcd_hd44780_avr.c **** /*
+ 769:lcd_hd44780_avr.c ****     The return value of the "lcd_getxy()" function is an integer,
+ 770:lcd_hd44780_avr.c ****     with the high byte containing the current line number (y) and the low byte 
+ 771:lcd_hd44780_avr.c ****     containing the char position in that line (x).
+ 772:lcd_hd44780_avr.c ****     If the lower byte has a value of 20 that means that you filled that line.
+ 773:lcd_hd44780_avr.c ****     This position result can only happen when no lcd reading is available.
+ 774:lcd_hd44780_avr.c ****     When lcd reading is available the maximum x == 19. 
+ 775:lcd_hd44780_avr.c **** */
+ 776:lcd_hd44780_avr.c **** 
+ 777:lcd_hd44780_avr.c **** unsigned char lcd_address_x;
+ 778:lcd_hd44780_avr.c **** unsigned char lcd_address_y;
+ 779:lcd_hd44780_avr.c **** unsigned int  lcd_address = 0;
+ 780:lcd_hd44780_avr.c **** 
+ 781:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1   
+ 782:lcd_hd44780_avr.c **** 
+ 783:lcd_hd44780_avr.c **** unsigned char address_counter=0;
+ 784:lcd_hd44780_avr.c **** 
+ 785:lcd_hd44780_avr.c **** // Get the lcd's AC //
+ 786:lcd_hd44780_avr.c **** address_counter=lcd_read(ADDRESS_COUNTER);
+ 1331               		.stabn	68,0,786,.LM183-.LFBB10
+ 1332               	.LM183:
+ 1333 04d8 80E0      		ldi r24,0	 ; 
+ 1334 04da 0E94 0000 		call lcd_read	 ; 
+ 787:lcd_hd44780_avr.c **** // Turn off the busy flag's bit so that the address only remains. 
+ 788:lcd_hd44780_avr.c **** address_counter &= (~(1<<LCD_BUSY)); 
+ 1335               		.stabn	68,0,788,.LM184-.LFBB10
+ 1336               	.LM184:
+ 1337 04de 8F77      		andi r24,lo8(127)	 ;  address_counter,
+ 789:lcd_hd44780_avr.c **** 
+ 790:lcd_hd44780_avr.c **** if(address_counter<(LCD_START_LINE1+0x14)) { lcd_address_y=0; } 
+ 1338               		.stabn	68,0,790,.LM185-.LFBB10
+ 1339               	.LM185:
+ 1340 04e0 8431      		cpi r24,lo8(20)	 ;  address_counter,
+ 1341 04e2 00F0      		brlo .L128	 ; ,
+ 791:lcd_hd44780_avr.c **** else if(address_counter<(LCD_START_LINE3+0x14)) { lcd_address_y=2; } 
+ 1342               		.stabn	68,0,791,.LM186-.LFBB10
+ 1343               	.LM186:
+ 1344 04e4 8832      		cpi r24,lo8(40)	 ;  address_counter,
+ 1345 04e6 00F0      		brlo .L129	 ; ,
+ 792:lcd_hd44780_avr.c **** else if(address_counter<(LCD_START_LINE2+0x14)) { lcd_address_y=1; }
+ 1346               		.stabn	68,0,792,.LM187-.LFBB10
+ 1347               	.LM187:
+ 1348 04e8 8435      		cpi r24,lo8(84)	 ;  address_counter,
+ 1349 04ea 00F0      		brlo .L130	 ; ,
+ 793:lcd_hd44780_avr.c **** else lcd_address_y=3;
+ 1350               		.stabn	68,0,793,.LM188-.LFBB10
+ 1351               	.LM188:
+ 1352 04ec 23E0      		ldi r18,lo8(3)	 ;  lcd_address_y,
+ 1353 04ee 00C0      		rjmp .L127	 ; 
+ 1354               	.L128:
+ 790:lcd_hd44780_avr.c **** else if(address_counter<(LCD_START_LINE3+0x14)) { lcd_address_y=2; } 
+ 1355               		.stabn	68,0,790,.LM189-.LFBB10
+ 1356               	.LM189:
+ 1357 04f0 20E0      		ldi r18,0	 ;  lcd_address_y
+ 1358 04f2 00C0      		rjmp .L127	 ; 
+ 1359               	.L129:
+GAS LISTING /tmp/ccd5pcoP.s 			page 40
+
+
+ 791:lcd_hd44780_avr.c **** else if(address_counter<(LCD_START_LINE2+0x14)) { lcd_address_y=1; }
+ 1360               		.stabn	68,0,791,.LM190-.LFBB10
+ 1361               	.LM190:
+ 1362 04f4 22E0      		ldi r18,lo8(2)	 ;  lcd_address_y,
+ 1363 04f6 00C0      		rjmp .L127	 ; 
+ 1364               	.L130:
+ 792:lcd_hd44780_avr.c **** else lcd_address_y=3;
+ 1365               		.stabn	68,0,792,.LM191-.LFBB10
+ 1366               	.LM191:
+ 1367 04f8 21E0      		ldi r18,lo8(1)	 ;  lcd_address_y,
+ 1368               	.L127:
+ 794:lcd_hd44780_avr.c **** 
+ 795:lcd_hd44780_avr.c **** lcd_address_x=(address_counter-lcd_line_start[lcd_address_y]);
+ 1369               		.stabn	68,0,795,.LM192-.LFBB10
+ 1370               	.LM192:
+ 1371 04fa E22F      		mov r30,r18	 ;  D.2421, lcd_address_y
+ 1372 04fc F0E0      		ldi r31,0	 ;  D.2421
+ 1373 04fe E050      		subi r30,lo8(-(lcd_line_start))	 ;  tmp58,
+ 1374 0500 F040      		sbci r31,hi8(-(lcd_line_start))	 ;  tmp58,
+ 1375 0502 9081      		ld r25,Z	 ;  tmp60, lcd_line_start
+ 1376 0504 891B      		sub r24,r25	 ;  lcd_address_x, tmp60
+ 796:lcd_hd44780_avr.c **** 
+ 797:lcd_hd44780_avr.c **** #else
+ 798:lcd_hd44780_avr.c **** 
+ 799:lcd_hd44780_avr.c **** lcd_address_y = y;
+ 800:lcd_hd44780_avr.c **** lcd_address_x = x;
+ 801:lcd_hd44780_avr.c **** 
+ 802:lcd_hd44780_avr.c **** #endif   // #if LCD_READ_REQUIRED == 0 -> #elif LCD_READ_REQUIRED == 1 
+ 803:lcd_hd44780_avr.c **** 
+ 804:lcd_hd44780_avr.c **** lcd_address = (lcd_address_y * 100)+lcd_address_x;
+ 1377               		.stabn	68,0,804,.LM193-.LFBB10
+ 1378               	.LM193:
+ 1379 0506 90E0      		ldi r25,0	 ;  D.2421
+ 805:lcd_hd44780_avr.c **** //lcd_address = lcd_address_y;
+ 806:lcd_hd44780_avr.c **** //lcd_address = (lcd_address<<8);
+ 807:lcd_hd44780_avr.c **** //lcd_address += lcd_address_x; 
+ 808:lcd_hd44780_avr.c **** 
+ 809:lcd_hd44780_avr.c **** return(lcd_address);
+ 810:lcd_hd44780_avr.c **** }
+ 1380               		.stabn	68,0,810,.LM194-.LFBB10
+ 1381               	.LM194:
+ 1382 0508 34E6      		ldi r19,lo8(100)	 ; ,
+ 1383 050a 239F      		mul r18,r19	 ;  lcd_address_y,
+ 1384 050c 800D      		add r24,r0	 ; 
+ 1385 050e 911D      		adc r25,r1	 ; 
+ 1386 0510 1124      		clr __zero_reg__
+ 1387 0512 0895      		ret
+ 1388               		.size	lcd_getxy, .-lcd_getxy
+ 1389               		.stabs	"lcd_address_y:r(0,11)",64,0,778,18
+ 1390               		.stabn	192,0,0,.LFBB10-.LFBB10
+ 1391               		.stabn	224,0,0,.Lscope10-.LFBB10
+ 1392               	.Lscope10:
+ 1393               		.stabs	"",36,0,0,.Lscope10-.LFBB10
+ 1394               		.stabd	78,0,0
+ 1395               		.stabs	"lcd_backlight_off:F(0,47)",36,0,522,lcd_backlight_off
+ 1396               	.global	lcd_backlight_off
+ 1397               		.type	lcd_backlight_off, @function
+GAS LISTING /tmp/ccd5pcoP.s 			page 41
+
+
+ 1398               	lcd_backlight_off:
+ 1399               		.stabd	46,0,0
+ 522:lcd_hd44780_avr.c **** uint16_t address = 0;
+ 1400               		.stabn	68,0,522,.LM195-.LFBB11
+ 1401               	.LM195:
+ 1402               	.LFBB11:
+ 1403               	/* prologue: function */
+ 1404               	/* frame size = 0 */
+ 1405               	/* stack size = 0 */
+ 1406               	.L__stack_usage = 0
+ 526:lcd_hd44780_avr.c **** y_row = address /100;
+ 1407               		.stabn	68,0,526,.LM196-.LFBB11
+ 1408               	.LM196:
+ 1409 0514 0E94 0000 		call lcd_getxy	 ; 
+ 1410 0518 282F      		mov r18,r24	 ;  address,
+ 528:lcd_hd44780_avr.c **** backlight = 0;
+ 1411               		.stabn	68,0,528,.LM197-.LFBB11
+ 1412               	.LM197:
+ 1413 051a 3091 0000 		lds r19,y	 ;  y, y
+ 529:lcd_hd44780_avr.c **** lcd_gotoxy(x_column, y_row);
+ 1414               		.stabn	68,0,529,.LM198-.LFBB11
+ 1415               	.LM198:
+ 1416 051e 1092 0000 		sts backlight,__zero_reg__	 ;  backlight,
+ 527:lcd_hd44780_avr.c **** x_column = address - (y*100);
+ 1417               		.stabn	68,0,527,.LM199-.LFBB11
+ 1418               	.LM199:
+ 1419 0522 64E6      		ldi r22,lo8(100)	 ; ,
+ 1420 0524 70E0      		ldi r23,0	 ; 
+ 1421 0526 0E94 0000 		call __udivmodhi4
+ 530:lcd_hd44780_avr.c **** 
+ 1422               		.stabn	68,0,530,.LM200-.LFBB11
+ 1423               	.LM200:
+ 1424 052a 822F      		mov r24,r18	 ; , address
+ 1425 052c 94E6      		ldi r25,lo8(100)	 ; ,
+ 1426 052e 399F      		mul r19,r25	 ;  y,
+ 1427 0530 8019      		sub r24,r0	 ; 
+ 1428 0532 1124      		clr __zero_reg__
+ 1429 0534 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1430               		.size	lcd_backlight_off, .-lcd_backlight_off
+ 1431               	.Lscope11:
+ 1432               		.stabs	"",36,0,0,.Lscope11-.LFBB11
+ 1433               		.stabd	78,0,0
+ 1434               		.stabs	"lcd_backlight_on:F(0,47)",36,0,535,lcd_backlight_on
+ 1435               	.global	lcd_backlight_on
+ 1436               		.type	lcd_backlight_on, @function
+ 1437               	lcd_backlight_on:
+ 1438               		.stabd	46,0,0
+ 535:lcd_hd44780_avr.c **** uint16_t address = 0;
+ 1439               		.stabn	68,0,535,.LM201-.LFBB12
+ 1440               	.LM201:
+ 1441               	.LFBB12:
+ 1442               	/* prologue: function */
+ 1443               	/* frame size = 0 */
+ 1444               	/* stack size = 0 */
+ 1445               	.L__stack_usage = 0
+ 539:lcd_hd44780_avr.c **** y_row = address /100;
+ 1446               		.stabn	68,0,539,.LM202-.LFBB12
+GAS LISTING /tmp/ccd5pcoP.s 			page 42
+
+
+ 1447               	.LM202:
+ 1448 0538 0E94 0000 		call lcd_getxy	 ; 
+ 1449 053c 282F      		mov r18,r24	 ;  address,
+ 541:lcd_hd44780_avr.c **** backlight = 1;
+ 1450               		.stabn	68,0,541,.LM203-.LFBB12
+ 1451               	.LM203:
+ 1452 053e 3091 0000 		lds r19,y	 ;  y, y
+ 542:lcd_hd44780_avr.c **** lcd_gotoxy(x_column, y_row);
+ 1453               		.stabn	68,0,542,.LM204-.LFBB12
+ 1454               	.LM204:
+ 1455 0542 81E0      		ldi r24,lo8(1)	 ;  tmp52,
+ 1456 0544 8093 0000 		sts backlight,r24	 ;  backlight, tmp52
+ 540:lcd_hd44780_avr.c **** x_column = address - (y*100);
+ 1457               		.stabn	68,0,540,.LM205-.LFBB12
+ 1458               	.LM205:
+ 1459 0548 822F      		mov r24,r18	 ; , address
+ 1460 054a 64E6      		ldi r22,lo8(100)	 ; ,
+ 1461 054c 70E0      		ldi r23,0	 ; 
+ 1462 054e 0E94 0000 		call __udivmodhi4
+ 543:lcd_hd44780_avr.c **** 
+ 1463               		.stabn	68,0,543,.LM206-.LFBB12
+ 1464               	.LM206:
+ 1465 0552 822F      		mov r24,r18	 ; , address
+ 1466 0554 94E6      		ldi r25,lo8(100)	 ; ,
+ 1467 0556 399F      		mul r19,r25	 ;  y,
+ 1468 0558 8019      		sub r24,r0	 ; 
+ 1469 055a 1124      		clr __zero_reg__
+ 1470 055c 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1471               		.size	lcd_backlight_on, .-lcd_backlight_on
+ 1472               	.Lscope12:
+ 1473               		.stabs	"",36,0,0,.Lscope12-.LFBB12
+ 1474               		.stabd	78,0,0
+ 1475               		.stabs	"lcd_puts:F(0,47)",36,0,814,lcd_puts
+ 1476               		.stabs	"s:P(0,50)",64,0,814,24
+ 1477               	.global	lcd_puts
+ 1478               		.type	lcd_puts, @function
+ 1479               	lcd_puts:
+ 1480               		.stabd	46,0,0
+ 811:lcd_hd44780_avr.c **** 
+ 812:lcd_hd44780_avr.c **** /*#################################################################################################
+ 813:lcd_hd44780_avr.c **** // print string on lcd (no auto linefeed)
+ 814:lcd_hd44780_avr.c **** void lcd_puts(const unsigned char *s){
+ 1481               		.stabn	68,0,814,.LM207-.LFBB13
+ 1482               	.LM207:
+ 1483               	.LFBB13:
+ 1484 0560 CF93      		push r28	 ; 
+ 1485 0562 DF93      		push r29	 ; 
+ 1486               	/* prologue: function */
+ 1487               	/* frame size = 0 */
+ 1488               	/* stack size = 2 */
+ 1489               	.L__stack_usage = 2
+ 1490 0564 EC01      		movw r28,r24	 ;  ivtmp.176, s
+ 1491               	.L134:
+ 815:lcd_hd44780_avr.c **** 
+ 816:lcd_hd44780_avr.c **** unsigned char c;
+ 817:lcd_hd44780_avr.c **** 
+ 818:lcd_hd44780_avr.c ****     while( (c = *s++) ) { lcd_putc(c);  }
+GAS LISTING /tmp/ccd5pcoP.s 			page 43
+
+
+ 1492               		.stabn	68,0,818,.LM208-.LFBB13
+ 1493               	.LM208:
+ 1494 0566 8991      		ld r24,Y+	 ;  c, MEM[base: _11, offset: 0B]
+ 1495 0568 8823      		tst r24	 ;  c
+ 1496 056a 01F0      		breq .L136	 ; ,
+ 1497               		.stabn	68,0,818,.LM209-.LFBB13
+ 1498               	.LM209:
+ 1499 056c 0E94 0000 		call lcd_putc	 ; 
+ 1500 0570 00C0      		rjmp .L134	 ; 
+ 1501               	.L136:
+ 1502               	/* epilogue start */
+ 819:lcd_hd44780_avr.c **** 
+ 820:lcd_hd44780_avr.c **** return;
+ 821:lcd_hd44780_avr.c **** }
+ 1503               		.stabn	68,0,821,.LM210-.LFBB13
+ 1504               	.LM210:
+ 1505 0572 DF91      		pop r29	 ; 
+ 1506 0574 CF91      		pop r28	 ; 
+ 1507 0576 0895      		ret
+ 1508               		.size	lcd_puts, .-lcd_puts
+ 1509               		.stabs	"c:r(0,11)",64,0,816,24
+ 1510               		.stabn	192,0,0,.LFBB13-.LFBB13
+ 1511               		.stabn	224,0,0,.Lscope13-.LFBB13
+ 1512               	.Lscope13:
+ 1513               		.stabs	"",36,0,0,.Lscope13-.LFBB13
+ 1514               		.stabd	78,0,0
+ 1515               		.stabs	"lcd_puts_p:F(0,47)",36,0,825,lcd_puts_p
+ 1516               		.stabs	"progmem_s:P(0,50)",64,0,825,24
+ 1517               	.global	lcd_puts_p
+ 1518               		.type	lcd_puts_p, @function
+ 1519               	lcd_puts_p:
+ 1520               		.stabd	46,0,0
+ 822:lcd_hd44780_avr.c **** 
+ 823:lcd_hd44780_avr.c **** /*#################################################################################################
+ 824:lcd_hd44780_avr.c **** // print string from program memory on lcd (no auto linefeed)
+ 825:lcd_hd44780_avr.c **** void lcd_puts_p(const unsigned char *progmem_s){
+ 1521               		.stabn	68,0,825,.LM211-.LFBB14
+ 1522               	.LM211:
+ 1523               	.LFBB14:
+ 1524 0578 CF93      		push r28	 ; 
+ 1525 057a DF93      		push r29	 ; 
+ 1526               	/* prologue: function */
+ 1527               	/* frame size = 0 */
+ 1528               	/* stack size = 2 */
+ 1529               	.L__stack_usage = 2
+ 1530 057c FC01      		movw r30,r24	 ;  __addr16, progmem_s
+ 1531               	.L138:
+ 1532               	.LBB39:
+ 826:lcd_hd44780_avr.c **** 
+ 827:lcd_hd44780_avr.c **** unsigned char c;
+ 828:lcd_hd44780_avr.c **** 
+ 829:lcd_hd44780_avr.c ****     while( (c = pgm_read_byte(progmem_s++)) ) { lcd_putc(c);  }
+ 1533               		.stabn	68,0,829,.LM212-.LFBB14
+ 1534               	.LM212:
+ 1535               	/* #APP */
+ 1536               	 ;  829 "lcd_hd44780_avr.c" 1
+ 1537 057e 8491      		lpm r24, Z	 ;  c
+GAS LISTING /tmp/ccd5pcoP.s 			page 44
+
+
+ 1538               		
+ 1539               	 ;  0 "" 2
+ 1540               	/* #NOAPP */
+ 1541 0580 EF01      		movw r28,r30	 ;  ivtmp.182, __addr16
+ 1542 0582 2196      		adiw r28,1	 ;  ivtmp.182,
+ 1543               	.LBE39:
+ 1544 0584 8823      		tst r24	 ;  c
+ 1545 0586 01F0      		breq .L140	 ; ,
+ 1546               		.stabn	68,0,829,.LM213-.LFBB14
+ 1547               	.LM213:
+ 1548 0588 0E94 0000 		call lcd_putc	 ; 
+ 1549 058c FE01      		movw r30,r28	 ;  __addr16, ivtmp.182
+ 1550 058e 00C0      		rjmp .L138	 ; 
+ 1551               	.L140:
+ 1552               	/* epilogue start */
+ 830:lcd_hd44780_avr.c **** 
+ 831:lcd_hd44780_avr.c **** 
+ 832:lcd_hd44780_avr.c **** return;
+ 833:lcd_hd44780_avr.c **** }
+ 1553               		.stabn	68,0,833,.LM214-.LFBB14
+ 1554               	.LM214:
+ 1555 0590 DF91      		pop r29	 ; 
+ 1556 0592 CF91      		pop r28	 ; 
+ 1557 0594 0895      		ret
+ 1558               		.size	lcd_puts_p, .-lcd_puts_p
+ 1559               		.stabs	"__addr16:r(5,4)",64,0,829,30
+ 1560               		.stabn	192,0,0,.LBB39-.LFBB14
+ 1561               		.stabn	224,0,0,.LBE39-.LFBB14
+ 1562               	.Lscope14:
+ 1563               		.stabs	"",36,0,0,.Lscope14-.LFBB14
+ 1564               		.stabd	78,0,0
+ 1565               		.stabs	"lcd_puts_e:F(0,47)",36,0,837,lcd_puts_e
+ 1566               		.stabs	"eeprom_s:P(0,54)=*(0,11)",64,0,837,24
+ 1567               	.global	lcd_puts_e
+ 1568               		.type	lcd_puts_e, @function
+ 1569               	lcd_puts_e:
+ 1570               		.stabd	46,0,0
+ 834:lcd_hd44780_avr.c **** 
+ 835:lcd_hd44780_avr.c **** /*#################################################################################################
+ 836:lcd_hd44780_avr.c **** 
+ 837:lcd_hd44780_avr.c **** void lcd_puts_e(unsigned char *eeprom_s)
+ 838:lcd_hd44780_avr.c **** /* print string from eeprom on lcd (no auto linefeed) */
+ 839:lcd_hd44780_avr.c **** {
+ 1571               		.stabn	68,0,839,.LM215-.LFBB15
+ 1572               	.LM215:
+ 1573               	.LFBB15:
+ 1574 0596 CF93      		push r28	 ; 
+ 1575 0598 DF93      		push r29	 ; 
+ 1576               	/* prologue: function */
+ 1577               	/* frame size = 0 */
+ 1578               	/* stack size = 2 */
+ 1579               	.L__stack_usage = 2
+ 1580               	.L142:
+ 840:lcd_hd44780_avr.c ****     unsigned char c;
+ 841:lcd_hd44780_avr.c ****    
+ 842:lcd_hd44780_avr.c ****     while( (c=eeprom_read_byte(eeprom_s++))&& c!=0xFF ) { lcd_putc(c);  }
+ 1581               		.stabn	68,0,842,.LM216-.LFBB15
+GAS LISTING /tmp/ccd5pcoP.s 			page 45
+
+
+ 1582               	.LM216:
+ 1583 059a EC01      		movw r28,r24	 ;  eeprom_s, eeprom_s
+ 1584 059c 2196      		adiw r28,1	 ;  eeprom_s,
+ 1585 059e 0E94 0000 		call eeprom_read_byte	 ; 
+ 1586 05a2 9FEF      		ldi r25,lo8(-1)	 ;  D.2460,
+ 1587 05a4 980F      		add r25,r24	 ;  D.2460, c
+ 1588 05a6 9E3F      		cpi r25,lo8(-2)	 ;  D.2460,
+ 1589 05a8 00F4      		brsh .L144	 ; ,
+ 1590               		.stabn	68,0,842,.LM217-.LFBB15
+ 1591               	.LM217:
+ 1592 05aa 0E94 0000 		call lcd_putc	 ; 
+ 1593 05ae CE01      		movw r24,r28	 ;  eeprom_s, eeprom_s
+ 1594 05b0 00C0      		rjmp .L142	 ; 
+ 1595               	.L144:
+ 1596               	/* epilogue start */
+ 843:lcd_hd44780_avr.c **** 
+ 844:lcd_hd44780_avr.c **** return;               
+ 845:lcd_hd44780_avr.c **** }
+ 1597               		.stabn	68,0,845,.LM218-.LFBB15
+ 1598               	.LM218:
+ 1599 05b2 DF91      		pop r29	 ; 
+ 1600 05b4 CF91      		pop r28	 ; 
+ 1601 05b6 0895      		ret
+ 1602               		.size	lcd_puts_e, .-lcd_puts_e
+ 1603               		.stabs	"c:r(0,11)",64,0,840,24
+ 1604               		.stabn	192,0,0,.LFBB15-.LFBB15
+ 1605               		.stabn	224,0,0,.Lscope15-.LFBB15
+ 1606               	.Lscope15:
+ 1607               		.stabs	"",36,0,0,.Lscope15-.LFBB15
+ 1608               		.stabd	78,0,0
+ 1609               		.stabs	"lcd_getc:F(0,11)",36,0,851,lcd_getc
+ 1610               	.global	lcd_getc
+ 1611               		.type	lcd_getc, @function
+ 1612               	lcd_getc:
+ 1613               		.stabd	46,0,0
+ 846:lcd_hd44780_avr.c **** 
+ 847:lcd_hd44780_avr.c **** /*#################################################################################################
+ 848:lcd_hd44780_avr.c **** 
+ 849:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1
+ 850:lcd_hd44780_avr.c **** 
+ 851:lcd_hd44780_avr.c **** unsigned char lcd_getc(void){
+ 1614               		.stabn	68,0,851,.LM219-.LFBB16
+ 1615               	.LM219:
+ 1616               	.LFBB16:
+ 1617               	/* prologue: function */
+ 1618               	/* frame size = 0 */
+ 1619               	/* stack size = 0 */
+ 1620               	.L__stack_usage = 0
+ 852:lcd_hd44780_avr.c **** 
+ 853:lcd_hd44780_avr.c **** 
+ 854:lcd_hd44780_avr.c **** return(lcd_read(DATA));
+ 1621               		.stabn	68,0,854,.LM220-.LFBB16
+ 1622               	.LM220:
+ 1623 05b8 81E0      		ldi r24,lo8(1)	 ; ,
+ 1624 05ba 0C94 0000 		jmp lcd_read	 ; 
+ 1625               		.size	lcd_getc, .-lcd_getc
+ 1626               	.Lscope16:
+GAS LISTING /tmp/ccd5pcoP.s 			page 46
+
+
+ 1627               		.stabs	"",36,0,0,.Lscope16-.LFBB16
+ 1628               		.stabd	78,0,0
+ 1629               		.stabs	"lcd_get_error:F(0,11)",36,0,859,lcd_get_error
+ 1630               	.global	lcd_get_error
+ 1631               		.type	lcd_get_error, @function
+ 1632               	lcd_get_error:
+ 1633               		.stabd	46,0,0
+ 855:lcd_hd44780_avr.c **** }
+ 856:lcd_hd44780_avr.c **** 
+ 857:lcd_hd44780_avr.c **** /*#################################################################################################
+ 858:lcd_hd44780_avr.c **** 
+ 859:lcd_hd44780_avr.c **** unsigned char lcd_get_error(void){
+ 1634               		.stabn	68,0,859,.LM221-.LFBB17
+ 1635               	.LM221:
+ 1636               	.LFBB17:
+ 1637               	/* prologue: function */
+ 1638               	/* frame size = 0 */
+ 1639               	/* stack size = 0 */
+ 1640               	.L__stack_usage = 0
+ 860:lcd_hd44780_avr.c **** 
+ 861:lcd_hd44780_avr.c **** 
+ 862:lcd_hd44780_avr.c **** return(lcd_error_detected);
+ 863:lcd_hd44780_avr.c **** }
+ 1641               		.stabn	68,0,863,.LM222-.LFBB17
+ 1642               	.LM222:
+ 1643 05be 8091 0000 		lds r24,lcd_error_detected	 ; , lcd_error_detected
+ 1644 05c2 0895      		ret
+ 1645               		.size	lcd_get_error, .-lcd_get_error
+ 1646               	.Lscope17:
+ 1647               		.stabs	"",36,0,0,.Lscope17-.LFBB17
+ 1648               		.stabd	78,0,0
+ 1649               		.stabs	"lcd_get_line:F(0,47)",36,0,866,lcd_get_line
+ 1650               		.stabs	"line:P(0,11)",64,0,866,24
+ 1651               	.global	lcd_get_line
+ 1652               		.type	lcd_get_line, @function
+ 1653               	lcd_get_line:
+ 1654               		.stabd	46,0,0
+ 864:lcd_hd44780_avr.c **** 
+ 865:lcd_hd44780_avr.c **** /*#################################################################################################
+ 866:lcd_hd44780_avr.c **** void lcd_get_line(unsigned char line, unsigned char* s)
+ 867:lcd_hd44780_avr.c **** {
+ 1655               		.stabn	68,0,867,.LM223-.LFBB18
+ 1656               	.LM223:
+ 1657               	.LFBB18:
+ 1658 05c4 CF92      		push r12	 ; 
+ 1659 05c6 DF92      		push r13	 ; 
+ 1660 05c8 EF92      		push r14	 ; 
+ 1661 05ca FF92      		push r15	 ; 
+ 1662 05cc 0F93      		push r16	 ; 
+ 1663 05ce 1F93      		push r17	 ; 
+ 1664 05d0 CF93      		push r28	 ; 
+ 1665 05d2 DF93      		push r29	 ; 
+ 1666               		 ; SP -= 1	 ; 
+ 1667 05d4 1F92      		push __zero_reg__
+ 1668 05d6 CDB7      		in r28,__SP_L__	 ; 
+ 1669 05d8 DEB7      		in r29,__SP_H__	 ; 
+ 1670               	/* prologue: function */
+GAS LISTING /tmp/ccd5pcoP.s 			page 47
+
+
+ 1671               	/* frame size = 1 */
+ 1672               	/* stack size = 9 */
+ 1673               	.L__stack_usage = 9
+ 1674 05da F62E      		mov r15,r22	 ;  s, s
+ 868:lcd_hd44780_avr.c **** unsigned char x1=0, lcd_x=0, lcd_y=0;
+ 869:lcd_hd44780_avr.c **** 
+ 870:lcd_hd44780_avr.c **** lcd_x = x; 
+ 1675               		.stabn	68,0,870,.LM224-.LFBB18
+ 1676               	.LM224:
+ 1677 05dc 1091 0000 		lds r17,x	 ;  lcd_x, x
+ 871:lcd_hd44780_avr.c **** lcd_y = y;
+ 1678               		.stabn	68,0,871,.LM225-.LFBB18
+ 1679               	.LM225:
+ 1680 05e0 0091 0000 		lds r16,y	 ;  lcd_y, y
+ 872:lcd_hd44780_avr.c **** lcd_gotoxy(0,line); 
+ 1681               		.stabn	68,0,872,.LM226-.LFBB18
+ 1682               	.LM226:
+ 1683 05e4 682F      		mov r22,r24	 ; , line
+ 1684 05e6 80E0      		ldi r24,0	 ; 
+ 1685 05e8 7983      		std Y+1,r23	 ; ,
+ 1686 05ea 0E94 0000 		call lcd_gotoxy	 ; 
+ 1687 05ee CF2C      		mov r12,r15	 ;  ivtmp.207, s
+ 1688 05f0 7981      		ldd r23,Y+1	 ; ,
+ 1689 05f2 D72E      		mov r13,r23	 ;  ivtmp.207, s
+ 1690 05f4 7601      		movw r14,r12	 ;  D.2481, ivtmp.207
+ 1691 05f6 84E1      		ldi r24,20	 ; ,
+ 1692 05f8 E80E      		add r14,r24	 ;  D.2481,
+ 1693 05fa F11C      		adc r15,__zero_reg__	 ;  D.2481
+ 1694               	.L148:
+ 873:lcd_hd44780_avr.c **** for(x1=0; x1<LCD_CHARS_PER_LINE; x1++){ *(s+x1)=lcd_read(DATA); }
+ 1695               		.stabn	68,0,873,.LM227-.LFBB18
+ 1696               	.LM227:
+ 1697 05fc 81E0      		ldi r24,lo8(1)	 ; ,
+ 1698 05fe 0E94 0000 		call lcd_read	 ; 
+ 1699 0602 F601      		movw r30,r12	 ; , ivtmp.207
+ 1700 0604 8193      		st Z+,r24	 ;  MEM[base: _23, offset: 0B],
+ 1701 0606 6F01      		movw r12,r30	 ;  ivtmp.207,
+ 1702 0608 EE15      		cp r30,r14	 ;  ivtmp.207, D.2481
+ 1703 060a FF05      		cpc r31,r15	 ;  ivtmp.207, D.2481
+ 1704 060c 01F4      		brne .L148	 ; ,
+ 874:lcd_hd44780_avr.c **** x=lcd_x;
+ 1705               		.stabn	68,0,874,.LM228-.LFBB18
+ 1706               	.LM228:
+ 1707 060e 1093 0000 		sts x,r17	 ;  x, lcd_x
+ 875:lcd_hd44780_avr.c **** y=lcd_y;
+ 1708               		.stabn	68,0,875,.LM229-.LFBB18
+ 1709               	.LM229:
+ 1710 0612 0093 0000 		sts y,r16	 ;  y, lcd_y
+ 876:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1711               		.stabn	68,0,876,.LM230-.LFBB18
+ 1712               	.LM230:
+ 1713 0616 602F      		mov r22,r16	 ; , lcd_y
+ 1714 0618 812F      		mov r24,r17	 ; , lcd_x
+ 1715               	/* epilogue start */
+ 877:lcd_hd44780_avr.c **** 
+ 878:lcd_hd44780_avr.c **** return;
+ 879:lcd_hd44780_avr.c **** }
+GAS LISTING /tmp/ccd5pcoP.s 			page 48
+
+
+ 1716               		.stabn	68,0,879,.LM231-.LFBB18
+ 1717               	.LM231:
+ 1718               		 ; SP += 1	 ; 
+ 1719 061a 0F90      		pop __tmp_reg__
+ 1720 061c DF91      		pop r29	 ; 
+ 1721 061e CF91      		pop r28	 ; 
+ 1722 0620 1F91      		pop r17	 ; 
+ 1723 0622 0F91      		pop r16	 ; 
+ 1724 0624 FF90      		pop r15	 ; 
+ 1725 0626 EF90      		pop r14	 ; 
+ 1726 0628 DF90      		pop r13	 ; 
+ 1727 062a CF90      		pop r12	 ; 
+ 876:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1728               		.stabn	68,0,876,.LM232-.LFBB18
+ 1729               	.LM232:
+ 1730 062c 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1731               		.size	lcd_get_line, .-lcd_get_line
+ 1732               		.stabs	"lcd_x:r(0,11)",64,0,868,17
+ 1733               		.stabs	"lcd_y:r(0,11)",64,0,868,16
+ 1734               		.stabn	192,0,0,.LFBB18-.LFBB18
+ 1735               		.stabn	224,0,0,.Lscope18-.LFBB18
+ 1736               	.Lscope18:
+ 1737               		.stabs	"",36,0,0,.Lscope18-.LFBB18
+ 1738               		.stabd	78,0,0
+ 1739               		.stabs	"lcd_backup_scr:F(0,47)",36,0,883,lcd_backup_scr
+ 1740               	.global	lcd_backup_scr
+ 1741               		.type	lcd_backup_scr, @function
+ 1742               	lcd_backup_scr:
+ 1743               		.stabd	46,0,0
+ 880:lcd_hd44780_avr.c **** 
+ 881:lcd_hd44780_avr.c **** 
+ 882:lcd_hd44780_avr.c **** /*#################################################################################################
+ 883:lcd_hd44780_avr.c **** void lcd_backup_scr(void)
+ 884:lcd_hd44780_avr.c **** {
+ 1744               		.stabn	68,0,884,.LM233-.LFBB19
+ 1745               	.LM233:
+ 1746               	.LFBB19:
+ 1747 0630 DF92      		push r13	 ; 
+ 1748 0632 EF92      		push r14	 ; 
+ 1749 0634 FF92      		push r15	 ; 
+ 1750 0636 0F93      		push r16	 ; 
+ 1751 0638 1F93      		push r17	 ; 
+ 1752 063a CF93      		push r28	 ; 
+ 1753 063c DF93      		push r29	 ; 
+ 1754               	/* prologue: function */
+ 1755               	/* frame size = 0 */
+ 1756               	/* stack size = 7 */
+ 1757               	.L__stack_usage = 7
+ 885:lcd_hd44780_avr.c **** unsigned char x1=0, x2=0, lcd_x=x, lcd_y=y;
+ 1758               		.stabn	68,0,885,.LM234-.LFBB19
+ 1759               	.LM234:
+ 1760 063e D091 0000 		lds r29,x	 ;  lcd_x, x
+ 1761 0642 D090 0000 		lds r13,y	 ;  lcd_y, y
+ 1762 0646 E12C      		mov r14,__zero_reg__	 ;  ivtmp.224
+ 1763 0648 F12C      		mov r15,__zero_reg__	 ;  ivtmp.224
+ 886:lcd_hd44780_avr.c **** 
+ 887:lcd_hd44780_avr.c **** for(x1=0; x1<LCD_LINES; x1++)
+GAS LISTING /tmp/ccd5pcoP.s 			page 49
+
+
+ 1764               		.stabn	68,0,887,.LM235-.LFBB19
+ 1765               	.LM235:
+ 1766 064a C0E0      		ldi r28,0	 ;  x1
+ 1767               	.L152:
+ 888:lcd_hd44780_avr.c ****   {
+ 889:lcd_hd44780_avr.c ****      lcd_gotoxy(0,x1); 
+ 1768               		.stabn	68,0,889,.LM236-.LFBB19
+ 1769               	.LM236:
+ 1770 064c 6C2F      		mov r22,r28	 ; , x1
+ 1771 064e 80E0      		ldi r24,0	 ; 
+ 1772 0650 0E94 0000 		call lcd_gotoxy	 ; 
+ 1773 0654 00E0      		ldi r16,0	 ;  ivtmp.211
+ 1774 0656 10E0      		ldi r17,0	 ;  ivtmp.211
+ 1775               	.L151:
+ 890:lcd_hd44780_avr.c ****      for(x2=0; x2<LCD_CHARS_PER_LINE; x2++)
+ 891:lcd_hd44780_avr.c ****        {
+ 892:lcd_hd44780_avr.c **** 
+ 893:lcd_hd44780_avr.c **** #if   LCD_BACKUP_LOCATION == 0
+ 894:lcd_hd44780_avr.c ****          eeprom_write_byte((lcd_backup[x1]+x2),lcd_read(DATA));
+ 1776               		.stabn	68,0,894,.LM237-.LFBB19
+ 1777               	.LM237:
+ 1778 0658 81E0      		ldi r24,lo8(1)	 ; ,
+ 1779 065a 0E94 0000 		call lcd_read	 ; 
+ 1780 065e 9801      		movw r18,r16	 ;  D.2499, ivtmp.211
+ 1781 0660 2E0D      		add r18,r14	 ;  D.2499, ivtmp.224
+ 1782 0662 3F1D      		adc r19,r15	 ;  D.2499, ivtmp.224
+ 1783 0664 682F      		mov r22,r24	 ; , D.2498
+ 1784 0666 C901      		movw r24,r18	 ; , D.2499
+ 1785 0668 8050      		subi r24,lo8(-(lcd_backup))	 ; ,
+ 1786 066a 9040      		sbci r25,hi8(-(lcd_backup))	 ; ,
+ 1787 066c 0E94 0000 		call eeprom_write_byte	 ; 
+ 1788 0670 0F5F      		subi r16,-1	 ;  ivtmp.211,
+ 1789 0672 1F4F      		sbci r17,-1	 ;  ivtmp.211,
+ 890:lcd_hd44780_avr.c ****      for(x2=0; x2<LCD_CHARS_PER_LINE; x2++)
+ 1790               		.stabn	68,0,890,.LM238-.LFBB19
+ 1791               	.LM238:
+ 1792 0674 0431      		cpi r16,20	 ;  ivtmp.211,
+ 1793 0676 1105      		cpc r17,__zero_reg__	 ;  ivtmp.211
+ 1794 0678 01F4      		brne .L151	 ; ,
+ 887:lcd_hd44780_avr.c ****   {
+ 1795               		.stabn	68,0,887,.LM239-.LFBB19
+ 1796               	.LM239:
+ 1797 067a CF5F      		subi r28,lo8(-(1))	 ;  x1,
+ 1798 067c 84E1      		ldi r24,20	 ; ,
+ 1799 067e E80E      		add r14,r24	 ;  ivtmp.224,
+ 1800 0680 F11C      		adc r15,__zero_reg__	 ;  ivtmp.224
+ 1801 0682 C430      		cpi r28,lo8(4)	 ;  x1,
+ 1802 0684 01F4      		brne .L152	 ; ,
+ 895:lcd_hd44780_avr.c **** #elif LCD_BACKUP_LOCATION == 1
+ 896:lcd_hd44780_avr.c ****           *(lcd_backup[x1]+x2)=lcd_read(DATA);
+ 897:lcd_hd44780_avr.c **** #endif
+ 898:lcd_hd44780_avr.c ****        }
+ 899:lcd_hd44780_avr.c ****   }
+ 900:lcd_hd44780_avr.c **** 
+ 901:lcd_hd44780_avr.c **** x=lcd_x;
+ 1803               		.stabn	68,0,901,.LM240-.LFBB19
+ 1804               	.LM240:
+GAS LISTING /tmp/ccd5pcoP.s 			page 50
+
+
+ 1805 0686 D093 0000 		sts x,r29	 ;  x, lcd_x
+ 902:lcd_hd44780_avr.c **** y=lcd_y;
+ 1806               		.stabn	68,0,902,.LM241-.LFBB19
+ 1807               	.LM241:
+ 1808 068a D092 0000 		sts y,r13	 ;  y, lcd_y
+ 903:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1809               		.stabn	68,0,903,.LM242-.LFBB19
+ 1810               	.LM242:
+ 1811 068e 6D2D      		mov r22,r13	 ; , lcd_y
+ 1812 0690 8D2F      		mov r24,r29	 ; , lcd_x
+ 1813               	/* epilogue start */
+ 904:lcd_hd44780_avr.c **** 
+ 905:lcd_hd44780_avr.c **** return;
+ 906:lcd_hd44780_avr.c **** }
+ 1814               		.stabn	68,0,906,.LM243-.LFBB19
+ 1815               	.LM243:
+ 1816 0692 DF91      		pop r29	 ; 
+ 1817 0694 CF91      		pop r28	 ; 
+ 1818 0696 1F91      		pop r17	 ; 
+ 1819 0698 0F91      		pop r16	 ; 
+ 1820 069a FF90      		pop r15	 ; 
+ 1821 069c EF90      		pop r14	 ; 
+ 1822 069e DF90      		pop r13	 ; 
+ 903:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1823               		.stabn	68,0,903,.LM244-.LFBB19
+ 1824               	.LM244:
+ 1825 06a0 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1826               		.size	lcd_backup_scr, .-lcd_backup_scr
+ 1827               		.stabs	"x1:r(0,11)",64,0,885,28
+ 1828               		.stabs	"lcd_x:r(0,11)",64,0,885,29
+ 1829               		.stabs	"lcd_y:r(0,11)",64,0,885,13
+ 1830               		.stabn	192,0,0,.LFBB19-.LFBB19
+ 1831               		.stabn	224,0,0,.Lscope19-.LFBB19
+ 1832               	.Lscope19:
+ 1833               		.stabs	"",36,0,0,.Lscope19-.LFBB19
+ 1834               		.stabd	78,0,0
+ 1835               		.stabs	"lcd_restore_scr:F(0,47)",36,0,909,lcd_restore_scr
+ 1836               	.global	lcd_restore_scr
+ 1837               		.type	lcd_restore_scr, @function
+ 1838               	lcd_restore_scr:
+ 1839               		.stabd	46,0,0
+ 907:lcd_hd44780_avr.c **** 
+ 908:lcd_hd44780_avr.c **** /*#################################################################################################
+ 909:lcd_hd44780_avr.c **** void lcd_restore_scr(void)
+ 910:lcd_hd44780_avr.c **** {
+ 1840               		.stabn	68,0,910,.LM245-.LFBB20
+ 1841               	.LM245:
+ 1842               	.LFBB20:
+ 1843 06a4 DF92      		push r13	 ; 
+ 1844 06a6 EF92      		push r14	 ; 
+ 1845 06a8 FF92      		push r15	 ; 
+ 1846 06aa 0F93      		push r16	 ; 
+ 1847 06ac 1F93      		push r17	 ; 
+ 1848 06ae CF93      		push r28	 ; 
+ 1849 06b0 DF93      		push r29	 ; 
+ 1850               	/* prologue: function */
+ 1851               	/* frame size = 0 */
+GAS LISTING /tmp/ccd5pcoP.s 			page 51
+
+
+ 1852               	/* stack size = 7 */
+ 1853               	.L__stack_usage = 7
+ 911:lcd_hd44780_avr.c **** unsigned char x1=0, x2=0, lcd_x=x, lcd_y=y;
+ 1854               		.stabn	68,0,911,.LM246-.LFBB20
+ 1855               	.LM246:
+ 1856 06b2 D091 0000 		lds r29,x	 ;  lcd_x, x
+ 1857 06b6 D090 0000 		lds r13,y	 ;  lcd_y, y
+ 912:lcd_hd44780_avr.c **** 
+ 913:lcd_hd44780_avr.c **** lcd_clrscr();   
+ 1858               		.stabn	68,0,913,.LM247-.LFBB20
+ 1859               	.LM247:
+ 1860 06ba 81E0      		ldi r24,lo8(1)	 ; ,
+ 1861 06bc 0E94 0000 		call lcd_command	 ; 
+ 914:lcd_hd44780_avr.c **** lcd_gotoxy(0,0);
+ 1862               		.stabn	68,0,914,.LM248-.LFBB20
+ 1863               	.LM248:
+ 1864 06c0 60E0      		ldi r22,0	 ; 
+ 1865 06c2 80E0      		ldi r24,0	 ; 
+ 1866 06c4 0E94 0000 		call lcd_gotoxy	 ; 
+ 1867 06c8 E12C      		mov r14,__zero_reg__	 ;  ivtmp.240
+ 1868 06ca F12C      		mov r15,__zero_reg__	 ;  ivtmp.240
+ 915:lcd_hd44780_avr.c **** 
+ 916:lcd_hd44780_avr.c **** for(x1=0; x1<LCD_LINES; x1++)
+ 1869               		.stabn	68,0,916,.LM249-.LFBB20
+ 1870               	.LM249:
+ 1871 06cc C0E0      		ldi r28,0	 ;  x1
+ 1872               	.L157:
+ 917:lcd_hd44780_avr.c ****   {
+ 918:lcd_hd44780_avr.c **** 
+ 919:lcd_hd44780_avr.c ****      lcd_gotoxy(0,x1); 
+ 1873               		.stabn	68,0,919,.LM250-.LFBB20
+ 1874               	.LM250:
+ 1875 06ce 6C2F      		mov r22,r28	 ; , x1
+ 1876 06d0 80E0      		ldi r24,0	 ; 
+ 1877 06d2 0E94 0000 		call lcd_gotoxy	 ; 
+ 1878 06d6 00E0      		ldi r16,0	 ;  ivtmp.227
+ 1879 06d8 10E0      		ldi r17,0	 ;  ivtmp.227
+ 1880               	.L156:
+ 1881 06da C801      		movw r24,r16	 ;  D.2518, ivtmp.227
+ 1882 06dc 8E0D      		add r24,r14	 ;  D.2518, ivtmp.240
+ 1883 06de 9F1D      		adc r25,r15	 ;  D.2518, ivtmp.240
+ 920:lcd_hd44780_avr.c ****      for(x2=0; x2<LCD_CHARS_PER_LINE; x2++)
+ 921:lcd_hd44780_avr.c ****        {
+ 922:lcd_hd44780_avr.c **** #if   LCD_BACKUP_LOCATION == 0
+ 923:lcd_hd44780_avr.c ****           lcd_putc( eeprom_read_byte((lcd_backup[x1]+x2)) );
+ 1884               		.stabn	68,0,923,.LM251-.LFBB20
+ 1885               	.LM251:
+ 1886 06e0 8050      		subi r24,lo8(-(lcd_backup))	 ; ,
+ 1887 06e2 9040      		sbci r25,hi8(-(lcd_backup))	 ; ,
+ 1888 06e4 0E94 0000 		call eeprom_read_byte	 ; 
+ 1889 06e8 0E94 0000 		call lcd_putc	 ; 
+ 1890 06ec 0F5F      		subi r16,-1	 ;  ivtmp.227,
+ 1891 06ee 1F4F      		sbci r17,-1	 ;  ivtmp.227,
+ 920:lcd_hd44780_avr.c ****      for(x2=0; x2<LCD_CHARS_PER_LINE; x2++)
+ 1892               		.stabn	68,0,920,.LM252-.LFBB20
+ 1893               	.LM252:
+ 1894 06f0 0431      		cpi r16,20	 ;  ivtmp.227,
+GAS LISTING /tmp/ccd5pcoP.s 			page 52
+
+
+ 1895 06f2 1105      		cpc r17,__zero_reg__	 ;  ivtmp.227
+ 1896 06f4 01F4      		brne .L156	 ; ,
+ 916:lcd_hd44780_avr.c ****   {
+ 1897               		.stabn	68,0,916,.LM253-.LFBB20
+ 1898               	.LM253:
+ 1899 06f6 CF5F      		subi r28,lo8(-(1))	 ;  x1,
+ 1900 06f8 84E1      		ldi r24,20	 ; ,
+ 1901 06fa E80E      		add r14,r24	 ;  ivtmp.240,
+ 1902 06fc F11C      		adc r15,__zero_reg__	 ;  ivtmp.240
+ 1903 06fe C430      		cpi r28,lo8(4)	 ;  x1,
+ 1904 0700 01F4      		brne .L157	 ; ,
+ 924:lcd_hd44780_avr.c **** #elif LCD_BACKUP_LOCATION == 1
+ 925:lcd_hd44780_avr.c ****           lcd_putc(*(lcd_backup[x1]+x2));
+ 926:lcd_hd44780_avr.c **** #endif
+ 927:lcd_hd44780_avr.c ****        }
+ 928:lcd_hd44780_avr.c ****   }
+ 929:lcd_hd44780_avr.c **** 
+ 930:lcd_hd44780_avr.c **** x=lcd_x;
+ 1905               		.stabn	68,0,930,.LM254-.LFBB20
+ 1906               	.LM254:
+ 1907 0702 D093 0000 		sts x,r29	 ;  x, lcd_x
+ 931:lcd_hd44780_avr.c **** y=lcd_y;
+ 1908               		.stabn	68,0,931,.LM255-.LFBB20
+ 1909               	.LM255:
+ 1910 0706 D092 0000 		sts y,r13	 ;  y, lcd_y
+ 932:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1911               		.stabn	68,0,932,.LM256-.LFBB20
+ 1912               	.LM256:
+ 1913 070a 6D2D      		mov r22,r13	 ; , lcd_y
+ 1914 070c 8D2F      		mov r24,r29	 ; , lcd_x
+ 1915               	/* epilogue start */
+ 933:lcd_hd44780_avr.c **** 
+ 934:lcd_hd44780_avr.c **** return;
+ 935:lcd_hd44780_avr.c **** }
+ 1916               		.stabn	68,0,935,.LM257-.LFBB20
+ 1917               	.LM257:
+ 1918 070e DF91      		pop r29	 ; 
+ 1919 0710 CF91      		pop r28	 ; 
+ 1920 0712 1F91      		pop r17	 ; 
+ 1921 0714 0F91      		pop r16	 ; 
+ 1922 0716 FF90      		pop r15	 ; 
+ 1923 0718 EF90      		pop r14	 ; 
+ 1924 071a DF90      		pop r13	 ; 
+ 932:lcd_hd44780_avr.c **** lcd_gotoxy(x,y);
+ 1925               		.stabn	68,0,932,.LM258-.LFBB20
+ 1926               	.LM258:
+ 1927 071c 0C94 0000 		jmp lcd_gotoxy	 ; 
+ 1928               		.size	lcd_restore_scr, .-lcd_restore_scr
+ 1929               		.stabs	"x1:r(0,11)",64,0,911,28
+ 1930               		.stabs	"lcd_x:r(0,11)",64,0,911,29
+ 1931               		.stabs	"lcd_y:r(0,11)",64,0,911,13
+ 1932               		.stabn	192,0,0,.LFBB20-.LFBB20
+ 1933               		.stabn	224,0,0,.Lscope20-.LFBB20
+ 1934               	.Lscope20:
+ 1935               		.stabs	"",36,0,0,.Lscope20-.LFBB20
+ 1936               		.stabd	78,0,0
+ 1937               		.stabs	"lcd_init:F(0,47)",36,0,943,lcd_init
+GAS LISTING /tmp/ccd5pcoP.s 			page 53
+
+
+ 1938               	.global	lcd_init
+ 1939               		.type	lcd_init, @function
+ 1940               	lcd_init:
+ 1941               		.stabd	46,0,0
+ 936:lcd_hd44780_avr.c **** 
+ 937:lcd_hd44780_avr.c **** #endif  /* #if LCD_READ_REQUIRED == 1 */
+ 938:lcd_hd44780_avr.c **** 
+ 939:lcd_hd44780_avr.c **** /*#################################################################################################
+ 940:lcd_hd44780_avr.c **** /*                                LCD INITIALIZATION FUNCTION                                      
+ 941:lcd_hd44780_avr.c **** /*#################################################################################################
+ 942:lcd_hd44780_avr.c **** 
+ 943:lcd_hd44780_avr.c **** void lcd_init(void)
+ 944:lcd_hd44780_avr.c **** {
+ 1942               		.stabn	68,0,944,.LM259-.LFBB21
+ 1943               	.LM259:
+ 1944               	.LFBB21:
+ 1945               	/* prologue: function */
+ 1946               	/* frame size = 0 */
+ 1947               	/* stack size = 0 */
+ 1948               	.L__stack_usage = 0
+ 945:lcd_hd44780_avr.c **** /* initialize display and select type of cursor */
+ 946:lcd_hd44780_avr.c **** /* dispAttr: LCD_DISP_OFF, LCD_DISP_ON, LCD_DISP_ON_CURSOR, LCD_DISP_CURSOR_BLINK */
+ 947:lcd_hd44780_avr.c **** 
+ 948:lcd_hd44780_avr.c **** #if LCD_LINES==1
+ 949:lcd_hd44780_avr.c **** #define LCD_FUNCTION_DEFAULT    LCD_FUNCTION_4BIT_1LINE 
+ 950:lcd_hd44780_avr.c **** #else
+ 951:lcd_hd44780_avr.c **** #define LCD_FUNCTION_DEFAULT    LCD_FUNCTION_4BIT_2LINES 
+ 952:lcd_hd44780_avr.c **** #endif 
+ 953:lcd_hd44780_avr.c **** 
+ 954:lcd_hd44780_avr.c **** #if LCD_PROTOCOL == 0
+ 955:lcd_hd44780_avr.c **** //lcd_init_lock = 1;
+ 956:lcd_hd44780_avr.c **** #if LCD_READ_REQUIRED == 1 || LCD_GROUND_RW_PIN_ALSO == 1 
+ 957:lcd_hd44780_avr.c **** LCD_RW_DDR_REG |= (1<<LCD_RW_PIN);
+ 958:lcd_hd44780_avr.c **** LCD_RW_OUT_REG &= ~(1<<LCD_RW_PIN);
+ 959:lcd_hd44780_avr.c **** #endif
+ 960:lcd_hd44780_avr.c **** 
+ 961:lcd_hd44780_avr.c **** LCD_E_DDR_REG |= (1<<LCD_E_PIN);
+ 962:lcd_hd44780_avr.c **** LCD_E_OUT_REG &= ~(1<<LCD_E_PIN);
+ 963:lcd_hd44780_avr.c **** LCD_RS_DDR_REG |= (1<<LCD_RS_PIN);
+ 964:lcd_hd44780_avr.c **** LCD_RS_OUT_REG &= (~(1<<LCD_RS_PIN));
+ 965:lcd_hd44780_avr.c **** 
+ 966:lcd_hd44780_avr.c **** 
+ 967:lcd_hd44780_avr.c **** 
+ 968:lcd_hd44780_avr.c **** LCD_D4_DDR_REG |= (1<<LCD_D4_PIN);
+ 969:lcd_hd44780_avr.c **** LCD_D5_DDR_REG |= (1<<LCD_D5_PIN);
+ 970:lcd_hd44780_avr.c **** LCD_D6_DDR_REG |= (1<<LCD_D6_PIN);
+ 971:lcd_hd44780_avr.c **** LCD_D7_DDR_REG |= (1<<LCD_D7_PIN);
+ 972:lcd_hd44780_avr.c **** 
+ 973:lcd_hd44780_avr.c **** LCD_D4_OUT_REG &= ~(1<<LCD_D4_PIN);
+ 974:lcd_hd44780_avr.c **** LCD_D5_OUT_REG &= ~(1<<LCD_D5_PIN);
+ 975:lcd_hd44780_avr.c **** LCD_D6_OUT_REG &= ~(1<<LCD_D6_PIN);
+ 976:lcd_hd44780_avr.c **** LCD_D7_OUT_REG &= ~(1<<LCD_D7_PIN);
+ 977:lcd_hd44780_avr.c **** #else
+ 978:lcd_hd44780_avr.c **** 
+ 979:lcd_hd44780_avr.c ****        I2C_START_TX(lcd_i2c_address);
+ 1949               		.stabn	68,0,979,.LM260-.LFBB21
+ 1950               	.LM260:
+GAS LISTING /tmp/ccd5pcoP.s 			page 54
+
+
+ 1951 0720 0E94 0000 		call i2c_start	 ; 
+ 1952 0724 8091 0000 		lds r24,lcd_i2c_address	 ; , lcd_i2c_address
+ 1953 0728 0E94 0000 		call i2c_put_byte	 ; 
+ 980:lcd_hd44780_avr.c ****        i2c_put_byte(0);    // lcd_e_low()
+ 1954               		.stabn	68,0,980,.LM261-.LFBB21
+ 1955               	.LM261:
+ 1956 072c 80E0      		ldi r24,0	 ; 
+ 1957 072e 0E94 0000 		call i2c_put_byte	 ; 
+ 981:lcd_hd44780_avr.c ****        i2c_stop();
+ 1958               		.stabn	68,0,981,.LM262-.LFBB21
+ 1959               	.LM262:
+ 1960 0732 0E94 0000 		call i2c_stop	 ; 
+ 1961 0736 84EF      		ldi r24,lo8(-12)	 ;  D.2530,
+ 1962 0738 91E0      		ldi r25,lo8(1)	 ;  D.2530,
+ 1963               	.LBB40:
+ 1964               	.LBB41:
+ 1965               	.LBB42:
+ 225:lcd_hd44780_avr.c **** 		"1: sbiw %0,1" "\n\t"
+ 1966               		.stabn	68,0,225,.LM263-.LFBB21
+ 1967               	.LM263:
+ 1968 073a 26E2      		ldi r18,lo8(38)	 ;  tmp52,
+ 1969 073c 33E0      		ldi r19,lo8(3)	 ; ,
+ 1970               	.L161:
+ 1971 073e F901      		movw r30,r18	 ;  __count, tmp52
+ 1972               	/* #APP */
+ 1973               	 ;  225 "lcd_hd44780_avr.c" 1
+ 1974 0740 3197      		1: sbiw r30,1	 ;  __count
+ 1975 0742 01F4      		brne 1b
+ 1976               	 ;  0 "" 2
+ 1977               	/* #NOAPP */
+ 1978 0744 0197      		sbiw r24,1	 ;  D.2530,
+ 1979               	.LBE42:
+ 1980               	.LBE41:
+ 982:lcd_hd44780_avr.c **** #endif
+ 983:lcd_hd44780_avr.c **** 
+ 984:lcd_hd44780_avr.c **** /*------ Initialize lcd to 4 bit i/o mode -------*/
+ 985:lcd_hd44780_avr.c **** /* initial write to lcd is 8bit using delay since busy flag can't be checked here anyway */
+ 986:lcd_hd44780_avr.c **** 
+ 987:lcd_hd44780_avr.c ****     LCD_POWER_ON_DELAY();                          /* Wait 20 milliseconds  */
+ 1981               		.stabn	68,0,987,.LM264-.LFBB21
+ 1982               	.LM264:
+ 1983 0746 01F4      		brne .L161	 ; ,
+ 1984               	.LBE40:
+ 988:lcd_hd44780_avr.c ****      
+ 989:lcd_hd44780_avr.c ****     lcd_write(LCD_FUNCTION_8BIT_1LINE, INIT_MODE);
+ 1985               		.stabn	68,0,989,.LM265-.LFBB21
+ 1986               	.LM265:
+ 1987 0748 62E0      		ldi r22,lo8(2)	 ; ,
+ 1988 074a 80E3      		ldi r24,lo8(48)	 ; ,
+ 1989 074c 0E94 0000 		call lcd_write	 ; 
+ 1990 0750 84E6      		ldi r24,lo8(100)	 ;  D.2530,
+ 1991 0752 90E0      		ldi r25,0	 ;  D.2530
+ 1992               	.LBB43:
+ 1993               	.LBB44:
+ 1994               	.LBB45:
+ 225:lcd_hd44780_avr.c **** 		"1: sbiw %0,1" "\n\t"
+ 1995               		.stabn	68,0,225,.LM266-.LFBB21
+GAS LISTING /tmp/ccd5pcoP.s 			page 55
+
+
+ 1996               	.LM266:
+ 1997 0754 26E2      		ldi r18,lo8(38)	 ;  tmp51,
+ 1998 0756 33E0      		ldi r19,lo8(3)	 ; ,
+ 1999               	.L162:
+ 2000 0758 F901      		movw r30,r18	 ;  __count, tmp51
+ 2001               	/* #APP */
+ 2002               	 ;  225 "lcd_hd44780_avr.c" 1
+ 2003 075a 3197      		1: sbiw r30,1	 ;  __count
+ 2004 075c 01F4      		brne 1b
+ 2005               	 ;  0 "" 2
+ 2006               	/* #NOAPP */
+ 2007 075e 0197      		sbiw r24,1	 ;  D.2530,
+ 2008               	.LBE45:
+ 2009               	.LBE44:
+ 990:lcd_hd44780_avr.c ****     LCD_INIT_DELAY();                              /* Wait 5 milliseconds */
+ 2010               		.stabn	68,0,990,.LM267-.LFBB21
+ 2011               	.LM267:
+ 2012 0760 01F4      		brne .L162	 ; ,
+ 2013               	.LBE43:
+ 991:lcd_hd44780_avr.c ****     
+ 992:lcd_hd44780_avr.c ****     lcd_write(LCD_FUNCTION_8BIT_1LINE, INIT_MODE);
+ 2014               		.stabn	68,0,992,.LM268-.LFBB21
+ 2015               	.LM268:
+ 2016 0762 62E0      		ldi r22,lo8(2)	 ; ,
+ 2017 0764 80E3      		ldi r24,lo8(48)	 ; ,
+ 2018 0766 0E94 0000 		call lcd_write	 ; 
+ 993:lcd_hd44780_avr.c ****     lcd_write(LCD_FUNCTION_8BIT_1LINE, INIT_MODE);
+ 2019               		.stabn	68,0,993,.LM269-.LFBB21
+ 2020               	.LM269:
+ 2021 076a 62E0      		ldi r22,lo8(2)	 ; ,
+ 2022 076c 80E3      		ldi r24,lo8(48)	 ; ,
+ 2023 076e 0E94 0000 		call lcd_write	 ; 
+ 994:lcd_hd44780_avr.c ****     lcd_write(LCD_FUNCTION_4BIT_1LINE, INIT_MODE);      /* set IO mode to 4bit */
+ 2024               		.stabn	68,0,994,.LM270-.LFBB21
+ 2025               	.LM270:
+ 2026 0772 62E0      		ldi r22,lo8(2)	 ; ,
+ 2027 0774 80E2      		ldi r24,lo8(32)	 ; ,
+ 2028 0776 0E94 0000 		call lcd_write	 ; 
+ 995:lcd_hd44780_avr.c ****  
+ 996:lcd_hd44780_avr.c ****     /* from now on the lcd accepts only 4 bit I/O, so we can use lcd_command() */    
+ 997:lcd_hd44780_avr.c ****     lcd_command(LCD_FUNCTION_DEFAULT);      /* function set: display lines  */
+ 2029               		.stabn	68,0,997,.LM271-.LFBB21
+ 2030               	.LM271:
+ 2031 077a 88E2      		ldi r24,lo8(40)	 ; ,
+ 2032 077c 0E94 0000 		call lcd_command	 ; 
+ 998:lcd_hd44780_avr.c ****     lcd_command(LCD_DISP_OFF);              /* display off                  */
+ 2033               		.stabn	68,0,998,.LM272-.LFBB21
+ 2034               	.LM272:
+ 2035 0780 88E0      		ldi r24,lo8(8)	 ; ,
+ 2036 0782 0E94 0000 		call lcd_command	 ; 
+ 999:lcd_hd44780_avr.c ****     lcd_command(LCD_CLEAR_SCREEN);          /* display clear                */
+ 2037               		.stabn	68,0,999,.LM273-.LFBB21
+ 2038               	.LM273:
+ 2039 0786 81E0      		ldi r24,lo8(1)	 ; ,
+ 2040 0788 0E94 0000 		call lcd_command	 ; 
+1000:lcd_hd44780_avr.c ****     lcd_command(LCD_MODE_DEFAULT);          /* set entry mode               */
+ 2041               		.stabn	68,0,1000,.LM274-.LFBB21
+GAS LISTING /tmp/ccd5pcoP.s 			page 56
+
+
+ 2042               	.LM274:
+ 2043 078c 86E0      		ldi r24,lo8(6)	 ; ,
+ 2044 078e 0E94 0000 		call lcd_command	 ; 
+1001:lcd_hd44780_avr.c ****     lcd_command(LCD_DISP_ON);               /* LCD DISPLAY ON (DEFAULT)     */
+ 2045               		.stabn	68,0,1001,.LM275-.LFBB21
+ 2046               	.LM275:
+ 2047 0792 8CE0      		ldi r24,lo8(12)	 ; ,
+ 2048 0794 0C94 0000 		jmp lcd_command	 ; 
+ 2049               		.size	lcd_init, .-lcd_init
+ 2050               	.Lscope21:
+ 2051               		.stabs	"",36,0,0,.Lscope21-.LFBB21
+ 2052               		.stabd	78,0,0
+ 2053               	.global	backlight
+ 2054               		.data
+ 2055               		.type	backlight, @object
+ 2056               		.size	backlight, 1
+ 2057               	backlight:
+ 2058 0000 01        		.byte	1
+ 2059               	.global	lcd_i2c_address
+ 2060               		.type	lcd_i2c_address, @object
+ 2061               		.size	lcd_i2c_address, 1
+ 2062               	lcd_i2c_address:
+ 2063 0001 4E        		.byte	78
+ 2064               		.section	.eeprom,"aw",@progbits
+ 2065               		.type	lcd_backup, @object
+ 2066               		.size	lcd_backup, 80
+ 2067               	lcd_backup:
+ 2068 0000 0000 0000 		.zero	80
+ 2068      0000 0000 
+ 2068      0000 0000 
+ 2068      0000 0000 
+ 2068      0000 0000 
+ 2069               	.global	lcd_error_detected
+ 2070               		.section .bss
+ 2071               		.type	lcd_error_detected, @object
+ 2072               		.size	lcd_error_detected, 1
+ 2073               	lcd_error_detected:
+ 2074 0000 00        		.zero	1
+ 2075               		.local	lcd_is_busy
+ 2076               		.comm	lcd_is_busy,1,1
+ 2077               		.local	putc_lock
+ 2078               		.comm	putc_lock,1,1
+ 2079               		.section	.rodata
+ 2080               		.type	lcd_line_start, @object
+ 2081               		.size	lcd_line_start, 4
+ 2082               	lcd_line_start:
+ 2083 0009 00        		.byte	0
+ 2084 000a 40        		.byte	64
+ 2085 000b 14        		.byte	20
+ 2086 000c 54        		.byte	84
+ 2087               		.local	y
+ 2088               		.comm	y,1,1
+ 2089               		.local	x
+ 2090               		.comm	x,1,1
+ 2091               		.stabs	"x:S(0,11)",40,0,194,x
+ 2092               		.stabs	"y:S(0,11)",40,0,194,y
+ 2093               		.stabs	"lcd_line_start:S(0,55)=ar(0,53);0;3;(0,11)",38,0,195,lcd_line_start
+GAS LISTING /tmp/ccd5pcoP.s 			page 57
+
+
+ 2094               		.stabs	"putc_lock:S(0,11)",38,0,198,putc_lock
+ 2095               		.stabs	"lcd_is_busy:S(0,11)",38,0,200,lcd_is_busy
+ 2096               		.stabs	"lcd_backup:S(0,56)=ar(0,53);0;3;(0,57)=ar(0,53);0;19;(0,11)",40,0,205,lcd_backup
+ 2097               		.stabs	"lcd_error_detected:G(0,11)",32,0,201,0
+ 2098               		.stabs	"lcd_i2c_address:G(0,11)",32,0,214,0
+ 2099               		.stabs	"backlight:G(0,11)",32,0,215,0
+ 2100               		.text
+ 2101               		.stabs	"",100,0,0,.Letext0
+ 2102               	.Letext0:
+ 2103               		.ident	"GCC: (GNU) 4.9.2"
+ 2104               	.global __do_copy_data
+ 2105               	.global __do_clear_bss
+GAS LISTING /tmp/ccd5pcoP.s 			page 58
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 lcd_hd44780_avr.c
+     /tmp/ccd5pcoP.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccd5pcoP.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccd5pcoP.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccd5pcoP.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccd5pcoP.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccd5pcoP.s:156    .text:0000000000000000 wait_until_busy_flag_is_clear
+     /tmp/ccd5pcoP.s:2057   .data:0000000000000000 backlight
+     /tmp/ccd5pcoP.s:2062   .data:0000000000000001 lcd_i2c_address
+                             .bss:0000000000000001 lcd_is_busy
+     /tmp/ccd5pcoP.s:259    .text:000000000000008c lcd_write
+     /tmp/ccd5pcoP.s:427    .text:000000000000012a lcd_read
+     /tmp/ccd5pcoP.s:621    .text:0000000000000204 lcd_command
+     /tmp/ccd5pcoP.s:2088   .bss:0000000000000004 x
+     /tmp/ccd5pcoP.s:2078   .bss:0000000000000003 y
+     /tmp/ccd5pcoP.s:690    .text:0000000000000232 lcd_gotoxy
+     /tmp/ccd5pcoP.s:2076   .bss:0000000000000002 putc_lock
+     /tmp/ccd5pcoP.s:2082   .rodata:0000000000000009 lcd_line_start
+     /tmp/ccd5pcoP.s:757    .text:0000000000000270 lcd_putc
+     /tmp/ccd5pcoP.s:813    .text:00000000000002a6 lcd_putc_cgram
+     /tmp/ccd5pcoP.s:954    .text:000000000000032e lcd_put_i
+     /tmp/ccd5pcoP.s:1266   .text:00000000000004aa lcd_clrline
+     /tmp/ccd5pcoP.s:1322   .text:00000000000004d8 lcd_getxy
+     /tmp/ccd5pcoP.s:1398   .text:0000000000000514 lcd_backlight_off
+     /tmp/ccd5pcoP.s:1437   .text:0000000000000538 lcd_backlight_on
+     /tmp/ccd5pcoP.s:1479   .text:0000000000000560 lcd_puts
+     /tmp/ccd5pcoP.s:1519   .text:0000000000000578 lcd_puts_p
+     /tmp/ccd5pcoP.s:1569   .text:0000000000000596 lcd_puts_e
+     /tmp/ccd5pcoP.s:1612   .text:00000000000005b8 lcd_getc
+     /tmp/ccd5pcoP.s:1632   .text:00000000000005be lcd_get_error
+     /tmp/ccd5pcoP.s:2073   .bss:0000000000000000 lcd_error_detected
+     /tmp/ccd5pcoP.s:1653   .text:00000000000005c4 lcd_get_line
+     /tmp/ccd5pcoP.s:1742   .text:0000000000000630 lcd_backup_scr
+     /tmp/ccd5pcoP.s:2067   .eeprom:0000000000000000 lcd_backup
+     /tmp/ccd5pcoP.s:1838   .text:00000000000006a4 lcd_restore_scr
+     /tmp/ccd5pcoP.s:1940   .text:0000000000000720 lcd_init
+
+UNDEFINED SYMBOLS
+i2c_start
+i2c_put_byte
+i2c_get_byte
+i2c_stop
+__divmodhi4
+__udivmodhi4
+eeprom_read_byte
+eeprom_write_byte
+__do_copy_data
+__do_clear_bss

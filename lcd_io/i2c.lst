@@ -1,0 +1,1807 @@
+GAS LISTING /tmp/ccJZdU2W.s 			page 1
+
+
+   1               		.file	"i2c.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               	 ;  GNU C (GCC) version 4.9.2 (avr)
+   8               	 ; 	compiled by GNU C version 5.3.1 20151206, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.
+   9               	 ;  warning: MPFR header version 3.1.3 differs from library version 3.1.4.
+  10               	 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  11               	 ;  options passed:  -imultilib avr5 -D__AVR_ATmega328P__
+  12               	 ;  -D__AVR_DEVICE_NAME__=atmega328p -D F_CPU=16000000UL i2c.c -mn-flash=1
+  13               	 ;  -mno-skip-bug -mmcu=avr5 -auxbase-strip i2c.o -g -Os -Wall
+  14               	 ;  -Wstrict-prototypes -fverbose-asm -funsigned-char -funsigned-bitfields
+  15               	 ;  -fpack-struct -fshort-enums
+  16               	 ;  options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
+  17               	 ;  -fbranch-count-reg -fcaller-saves -fcombine-stack-adjustments -fcommon
+  18               	 ;  -fcompare-elim -fcprop-registers -fcrossjumping -fcse-follow-jumps
+  19               	 ;  -fdefer-pop -fdevirtualize -fdevirtualize-speculatively
+  20               	 ;  -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  21               	 ;  -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  22               	 ;  -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  23               	 ;  -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  24               	 ;  -findirect-inlining -finline -finline-atomics -finline-functions
+  25               	 ;  -finline-functions-called-once -finline-small-functions -fipa-cp
+  26               	 ;  -fipa-profile -fipa-pure-const -fipa-reference -fipa-sra
+  27               	 ;  -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  28               	 ;  -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  29               	 ;  -fleading-underscore -fmath-errno -fmerge-constants
+  30               	 ;  -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  31               	 ;  -foptimize-sibling-calls -fpack-struct -fpartial-inlining -fpeephole
+  32               	 ;  -fpeephole2 -fprefetch-loop-arrays -freg-struct-return -freorder-blocks
+  33               	 ;  -freorder-functions -frerun-cse-after-loop
+  34               	 ;  -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  35               	 ;  -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  36               	 ;  -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
+  37               	 ;  -fsched-stalled-insns-dep -fshow-column -fshrink-wrap -fsigned-zeros
+  38               	 ;  -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39               	 ;  -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  40               	 ;  -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  41               	 ;  -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  42               	 ;  -ftree-copy-prop -ftree-copyrename -ftree-dce -ftree-dominator-opts
+  43               	 ;  -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  44               	 ;  -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+  45               	 ;  -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  46               	 ;  -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  47               	 ;  -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  48               	 ;  -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  49               	
+  50               		.stabs	"/home/hendrix/Desktop/ACTIVE_306_PROJECTS/general_drivers_project_54/lcd_io/",100,0,2,.Lte
+  51               		.stabs	"i2c.c",100,0,2,.Ltext0
+  52               		.text
+  53               	.Ltext0:
+  54               		.stabs	"gcc2_compiled.",60,0,0,0
+  55               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  56               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  57               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+GAS LISTING /tmp/ccJZdU2W.s 			page 2
+
+
+  58               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  59               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  60               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  61               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  62               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  63               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  64               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  65               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  66               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  67               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  68               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  69               		.stabs	"short _Fract:t(0,15)=r(0,1);1;0;",128,0,0,0
+  70               		.stabs	"_Fract:t(0,16)=r(0,1);2;0;",128,0,0,0
+  71               		.stabs	"long _Fract:t(0,17)=r(0,1);4;0;",128,0,0,0
+  72               		.stabs	"long long _Fract:t(0,18)=r(0,1);8;0;",128,0,0,0
+  73               		.stabs	"unsigned short _Fract:t(0,19)=r(0,1);1;0;",128,0,0,0
+  74               		.stabs	"unsigned _Fract:t(0,20)=r(0,1);2;0;",128,0,0,0
+  75               		.stabs	"unsigned long _Fract:t(0,21)=r(0,1);4;0;",128,0,0,0
+  76               		.stabs	"unsigned long long _Fract:t(0,22)=r(0,1);8;0;",128,0,0,0
+  77               		.stabs	"_Sat short _Fract:t(0,23)=r(0,1);1;0;",128,0,0,0
+  78               		.stabs	"_Sat _Fract:t(0,24)=r(0,1);2;0;",128,0,0,0
+  79               		.stabs	"_Sat long _Fract:t(0,25)=r(0,1);4;0;",128,0,0,0
+  80               		.stabs	"_Sat long long _Fract:t(0,26)=r(0,1);8;0;",128,0,0,0
+  81               		.stabs	"_Sat unsigned short _Fract:t(0,27)=r(0,1);1;0;",128,0,0,0
+  82               		.stabs	"_Sat unsigned _Fract:t(0,28)=r(0,1);2;0;",128,0,0,0
+  83               		.stabs	"_Sat unsigned long _Fract:t(0,29)=r(0,1);4;0;",128,0,0,0
+  84               		.stabs	"_Sat unsigned long long _Fract:t(0,30)=r(0,1);8;0;",128,0,0,0
+  85               		.stabs	"short _Accum:t(0,31)=r(0,1);2;0;",128,0,0,0
+  86               		.stabs	"_Accum:t(0,32)=r(0,1);4;0;",128,0,0,0
+  87               		.stabs	"long _Accum:t(0,33)=r(0,1);8;0;",128,0,0,0
+  88               		.stabs	"long long _Accum:t(0,34)=r(0,1);8;0;",128,0,0,0
+  89               		.stabs	"unsigned short _Accum:t(0,35)=r(0,1);2;0;",128,0,0,0
+  90               		.stabs	"unsigned _Accum:t(0,36)=r(0,1);4;0;",128,0,0,0
+  91               		.stabs	"unsigned long _Accum:t(0,37)=r(0,1);8;0;",128,0,0,0
+  92               		.stabs	"unsigned long long _Accum:t(0,38)=r(0,1);8;0;",128,0,0,0
+  93               		.stabs	"_Sat short _Accum:t(0,39)=r(0,1);2;0;",128,0,0,0
+  94               		.stabs	"_Sat _Accum:t(0,40)=r(0,1);4;0;",128,0,0,0
+  95               		.stabs	"_Sat long _Accum:t(0,41)=r(0,1);8;0;",128,0,0,0
+  96               		.stabs	"_Sat long long _Accum:t(0,42)=r(0,1);8;0;",128,0,0,0
+  97               		.stabs	"_Sat unsigned short _Accum:t(0,43)=r(0,1);2;0;",128,0,0,0
+  98               		.stabs	"_Sat unsigned _Accum:t(0,44)=r(0,1);4;0;",128,0,0,0
+  99               		.stabs	"_Sat unsigned long _Accum:t(0,45)=r(0,1);8;0;",128,0,0,0
+ 100               		.stabs	"_Sat unsigned long long _Accum:t(0,46)=r(0,1);8;0;",128,0,0,0
+ 101               		.stabs	"void:t(0,47)=(0,47)",128,0,0,0
+ 102               		.stabs	"/usr/lib/avr/include/avr/io.h",130,0,0,0
+ 103               		.stabs	"/usr/lib/avr/include/avr/sfr_defs.h",130,0,0,0
+ 104               		.stabs	"/usr/lib/avr/include/inttypes.h",130,0,0,0
+ 105               		.stabs	"/usr/lib/gcc/avr/4.9.2/include/stdint.h",130,0,0,0
+ 106               		.stabs	"/usr/lib/avr/include/stdint.h",130,0,0,0
+ 107               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+ 108               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+ 109               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+ 110               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+ 111               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+ 112               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+ 113               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+ 114               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+GAS LISTING /tmp/ccJZdU2W.s 			page 3
+
+
+ 115               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+ 116               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+ 117               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+ 118               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+ 119               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+ 120               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+ 121               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+ 122               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+ 123               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+ 124               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+ 125               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+ 126               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+ 127               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+ 128               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+ 129               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+ 130               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+ 131               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+ 132               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+ 133               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+ 134               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+ 135               		.stabn	162,0,0,0
+ 136               		.stabn	162,0,0,0
+ 137               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
+ 138               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+ 139               		.stabn	162,0,0,0
+ 140               		.stabn	162,0,0,0
+ 141               		.stabs	"/usr/lib/avr/include/avr/fuse.h",130,0,0,0
+ 142               		.stabs	"__fuse_t:t(6,1)=(6,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+ 143               		.stabn	162,0,0,0
+ 144               		.stabn	162,0,0,0
+ 145               		.stabs	"i2c_get_error:F(0,11)",36,0,445,i2c_get_error
+ 146               	.global	i2c_get_error
+ 147               		.type	i2c_get_error, @function
+ 148               	i2c_get_error:
+ 149               		.stabd	46,0,0
+   1:i2c.c         **** 
+   2:i2c.c         **** /****************************************************************************
+   3:i2c.c         ****  Title	:   C  file for the I2C FUNCTIONS library (i2c.c)
+   4:i2c.c         ****  Author:    Chris efstathiou hendrix@vivodinet.gr
+   5:i2c.c         ****  Date:	    7/Apr/2007 
+   6:i2c.c         ****  Software:  AVR-GCC with AVR-AS
+   7:i2c.c         ****  Target:    any AVR device
+   8:i2c.c         ****  Comments:  This software is FREE.
+   9:i2c.c         **** *****************************************************************************/
+  10:i2c.c         **** /* Although i could had written it in the new style, i prefer the old one for compatibility sake. *
+  11:i2c.c         **** 
+  12:i2c.c         **** #if !defined(AVRGCC_VERSION)
+  13:i2c.c         **** #if ((__GNUC__ * 100) + __GNUC_MINOR__) > 303
+  14:i2c.c         **** #define AVRGCC_VERSION      304        /* AVRGCC version for including the correct files  */
+  15:i2c.c         **** #elif ((__GNUC__ * 100) + __GNUC_MINOR__) >= 300  &&  ((__GNUC__ * 100) + __GNUC_MINOR__) <= 303
+  16:i2c.c         **** #define AVRGCC_VERSION      303        /* AVRGCC version for including the correct files  */
+  17:i2c.c         **** #else 
+  18:i2c.c         **** #define AVRGCC_VERSION   300    
+  19:i2c.c         **** #endif
+  20:i2c.c         **** #endif
+  21:i2c.c         **** 
+  22:i2c.c         **** 
+GAS LISTING /tmp/ccJZdU2W.s 			page 4
+
+
+  23:i2c.c         **** #if AVRGCC_VERSION >= 303
+  24:i2c.c         **** #include <avr/io.h>
+  25:i2c.c         **** #else
+  26:i2c.c         **** #include <io.h>
+  27:i2c.c         **** #endif
+  28:i2c.c         **** 
+  29:i2c.c         **** #include "i2c.h"
+  30:i2c.c         **** 
+  31:i2c.c         **** #ifndef CONCAT1
+  32:i2c.c         **** #define CONCAT1(a, b) CONCAT2(a, b)
+  33:i2c.c         **** #endif
+  34:i2c.c         **** 
+  35:i2c.c         **** #ifndef CONCAT2
+  36:i2c.c         **** #define CONCAT2(a, b) a ## b
+  37:i2c.c         **** #endif
+  38:i2c.c         **** 
+  39:i2c.c         **** /* Register name forming */
+  40:i2c.c         **** #define I2C_SDA_OUT_REG   CONCAT1(PORT, I2C_SDA_PORT)
+  41:i2c.c         **** #define I2C_SCL_OUT_REG   CONCAT1(PORT, I2C_SCL_PORT)
+  42:i2c.c         **** #define I2C_SDA_DDR_REG   CONCAT1(DDR, I2C_SDA_PORT)
+  43:i2c.c         **** #define I2C_SCL_DDR_REG   CONCAT1(DDR, I2C_SCL_PORT)
+  44:i2c.c         **** #define I2C_SDA_PIN_REG   CONCAT1(PIN, I2C_SDA_PORT)
+  45:i2c.c         **** #define I2C_SCL_PIN_REG   CONCAT1(PIN, I2C_SCL_PORT)
+  46:i2c.c         **** 
+  47:i2c.c         **** 
+  48:i2c.c         **** /* 
+  49:i2c.c         ****    Conversion of milliseconds and HERTZ to the right value for the delay function. 
+  50:i2c.c         ****    Some tricks are performed in order to increase accuracy without reverting to floating numbers
+  51:i2c.c         **** */
+  52:i2c.c         **** 
+  53:i2c.c         **** #if I2C_CLOCK_IN_HERTZ <= 0 
+  54:i2c.c         **** #undef  I2C_CLOCK_IN_HERTZ
+  55:i2c.c         **** #define I2C_CLOCK_IN_HERTZ   1
+  56:i2c.c         **** #warning "I2C_CLOCK_IN_HERTZ SET TO 1 HERTZ"
+  57:i2c.c         **** #endif
+  58:i2c.c         **** 
+  59:i2c.c         **** #if I2C_TIMEOUT <= 0
+  60:i2c.c         **** #undef  I2C_TIMEOUT 
+  61:i2c.c         **** #define I2C_TIMEOUT   10
+  62:i2c.c         **** #warning "I2C_TIMEOUT IS SET TO 10 CYCLES"
+  63:i2c.c         **** #endif    
+  64:i2c.c         **** 
+  65:i2c.c         **** #define I2C_CLOCK          CONCAT1(I2C_CLOCK_IN_HERTZ, L)
+  66:i2c.c         **** 
+  67:i2c.c         **** #ifndef DELAY_L_ACCURATE
+  68:i2c.c         **** /* 6 cpu cycles per loop + 3 overhead when a constant is passed. */
+  69:i2c.c         **** #define DELAY_L_ACCURATE(x)  ({ unsigned long number_of_loops=(unsigned long)x;   \
+  70:i2c.c         ****                                 __asm__ volatile ( "L_%=: \n\t"                   \
+  71:i2c.c         ****                                                    "subi %A0,lo8(-(-1)) \n\t"     \
+  72:i2c.c         ****                                                    "sbci %B0,hi8(-(-1)) \n\t"     \
+  73:i2c.c         ****                                                    "sbci %C0,hlo8(-(-1)) \n\t"    \
+  74:i2c.c         ****                                                    "sbci %D0,hhi8(-(-1)) \n\t"    \
+  75:i2c.c         ****                                                    "brne L_%= \n\t"               \
+  76:i2c.c         ****                                                    : /* NO OUTPUT */              \
+  77:i2c.c         ****                                                    : "w" (number_of_loops)        \
+  78:i2c.c         ****                                                  );                               \
+  79:i2c.c         ****                              })                                      
+GAS LISTING /tmp/ccJZdU2W.s 			page 5
+
+
+  80:i2c.c         **** 
+  81:i2c.c         **** #endif /* #ifndef DELAY_L_ACCURATE */
+  82:i2c.c         **** 
+  83:i2c.c         **** 
+  84:i2c.c         **** 
+  85:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+  86:i2c.c         **** #if   I2C_WILL_USE_A_TIMER == 1
+  87:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+  88:i2c.c         **** 
+  89:i2c.c         **** 
+  90:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+  91:i2c.c         **** #if defined(__AVR_ATmega103__) || defined(__AVR_ATmega128__) || \
+  92:i2c.c         ****     defined(__AVR_ATmega8535__) || defined(__AVR_ATmega8515__)
+  93:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+  94:i2c.c         **** 
+  95:i2c.c         **** #define NUMBER_OF_8_BIT_TIMERS 2
+  96:i2c.c         **** 
+  97:i2c.c         **** #if I2C_USE_TIMER == 0  || NUMBER_OF_8_BIT_TIMERS == 1
+  98:i2c.c         **** 
+  99:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 100:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 101:i2c.c         **** #define TIMER_DIV_BY_32     ( (1<<1)|(1<<0) )
+ 102:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<2) )
+ 103:i2c.c         **** #define TIMER_DIV_BY_128    ( (1<<2)|(1<<0) )
+ 104:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2)|(1<<1) )
+ 105:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<1)|(1<<0) )
+ 106:i2c.c         **** 
+ 107:i2c.c         **** #define I2C_TCNT            TCNT0
+ 108:i2c.c         **** #define I2C_TCCR            TCCR0
+ 109:i2c.c         **** #define I2C_TOIE            TOIE0
+ 110:i2c.c         **** #define I2C_OCIE            OCIE0
+ 111:i2c.c         **** #define TIMER_SIGNAL()      SIGNAL(SIG_OVERFLOW0)
+ 112:i2c.c         **** 
+ 113:i2c.c         **** #elif I2C_USE_TIMER == 2 && NUMBER_OF_8_BIT_TIMERS >= 2
+ 114:i2c.c         **** 
+ 115:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 116:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 117:i2c.c         **** #define TIMER_DIV_BY_32     0
+ 118:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<1)|(1<<0) )
+ 119:i2c.c         **** #define TIMER_DIV_BY_128    0
+ 120:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2) )
+ 121:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<0) )
+ 122:i2c.c         **** 
+ 123:i2c.c         **** #define I2C_TCNT            TCNT2
+ 124:i2c.c         **** #define I2C_TCCR            TCCR2
+ 125:i2c.c         **** #define I2C_TOIE            TOIE2
+ 126:i2c.c         **** #define I2C_OCIE            OCIE2
+ 127:i2c.c         **** #define TIMER_SIGNAL()      SIGNAL(SIG_OVERFLOW2)
+ 128:i2c.c         **** 
+ 129:i2c.c         **** #endif
+ 130:i2c.c         **** 
+ 131:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 132:i2c.c         **** #elif  defined(__AVR_ATmega8__) || defined(__AVR_ATmega16__) || defined(__AVR_ATmega32__) || \
+ 133:i2c.c         ****        defined(__AVR_ATmega64__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168__)
+ 134:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 135:i2c.c         **** 
+ 136:i2c.c         **** #define NUMBER_OF_8_BIT_TIMERS 2
+GAS LISTING /tmp/ccJZdU2W.s 			page 6
+
+
+ 137:i2c.c         **** 
+ 138:i2c.c         **** #if I2C_USE_TIMER == 0  || NUMBER_OF_8_BIT_TIMERS == 1
+ 139:i2c.c         **** 
+ 140:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 141:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 142:i2c.c         **** #define TIMER_DIV_BY_32     ( (1<<1)|(1<<0) )
+ 143:i2c.c         **** #define TIMER_DIV_BY_64     0
+ 144:i2c.c         **** #define TIMER_DIV_BY_128    0
+ 145:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2) )
+ 146:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<0) )
+ 147:i2c.c         **** 
+ 148:i2c.c         **** #define I2C_TCNT            TCNT0
+ 149:i2c.c         **** #define I2C_TCCR            TCCR0B
+ 150:i2c.c         **** #define I2C_TOIE            TOIE0
+ 151:i2c.c         **** #define I2C_OCIE            OCIE0
+ 152:i2c.c         **** #define TIMER_SIGNAL()      SIGNAL(SIG_OVERFLOW0)
+ 153:i2c.c         **** 
+ 154:i2c.c         **** #elif I2C_USE_TIMER == 2 && NUMBER_OF_8_BIT_TIMERS >= 2
+ 155:i2c.c         **** 
+ 156:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 157:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 158:i2c.c         **** #define TIMER_DIV_BY_32     ( (1<<1)|(1<<0) )
+ 159:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<2) )
+ 160:i2c.c         **** #define TIMER_DIV_BY_128    ( (1<<2)|(1<<0) )
+ 161:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2)|(1<<1) )
+ 162:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<1)|(1<<0) )
+ 163:i2c.c         **** 
+ 164:i2c.c         **** #define I2C_TCNT            TCNT2
+ 165:i2c.c         **** #define I2C_TCCR            TCCR2
+ 166:i2c.c         **** #define I2C_TOIE            TOIE2
+ 167:i2c.c         **** #define I2C_OCIE            OCIE2
+ 168:i2c.c         **** #define TIMER_SIGNAL()      SIGNAL(SIG_OVERFLOW2)
+ 169:i2c.c         ****                          
+ 170:i2c.c         **** #endif
+ 171:i2c.c         **** 
+ 172:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 173:i2c.c         **** #elif  defined(__AVR_ATmega161__) || defined(__AVR_ATmega163__) || defined(__AVR_AT90S8515__) || \
+ 174:i2c.c         ****        defined(__AVR_AT90S8535__) || defined(__AVR_AT90S4434__)  
+ 175:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 176:i2c.c         **** 
+ 177:i2c.c         **** #define NUMBER_OF_8_BIT_TIMERS 2
+ 178:i2c.c         **** 
+ 179:i2c.c         **** #if I2C_USE_TIMER == 0  || NUMBER_OF_8_BIT_TIMERS == 1
+ 180:i2c.c         **** 
+ 181:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 182:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 183:i2c.c         **** #define TIMER_DIV_BY_32     0
+ 184:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<1)|(1<<0) )
+ 185:i2c.c         **** #define TIMER_DIV_BY_128    0
+ 186:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2) )
+ 187:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<0) )
+ 188:i2c.c         **** 
+ 189:i2c.c         **** #define I2C_TCNT            TCNT0
+ 190:i2c.c         **** #define I2C_TCCR            TCCR0
+ 191:i2c.c         **** #define I2C_TOIE            TOIE0
+ 192:i2c.c         **** #if defined(__AVR_ATmega161__)
+ 193:i2c.c         **** #define I2C_OCIE            OCIE0
+GAS LISTING /tmp/ccJZdU2W.s 			page 7
+
+
+ 194:i2c.c         **** #else
+ 195:i2c.c         **** #define I2C_OCIE            0
+ 196:i2c.c         **** #endif
+ 197:i2c.c         **** #define TIMER_SIGNAL()      ISR(TIMER0_OVF_vect)
+ 198:i2c.c         **** 
+ 199:i2c.c         **** #elif I2C_USE_TIMER == 2 && NUMBER_OF_8_BIT_TIMERS >= 2
+ 200:i2c.c         **** 
+ 201:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 202:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 203:i2c.c         **** #define TIMER_DIV_BY_32     ( (1<<1)|(1<<0) )
+ 204:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<2) )
+ 205:i2c.c         **** #define TIMER_DIV_BY_128    ( (1<<2)|(1<<0) )
+ 206:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2)|(1<<1) )
+ 207:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<1)|(1<<0) )
+ 208:i2c.c         **** 
+ 209:i2c.c         **** #define I2C_TCNT            TCNT2
+ 210:i2c.c         **** #define I2C_TCCR            TCCR2
+ 211:i2c.c         **** #define I2C_TOIE            TOIE2
+ 212:i2c.c         **** #define I2C_OCIE            OCIE2
+ 213:i2c.c         **** #define TIMER_SIGNAL()      ISR(TIMER2_OVF_vect)
+ 214:i2c.c         ****                          
+ 215:i2c.c         **** #endif
+ 216:i2c.c         **** 
+ 217:i2c.c         **** 
+ 218:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 219:i2c.c         **** #elif  defined(__AVR_AT90S4433__)  || defined(__AVR_AT90S2343__) || defined(__AVR_AT90S2323__)
+ 220:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 221:i2c.c         **** 
+ 222:i2c.c         **** #define NUMBER_OF_8_BIT_TIMERS 1
+ 223:i2c.c         **** 
+ 224:i2c.c         **** #if I2C_USE_TIMER > 0
+ 225:i2c.c         **** #undef I2C_USE_TIMER
+ 226:i2c.c         **** #warning " THERE IS NOT SUCH AN 8 BIT TIMER. WILL USE TIMER 0 "
+ 227:i2c.c         **** #define I2C_USE_TIMER 0
+ 228:i2c.c         **** #endif
+ 229:i2c.c         **** 
+ 230:i2c.c         **** #define TIMER_DIV_BY_1      ( (1<<0) )
+ 231:i2c.c         **** #define TIMER_DIV_BY_8      ( (1<<1) )
+ 232:i2c.c         **** #define TIMER_DIV_BY_32     0
+ 233:i2c.c         **** #define TIMER_DIV_BY_64     ( (1<<1)|(1<<0) )
+ 234:i2c.c         **** #define TIMER_DIV_BY_128    0
+ 235:i2c.c         **** #define TIMER_DIV_BY_256    ( (1<<2) )
+ 236:i2c.c         **** #define TIMER_DIV_BY_1024   ( (1<<2)|(1<<0) )
+ 237:i2c.c         **** 
+ 238:i2c.c         **** #define I2C_TCNT            TCNT0
+ 239:i2c.c         **** #define I2C_TCCR            TCCR0
+ 240:i2c.c         **** #define I2C_TOIE            TOIE0
+ 241:i2c.c         **** #define I2C_OCIE            OCIE0
+ 242:i2c.c         **** #define TIMER_SIGNAL()      SIGNAL(SIG_OVERFLOW0)
+ 243:i2c.c         **** 
+ 244:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 245:i2c.c         **** #endif
+ 246:i2c.c         **** /*222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222*
+ 247:i2c.c         **** 
+ 248:i2c.c         **** /* TIMER SELECTION RELATED ERROR MESSAGES */
+ 249:i2c.c         **** #if    I2C_WILL_USE_A_TIMER == 1 &&  NUMBER_OF_8_BIT_TIMERS == 2 
+ 250:i2c.c         **** 
+GAS LISTING /tmp/ccJZdU2W.s 			page 8
+
+
+ 251:i2c.c         **** #if    I2C_USE_TIMER == 1 || I2C_USE_TIMER > 2 
+ 252:i2c.c         **** #error "SELECT TIMER 0 OR 2 PLEASE! " 
+ 253:i2c.c         **** #endif
+ 254:i2c.c         **** 
+ 255:i2c.c         **** #endif /* I2C_WILL_USE_A_TIMER == 1 &&  NUMBER_OF_8_BIT_TIMERS == 2  */
+ 256:i2c.c         **** 
+ 257:i2c.c         **** 
+ 258:i2c.c         **** 
+ 259:i2c.c         **** #define I2C_DELAY_ACCURATE          (((100000000/I2C_CLOCK)/(100000000/F_CPU))/2)
+ 260:i2c.c         **** 
+ 261:i2c.c         **** #if I2C_DELAY_ACCURATE <= 0
+ 262:i2c.c         **** #error " I2C CLOCK TOO HIGH "
+ 263:i2c.c         **** 
+ 264:i2c.c         **** #elif I2C_DELAY_ACCURATE <= 255
+ 265:i2c.c         **** 
+ 266:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_1
+ 267:i2c.c         **** #define TIMER_DIVISION_FACTOR     1
+ 268:i2c.c         **** 
+ 269:i2c.c         **** #elif I2C_DELAY_ACCURATE > 255
+ 270:i2c.c         **** 
+ 271:i2c.c         **** #if   TIMER_DIV_BY_8 > 0 && (I2C_DELAY_ACCURATE/8) < 255
+ 272:i2c.c         **** 
+ 273:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_8
+ 274:i2c.c         **** #define TIMER_DIVISION_FACTOR     8
+ 275:i2c.c         **** 
+ 276:i2c.c         **** #elif TIMER_DIV_BY_32 > 0 && (I2C_DELAY_ACCURATE/32) < 255
+ 277:i2c.c         **** 
+ 278:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_32
+ 279:i2c.c         **** #define TIMER_DIVISION_FACTOR     32
+ 280:i2c.c         **** 
+ 281:i2c.c         **** #elif TIMER_DIV_BY_64 > 0 && (I2C_DELAY_ACCURATE/64) < 255
+ 282:i2c.c         **** 
+ 283:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_64
+ 284:i2c.c         **** #define TIMER_DIVISION_FACTOR     64
+ 285:i2c.c         **** 
+ 286:i2c.c         **** #elif TIMER_DIV_BY_128 > 0 && (I2C_DELAY_ACCURATE/128) < 255
+ 287:i2c.c         **** 
+ 288:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_128
+ 289:i2c.c         **** #define TIMER_DIVISION_FACTOR     128
+ 290:i2c.c         **** 
+ 291:i2c.c         **** #elif TIMER_DIV_BY_256 > 0 && (I2C_DELAY_ACCURATE/256) < 255
+ 292:i2c.c         **** 
+ 293:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_256
+ 294:i2c.c         **** #define TIMER_DIVISION_FACTOR     256
+ 295:i2c.c         **** 
+ 296:i2c.c         **** #elif TIMER_DIV_BY_1024 > 0 && (I2C_DELAY_ACCURATE/1024) < 255
+ 297:i2c.c         **** 
+ 298:i2c.c         **** #define I2C_TIMER_PRESCALER_BITS  TIMER_DIV_BY_1024
+ 299:i2c.c         **** #define TIMER_DIVISION_FACTOR     1024
+ 300:i2c.c         **** 
+ 301:i2c.c         **** #endif  /* #if   TIMER_DIV_BY_8 > 0 && (I2C_DELAY_ACCURATE/8) < 255 */
+ 302:i2c.c         **** #endif  /* #elif I2C_DELAY_ACCURATE > 255 */
+ 303:i2c.c         **** 
+ 304:i2c.c         **** #define I2C_DELAY  ( I2C_DELAY_ACCURATE/TIMER_DIVISION_FACTOR )
+ 305:i2c.c         **** #define DELAY()    { I2C_TCNT = 0; while(I2C_TCNT < I2C_DELAY); }  
+ 306:i2c.c         **** 
+ 307:i2c.c         ****  
+GAS LISTING /tmp/ccJZdU2W.s 			page 9
+
+
+ 308:i2c.c         **** 
+ 309:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+ 310:i2c.c         **** #elif I2C_WILL_USE_A_TIMER == 0 /* #if   I2C_WILL_USE_A_TIMER == 1 */
+ 311:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+ 312:i2c.c         **** 
+ 313:i2c.c         **** #define I2C_LEVEL_CHANGE_OVERHEAD    1 /* The cyccles needed to change the level of a I2C pin. */
+ 314:i2c.c         **** 
+ 315:i2c.c         **** #define I2C_CLOCK_CYCLES_ACCURATE    ( ((1000000000/I2C_CLOCK)/(1000000000/(F_CPU*10)))/2 )
+ 316:i2c.c         **** #define I2C_CLOCK_CYCLES_REAL        ( ((1000000000/I2C_CLOCK)/(1000000000/F_CPU))/2 )
+ 317:i2c.c         **** 
+ 318:i2c.c         **** 
+ 319:i2c.c         **** #if  I2C_CLOCK_CYCLES_ACCURATE - (I2C_CLOCK_CYCLES_REAL*10) >= 5
+ 320:i2c.c         **** #define I2C_CLOCK_CYCLES             ((I2C_CLOCK_CYCLES_REAL+1)-I2C_LEVEL_CHANGE_OVERHEAD)
+ 321:i2c.c         **** #else
+ 322:i2c.c         **** #define I2C_CLOCK_CYCLES             (I2C_CLOCK_CYCLES_REAL-I2C_LEVEL_CHANGE_OVERHEAD)
+ 323:i2c.c         **** #endif
+ 324:i2c.c         **** 
+ 325:i2c.c         **** 
+ 326:i2c.c         **** #if  I2C_CLOCK_CYCLES <= 0
+ 327:i2c.c         **** #warning " I2C CLOCK TOO HIGH "
+ 328:i2c.c         **** #define DELAY()                       { }
+ 329:i2c.c         **** 
+ 330:i2c.c         **** #elif  I2C_CLOCK_CYCLES == 1
+ 331:i2c.c         **** #define DELAY()                      __asm__ volatile("nop")
+ 332:i2c.c         **** 
+ 333:i2c.c         **** #elif I2C_CLOCK_CYCLES == 2
+ 334:i2c.c         **** #define DELAY()                      { __asm__ volatile("nop"); __asm__ volatile("nop"); }
+ 335:i2c.c         **** 
+ 336:i2c.c         **** #elif I2C_CLOCK_CYCLES == 3
+ 337:i2c.c         **** #define DELAY()                      { __asm__ volatile("nop"); __asm__ volatile("nop"); \
+ 338:i2c.c         ****                                        __asm__ volatile("nop");                          \
+ 339:i2c.c         ****                                      }
+ 340:i2c.c         **** 
+ 341:i2c.c         **** #elif I2C_CLOCK_CYCLES == 4
+ 342:i2c.c         **** #define DELAY()                      { __asm__ volatile("nop"); __asm__ volatile("nop"); \
+ 343:i2c.c         ****                                        __asm__ volatile("nop"); __asm__ volatile("nop"); \
+ 344:i2c.c         ****                                      }
+ 345:i2c.c         **** 
+ 346:i2c.c         **** #elif  I2C_CLOCK_CYCLES >= 5 && I2C_CLOCK_CYCLES <= (240*3)
+ 347:i2c.c         **** 
+ 348:i2c.c         ****  
+ 349:i2c.c         **** 
+ 350:i2c.c         **** #define I2C_DELAY_LOOPS              ( I2C_CLOCK_CYCLES/3)
+ 351:i2c.c         **** #define I2C_DELAY_REMAINDER          ( I2C_CLOCK_CYCLES - (I2C_DELAY_LOOPS*3) )
+ 352:i2c.c         **** 
+ 353:i2c.c         **** #if   I2C_DELAY_REMAINDER <= 0
+ 354:i2c.c         **** #define DELAY()                      delay_c(I2C_DELAY_LOOPS)   
+ 355:i2c.c         **** #elif I2C_DELAY_REMAINDER == 1
+ 356:i2c.c         **** #define DELAY()                     { delay_c(I2C_DELAY_LOOPS); __asm__ volatile("nop"); }  
+ 357:i2c.c         **** #elif I2C_DELAY_REMAINDER == 2
+ 358:i2c.c         **** #define DELAY()                     { delay_c(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 359:i2c.c         ****                                       __asm__ volatile("nop");                                    \
+ 360:i2c.c         ****                                     }    
+ 361:i2c.c         **** #endif
+ 362:i2c.c         **** 
+ 363:i2c.c         **** #elif I2C_CLOCK_CYCLES > (240*3)  
+ 364:i2c.c         **** 
+GAS LISTING /tmp/ccJZdU2W.s 			page 10
+
+
+ 365:i2c.c         **** #define I2C_DELAY_LOOPS              ( (I2C_CLOCK_CYCLES-3)/6 )
+ 366:i2c.c         **** #define I2C_DELAY_REMAINDER          ( I2C_CLOCK_CYCLES - (I2C_DELAY_LOOPS*6) )
+ 367:i2c.c         **** 
+ 368:i2c.c         **** #if   I2C_DELAY_REMAINDER <= 0
+ 369:i2c.c         **** #define DELAY()                      DELAY_L_ACCURATE(I2C_DELAY_LOOPS)   
+ 370:i2c.c         **** #elif I2C_DELAY_REMAINDER == 1
+ 371:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); }
+ 372:i2c.c         **** #elif I2C_DELAY_REMAINDER == 2
+ 373:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 374:i2c.c         ****                                       __asm__ volatile("nop");                                    \
+ 375:i2c.c         ****                                     } 
+ 376:i2c.c         **** #elif I2C_DELAY_REMAINDER == 3
+ 377:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 378:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 379:i2c.c         ****                                     }  
+ 380:i2c.c         **** #elif I2C_DELAY_REMAINDER == 4
+ 381:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 382:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 383:i2c.c         ****                                       __asm__ volatile("nop");                                    \
+ 384:i2c.c         ****                                     }    
+ 385:i2c.c         **** 
+ 386:i2c.c         **** #elif I2C_DELAY_REMAINDER == 5
+ 387:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 388:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 389:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 390:i2c.c         ****                                       __asm__ volatile("nop");                                    \
+ 391:i2c.c         ****                                     }
+ 392:i2c.c         **** #elif I2C_DELAY_REMAINDER == 6
+ 393:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 394:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 395:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 396:i2c.c         ****                                       __asm__ volatile("nop");  __asm__ volatile("nop");          \
+ 397:i2c.c         ****                                     }
+ 398:i2c.c         **** #elif I2C_DELAY_REMAINDER == 7
+ 399:i2c.c         **** #define DELAY()                     { DELAY_L_ACCURATE(I2C_DELAY_LOOPS); __asm__ volatile("nop"); \
+ 400:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 401:i2c.c         ****                                       __asm__ volatile("nop"); __asm__ volatile("nop");           \
+ 402:i2c.c         ****                                       __asm__ volatile("nop");  __asm__ volatile("nop");          \
+ 403:i2c.c         ****                                       __asm__ volatile("nop");                                    \
+ 404:i2c.c         ****                                     }                
+ 405:i2c.c         ****    
+ 406:i2c.c         **** #endif  /* #elif I2C_CLOCK_CYCLES >= (255*3) */
+ 407:i2c.c         **** 
+ 408:i2c.c         **** 
+ 409:i2c.c         **** 
+ 410:i2c.c         **** #endif  /* I2C_CLOCK_CYCLES <= 0 */
+ 411:i2c.c         **** 
+ 412:i2c.c         **** 
+ 413:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+ 414:i2c.c         **** #endif  /* #elif I2C_WILL_USE_A_TIMER == 0 */
+ 415:i2c.c         **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+ 416:i2c.c         **** 
+ 417:i2c.c         **** /* Pin states */
+ 418:i2c.c         **** 
+ 419:i2c.c         **** #define SCL_1() 	  I2C_SCL_DDR_REG &= (~(1<<SCL_PIN))
+ 420:i2c.c         **** #define SCL_0() 	  I2C_SCL_DDR_REG |= (1<<SCL_PIN)
+ 421:i2c.c         **** #define SDA_1() 	  I2C_SDA_DDR_REG &= (~(1<<SDA_PIN))
+GAS LISTING /tmp/ccJZdU2W.s 			page 11
+
+
+ 422:i2c.c         **** #define SDA_0() 	  I2C_SDA_DDR_REG |= (1<<SDA_PIN)
+ 423:i2c.c         **** 
+ 424:i2c.c         **** #define RELEASE_I2C_BUS() { asm("cli"); SDA_1(); SCL_1(); asm("sei"); }
+ 425:i2c.c         **** #define TOGGLE_SCL()      { SCL_1(); DELAY(); SCL_0(); DELAY(); }  
+ 426:i2c.c         **** 
+ 427:i2c.c         **** 
+ 428:i2c.c         **** /* Global variables */
+ 429:i2c.c         **** static unsigned char i2c_error=0; 
+ 430:i2c.c         **** 
+ 431:i2c.c         **** 
+ 432:i2c.c         **** static inline void delay_c(uint8_t __count) __attribute__((always_inline));
+ 433:i2c.c         **** 
+ 434:i2c.c         **** void  delay_c(uint8_t __count)
+ 435:i2c.c         **** {
+ 436:i2c.c         **** 	__asm__ volatile (
+ 437:i2c.c         **** 		"1: dec %0" "\n\t"
+ 438:i2c.c         **** 		"brne 1b"
+ 439:i2c.c         **** 		: "=r" (__count)
+ 440:i2c.c         **** 		: "0" (__count)
+ 441:i2c.c         **** 	);
+ 442:i2c.c         **** }
+ 443:i2c.c         **** 
+ 444:i2c.c         **** 
+ 445:i2c.c         **** unsigned char i2c_get_error(void)
+ 446:i2c.c         **** {
+ 150               		.stabn	68,0,446,.LM0-.LFBB1
+ 151               	.LM0:
+ 152               	.LFBB1:
+ 153               	/* prologue: function */
+ 154               	/* frame size = 0 */
+ 155               	/* stack size = 0 */
+ 156               	.L__stack_usage = 0
+ 447:i2c.c         **** 
+ 448:i2c.c         **** return(i2c_error);
+ 449:i2c.c         **** }
+ 157               		.stabn	68,0,449,.LM1-.LFBB1
+ 158               	.LM1:
+ 159 0000 8091 0000 		lds r24,i2c_error	 ; , i2c_error
+ 160 0004 0895      		ret
+ 161               		.size	i2c_get_error, .-i2c_get_error
+ 162               	.Lscope1:
+ 163               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 164               		.stabd	78,0,0
+ 165               		.stabs	"i2c_start:F(0,47)",36,0,452,i2c_start
+ 166               	.global	i2c_start
+ 167               		.type	i2c_start, @function
+ 168               	i2c_start:
+ 169               		.stabd	46,0,0
+ 450:i2c.c         **** 
+ 451:i2c.c         **** 
+ 452:i2c.c         **** void i2c_start(void)
+ 453:i2c.c         **** {
+ 170               		.stabn	68,0,453,.LM2-.LFBB2
+ 171               	.LM2:
+ 172               	.LFBB2:
+ 173               	/* prologue: function */
+ 174               	/* frame size = 0 */
+GAS LISTING /tmp/ccJZdU2W.s 			page 12
+
+
+ 175               	/* stack size = 0 */
+ 176               	.L__stack_usage = 0
+ 454:i2c.c         **** unsigned int timeout = 0;
+ 455:i2c.c         **** 
+ 456:i2c.c         **** //I2C_SCL_OUT_REG = (1<<SCL_PIN);
+ 457:i2c.c         **** //I2C_SDA_OUT_REG = (1<<SDA_PIN);
+ 458:i2c.c         **** 
+ 459:i2c.c         **** #if I2C_WILL_USE_A_TIMER == 1
+ 460:i2c.c         ****         I2C_TCCR = I2C_TIMER_PRESCALER_BITS;
+ 461:i2c.c         **** #endif	
+ 462:i2c.c         **** 
+ 463:i2c.c         ****         RELEASE_I2C_BUS();
+ 177               		.stabn	68,0,463,.LM3-.LFBB2
+ 178               	.LM3:
+ 179               	/* #APP */
+ 180               	 ;  463 "i2c.c" 1
+ 181 0006 F894      		cli
+ 182               	 ;  0 "" 2
+ 183               	/* #NOAPP */
+ 184 0008 3C98      		cbi 0x7,4	 ; ,
+ 185 000a 3D98      		cbi 0x7,5	 ; ,
+ 186               	/* #APP */
+ 187               	 ;  463 "i2c.c" 1
+ 188 000c 7894      		sei
+ 189               	 ;  0 "" 2
+ 464:i2c.c         **** 	I2C_SDA_DDR_REG &= (~(1<<SDA_PIN));
+ 190               		.stabn	68,0,464,.LM4-.LFBB2
+ 191               	.LM4:
+ 192               	/* #NOAPP */
+ 193 000e 3C98      		cbi 0x7,4	 ; ,
+ 465:i2c.c         ****         I2C_SCL_DDR_REG &= (~(1<<SCL_PIN));
+ 194               		.stabn	68,0,465,.LM5-.LFBB2
+ 195               	.LM5:
+ 196 0010 3D98      		cbi 0x7,5	 ; ,
+ 466:i2c.c         ****         while( bit_is_clear(I2C_SCL_PIN_REG,SCL_PIN) || bit_is_clear(I2C_SDA_PIN_REG,SDA_PIN) )
+ 197               		.stabn	68,0,466,.LM6-.LFBB2
+ 198               	.LM6:
+ 199 0012 85E6      		ldi r24,lo8(101)	 ;  D.1725,
+ 200 0014 90E0      		ldi r25,0	 ;  D.1725
+ 201               	.LBB50:
+ 202               	.LBB51:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 203               		.stabn	68,0,436,.LM7-.LFBB2
+ 204               	.LM7:
+ 205 0016 36E0      		ldi r19,lo8(6)	 ;  tmp88,
+ 206               	.L3:
+ 207               	.LBE51:
+ 208               	.LBE50:
+ 209               		.stabn	68,0,466,.LM8-.LFBB2
+ 210               	.LM8:
+ 211 0018 3599      		sbic 0x6,5	 ; ,
+ 212 001a 00C0      		rjmp .L14	 ; 
+ 213               	.L5:
+ 214               	.LBB53:
+ 215               	.LBB52:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 216               		.stabn	68,0,436,.LM9-.LFBB2
+GAS LISTING /tmp/ccJZdU2W.s 			page 13
+
+
+ 217               	.LM9:
+ 218 001c 232F      		mov r18,r19	 ;  __count, tmp88
+ 219               	/* #APP */
+ 220               	 ;  436 "i2c.c" 1
+ 221 001e 2A95      		1: dec r18	 ;  __count
+ 222 0020 01F4      		brne 1b
+ 223               	 ;  0 "" 2
+ 224               	/* #NOAPP */
+ 225               	.LBE52:
+ 226               	.LBE53:
+ 467:i2c.c         ****             {
+ 468:i2c.c         ****                	DELAY();
+ 227               		.stabn	68,0,468,.LM10-.LFBB2
+ 228               	.LM10:
+ 229               	/* #APP */
+ 230               	 ;  468 "i2c.c" 1
+ 231 0022 0000      		nop
+ 232               	 ;  0 "" 2
+ 233               	 ;  468 "i2c.c" 1
+ 234 0024 0000      		nop
+ 235               	 ;  0 "" 2
+ 236               	/* #NOAPP */
+ 237 0026 0197      		sbiw r24,1	 ;  D.1725,
+ 469:i2c.c         ****                 timeout++;
+ 470:i2c.c         ****                 if(timeout > I2C_TIMEOUT ) { timeout=0; i2c_error=2; return; }
+ 238               		.stabn	68,0,470,.LM11-.LFBB2
+ 239               	.LM11:
+ 240 0028 01F4      		brne .L3	 ; ,
+ 241               		.stabn	68,0,470,.LM12-.LFBB2
+ 242               	.LM12:
+ 243 002a 82E0      		ldi r24,lo8(2)	 ;  tmp73,
+ 244 002c 8093 0000 		sts i2c_error,r24	 ;  i2c_error, tmp73
+ 245 0030 0895      		ret
+ 246               	.L14:
+ 466:i2c.c         ****             {
+ 247               		.stabn	68,0,466,.LM13-.LFBB2
+ 248               	.LM13:
+ 249 0032 349B      		sbis 0x6,4	 ; ,
+ 250 0034 00C0      		rjmp .L5	 ; 
+ 251               	.LBB54:
+ 252               	.LBB55:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 253               		.stabn	68,0,436,.LM14-.LFBB2
+ 254               	.LM14:
+ 255 0036 86E0      		ldi r24,lo8(6)	 ;  tmp79,
+ 256 0038 982F      		mov r25,r24	 ;  __count, tmp79
+ 257               	/* #APP */
+ 258               	 ;  436 "i2c.c" 1
+ 259 003a 9A95      		1: dec r25	 ;  __count
+ 260 003c 01F4      		brne 1b
+ 261               	 ;  0 "" 2
+ 262               	/* #NOAPP */
+ 263               	.LBE55:
+ 264               	.LBE54:
+ 471:i2c.c         ****              }	
+ 472:i2c.c         ****         DELAY();  
+ 265               		.stabn	68,0,472,.LM15-.LFBB2
+GAS LISTING /tmp/ccJZdU2W.s 			page 14
+
+
+ 266               	.LM15:
+ 267               	/* #APP */
+ 268               	 ;  472 "i2c.c" 1
+ 269 003e 0000      		nop
+ 270               	 ;  0 "" 2
+ 271               	 ;  472 "i2c.c" 1
+ 272 0040 0000      		nop
+ 273               	 ;  0 "" 2
+ 473:i2c.c         **** 	SDA_0();
+ 274               		.stabn	68,0,473,.LM16-.LFBB2
+ 275               	.LM16:
+ 276               	/* #NOAPP */
+ 277 0042 3C9A      		sbi 0x7,4	 ; ,
+ 278               	.LBB56:
+ 279               	.LBB57:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 280               		.stabn	68,0,436,.LM17-.LFBB2
+ 281               	.LM17:
+ 282 0044 982F      		mov r25,r24	 ;  __count, tmp79
+ 283               	/* #APP */
+ 284               	 ;  436 "i2c.c" 1
+ 285 0046 9A95      		1: dec r25	 ;  __count
+ 286 0048 01F4      		brne 1b
+ 287               	 ;  0 "" 2
+ 288               	/* #NOAPP */
+ 289               	.LBE57:
+ 290               	.LBE56:
+ 474:i2c.c         **** 	DELAY();
+ 291               		.stabn	68,0,474,.LM18-.LFBB2
+ 292               	.LM18:
+ 293               	/* #APP */
+ 294               	 ;  474 "i2c.c" 1
+ 295 004a 0000      		nop
+ 296               	 ;  0 "" 2
+ 297               	 ;  474 "i2c.c" 1
+ 298 004c 0000      		nop
+ 299               	 ;  0 "" 2
+ 475:i2c.c         **** 	SCL_0();
+ 300               		.stabn	68,0,475,.LM19-.LFBB2
+ 301               	.LM19:
+ 302               	/* #NOAPP */
+ 303 004e 3D9A      		sbi 0x7,5	 ; ,
+ 304               	.LBB58:
+ 305               	.LBB59:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 306               		.stabn	68,0,436,.LM20-.LFBB2
+ 307               	.LM20:
+ 308               	/* #APP */
+ 309               	 ;  436 "i2c.c" 1
+ 310 0050 8A95      		1: dec r24	 ;  __count
+ 311 0052 01F4      		brne 1b
+ 312               	 ;  0 "" 2
+ 313               	/* #NOAPP */
+ 314               	.LBE59:
+ 315               	.LBE58:
+ 476:i2c.c         ****         DELAY();
+ 316               		.stabn	68,0,476,.LM21-.LFBB2
+GAS LISTING /tmp/ccJZdU2W.s 			page 15
+
+
+ 317               	.LM21:
+ 318               	/* #APP */
+ 319               	 ;  476 "i2c.c" 1
+ 320 0054 0000      		nop
+ 321               	 ;  0 "" 2
+ 322               	 ;  476 "i2c.c" 1
+ 323 0056 0000      		nop
+ 324               	 ;  0 "" 2
+ 325               	/* #NOAPP */
+ 326 0058 0895      		ret
+ 327               		.size	i2c_start, .-i2c_start
+ 328               	.Lscope2:
+ 329               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 330               		.stabd	78,0,0
+ 331               		.stabs	"i2c_stop:F(0,47)",36,0,482,i2c_stop
+ 332               	.global	i2c_stop
+ 333               		.type	i2c_stop, @function
+ 334               	i2c_stop:
+ 335               		.stabd	46,0,0
+ 477:i2c.c         **** 
+ 478:i2c.c         **** return;
+ 479:i2c.c         **** }
+ 480:i2c.c         **** /*#################################################################################################
+ 481:i2c.c         **** 
+ 482:i2c.c         **** void i2c_stop(void)
+ 483:i2c.c         **** {
+ 336               		.stabn	68,0,483,.LM22-.LFBB3
+ 337               	.LM22:
+ 338               	.LFBB3:
+ 339               	/* prologue: function */
+ 340               	/* frame size = 0 */
+ 341               	/* stack size = 0 */
+ 342               	.L__stack_usage = 0
+ 484:i2c.c         **** unsigned int timeout = 0;
+ 485:i2c.c         **** 
+ 486:i2c.c         **** #if I2C_WILL_USE_A_TIMER == 1
+ 487:i2c.c         ****         I2C_TCCR = I2C_TIMER_PRESCALER_BITS;
+ 488:i2c.c         **** #endif	
+ 489:i2c.c         **** 
+ 490:i2c.c         ****         SCL_0();
+ 343               		.stabn	68,0,490,.LM23-.LFBB3
+ 344               	.LM23:
+ 345 005a 3D9A      		sbi 0x7,5	 ; ,
+ 491:i2c.c         **** 	SDA_0();
+ 346               		.stabn	68,0,491,.LM24-.LFBB3
+ 347               	.LM24:
+ 348 005c 3C9A      		sbi 0x7,4	 ; ,
+ 349               	.LBB60:
+ 350               	.LBB61:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 351               		.stabn	68,0,436,.LM25-.LFBB3
+ 352               	.LM25:
+ 353 005e 86E0      		ldi r24,lo8(6)	 ;  tmp65,
+ 354 0060 982F      		mov r25,r24	 ;  __count, tmp65
+ 355               	/* #APP */
+ 356               	 ;  436 "i2c.c" 1
+ 357 0062 9A95      		1: dec r25	 ;  __count
+GAS LISTING /tmp/ccJZdU2W.s 			page 16
+
+
+ 358 0064 01F4      		brne 1b
+ 359               	 ;  0 "" 2
+ 360               	/* #NOAPP */
+ 361               	.LBE61:
+ 362               	.LBE60:
+ 492:i2c.c         ****   	DELAY();
+ 363               		.stabn	68,0,492,.LM26-.LFBB3
+ 364               	.LM26:
+ 365               	/* #APP */
+ 366               	 ;  492 "i2c.c" 1
+ 367 0066 0000      		nop
+ 368               	 ;  0 "" 2
+ 369               	 ;  492 "i2c.c" 1
+ 370 0068 0000      		nop
+ 371               	 ;  0 "" 2
+ 493:i2c.c         **** 	SCL_1();
+ 372               		.stabn	68,0,493,.LM27-.LFBB3
+ 373               	.LM27:
+ 374               	/* #NOAPP */
+ 375 006a 3D98      		cbi 0x7,5	 ; ,
+ 376               	.LBB62:
+ 377               	.LBB63:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 378               		.stabn	68,0,436,.LM28-.LFBB3
+ 379               	.LM28:
+ 380 006c 982F      		mov r25,r24	 ;  __count, tmp65
+ 381               	/* #APP */
+ 382               	 ;  436 "i2c.c" 1
+ 383 006e 9A95      		1: dec r25	 ;  __count
+ 384 0070 01F4      		brne 1b
+ 385               	 ;  0 "" 2
+ 386               	/* #NOAPP */
+ 387               	.LBE63:
+ 388               	.LBE62:
+ 494:i2c.c         **** 	DELAY();
+ 389               		.stabn	68,0,494,.LM29-.LFBB3
+ 390               	.LM29:
+ 391               	/* #APP */
+ 392               	 ;  494 "i2c.c" 1
+ 393 0072 0000      		nop
+ 394               	 ;  0 "" 2
+ 395               	 ;  494 "i2c.c" 1
+ 396 0074 0000      		nop
+ 397               	 ;  0 "" 2
+ 495:i2c.c         ****         SDA_1();
+ 398               		.stabn	68,0,495,.LM30-.LFBB3
+ 399               	.LM30:
+ 400               	/* #NOAPP */
+ 401 0076 3C98      		cbi 0x7,4	 ; ,
+ 402               	.LBB64:
+ 403               	.LBB65:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 404               		.stabn	68,0,436,.LM31-.LFBB3
+ 405               	.LM31:
+ 406               	/* #APP */
+ 407               	 ;  436 "i2c.c" 1
+ 408 0078 8A95      		1: dec r24	 ;  __count
+GAS LISTING /tmp/ccJZdU2W.s 			page 17
+
+
+ 409 007a 01F4      		brne 1b
+ 410               	 ;  0 "" 2
+ 411               	/* #NOAPP */
+ 412               	.LBE65:
+ 413               	.LBE64:
+ 496:i2c.c         ****         DELAY();
+ 414               		.stabn	68,0,496,.LM32-.LFBB3
+ 415               	.LM32:
+ 416               	/* #APP */
+ 417               	 ;  496 "i2c.c" 1
+ 418 007c 0000      		nop
+ 419               	 ;  0 "" 2
+ 420               	 ;  496 "i2c.c" 1
+ 421 007e 0000      		nop
+ 422               	 ;  0 "" 2
+ 484:i2c.c         **** 
+ 423               		.stabn	68,0,484,.LM33-.LFBB3
+ 424               	.LM33:
+ 425               	/* #NOAPP */
+ 426 0080 80E0      		ldi r24,0	 ;  timeout
+ 427 0082 90E0      		ldi r25,0	 ;  timeout
+ 428               	.LBB66:
+ 429               	.LBB67:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 430               		.stabn	68,0,436,.LM34-.LFBB3
+ 431               	.LM34:
+ 432 0084 26E0      		ldi r18,lo8(6)	 ;  tmp83,
+ 433               	.LBE67:
+ 434               	.LBE66:
+ 497:i2c.c         ****         while( bit_is_clear(I2C_SCL_PIN_REG,SCL_PIN) || bit_is_clear(I2C_SDA_PIN_REG,SDA_PIN) )
+ 498:i2c.c         ****             {
+ 499:i2c.c         ****                	DELAY();
+ 500:i2c.c         ****               	DELAY();
+ 501:i2c.c         ****                 timeout++;
+ 502:i2c.c         ****                 if(timeout > I2C_TIMEOUT ) { i2c_error=1; }
+ 435               		.stabn	68,0,502,.LM35-.LFBB3
+ 436               	.LM35:
+ 437 0086 41E0      		ldi r20,lo8(1)	 ;  tmp84,
+ 438               	.L16:
+ 497:i2c.c         ****         while( bit_is_clear(I2C_SCL_PIN_REG,SCL_PIN) || bit_is_clear(I2C_SDA_PIN_REG,SDA_PIN) )
+ 439               		.stabn	68,0,497,.LM36-.LFBB3
+ 440               	.LM36:
+ 441 0088 3599      		sbic 0x6,5	 ; ,
+ 442 008a 00C0      		rjmp .L25	 ; 
+ 443               	.L18:
+ 444               	.LBB69:
+ 445               	.LBB68:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 446               		.stabn	68,0,436,.LM37-.LFBB3
+ 447               	.LM37:
+ 448 008c 322F      		mov r19,r18	 ;  __count, tmp83
+ 449               	/* #APP */
+ 450               	 ;  436 "i2c.c" 1
+ 451 008e 3A95      		1: dec r19	 ;  __count
+ 452 0090 01F4      		brne 1b
+ 453               	 ;  0 "" 2
+ 454               	/* #NOAPP */
+GAS LISTING /tmp/ccJZdU2W.s 			page 18
+
+
+ 455               	.LBE68:
+ 456               	.LBE69:
+ 499:i2c.c         ****               	DELAY();
+ 457               		.stabn	68,0,499,.LM38-.LFBB3
+ 458               	.LM38:
+ 459               	/* #APP */
+ 460               	 ;  499 "i2c.c" 1
+ 461 0092 0000      		nop
+ 462               	 ;  0 "" 2
+ 463               	 ;  499 "i2c.c" 1
+ 464 0094 0000      		nop
+ 465               	 ;  0 "" 2
+ 466               	/* #NOAPP */
+ 467               	.LBB70:
+ 468               	.LBB71:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 469               		.stabn	68,0,436,.LM39-.LFBB3
+ 470               	.LM39:
+ 471 0096 322F      		mov r19,r18	 ;  __count, tmp83
+ 472               	/* #APP */
+ 473               	 ;  436 "i2c.c" 1
+ 474 0098 3A95      		1: dec r19	 ;  __count
+ 475 009a 01F4      		brne 1b
+ 476               	 ;  0 "" 2
+ 477               	/* #NOAPP */
+ 478               	.LBE71:
+ 479               	.LBE70:
+ 500:i2c.c         ****                 timeout++;
+ 480               		.stabn	68,0,500,.LM40-.LFBB3
+ 481               	.LM40:
+ 482               	/* #APP */
+ 483               	 ;  500 "i2c.c" 1
+ 484 009c 0000      		nop
+ 485               	 ;  0 "" 2
+ 486               	 ;  500 "i2c.c" 1
+ 487 009e 0000      		nop
+ 488               	 ;  0 "" 2
+ 501:i2c.c         ****                 if(timeout > I2C_TIMEOUT ) { i2c_error=1; }
+ 489               		.stabn	68,0,501,.LM41-.LFBB3
+ 490               	.LM41:
+ 491               	/* #NOAPP */
+ 492 00a0 0196      		adiw r24,1	 ;  timeout,
+ 493               		.stabn	68,0,502,.LM42-.LFBB3
+ 494               	.LM42:
+ 495 00a2 8536      		cpi r24,101	 ;  timeout,
+ 496 00a4 9105      		cpc r25,__zero_reg__	 ;  timeout
+ 497 00a6 00F0      		brlo .L16	 ; ,
+ 498               		.stabn	68,0,502,.LM43-.LFBB3
+ 499               	.LM43:
+ 500 00a8 4093 0000 		sts i2c_error,r20	 ;  i2c_error, tmp84
+ 501 00ac 00C0      		rjmp .L16	 ; 
+ 502               	.L25:
+ 497:i2c.c         ****             {
+ 503               		.stabn	68,0,497,.LM44-.LFBB3
+ 504               	.LM44:
+ 505 00ae 349B      		sbis 0x6,4	 ; ,
+ 506 00b0 00C0      		rjmp .L18	 ; 
+GAS LISTING /tmp/ccJZdU2W.s 			page 19
+
+
+ 507               	/* epilogue start */
+ 503:i2c.c         ****              }	
+ 504:i2c.c         **** 
+ 505:i2c.c         **** 
+ 506:i2c.c         **** return;
+ 507:i2c.c         **** }
+ 508               		.stabn	68,0,507,.LM45-.LFBB3
+ 509               	.LM45:
+ 510 00b2 0895      		ret
+ 511               		.size	i2c_stop, .-i2c_stop
+ 512               		.stabs	"timeout:r(0,4)",64,0,484,24
+ 513               		.stabn	192,0,0,.LFBB3-.LFBB3
+ 514               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 515               	.Lscope3:
+ 516               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 517               		.stabd	78,0,0
+ 518               		.stabs	"i2c_put_byte:F(0,47)",36,0,510,i2c_put_byte
+ 519               		.stabs	"data:P(0,11)",64,0,510,24
+ 520               	.global	i2c_put_byte
+ 521               		.type	i2c_put_byte, @function
+ 522               	i2c_put_byte:
+ 523               		.stabd	46,0,0
+ 508:i2c.c         **** /*#################################################################################################
+ 509:i2c.c         **** 
+ 510:i2c.c         **** void i2c_put_byte(unsigned char data)
+ 511:i2c.c         **** {
+ 524               		.stabn	68,0,511,.LM46-.LFBB4
+ 525               	.LM46:
+ 526               	.LFBB4:
+ 527               	/* prologue: function */
+ 528               	/* frame size = 0 */
+ 529               	/* stack size = 0 */
+ 530               	.L__stack_usage = 0
+ 531               		.stabn	68,0,511,.LM47-.LFBB4
+ 532               	.LM47:
+ 533 00b4 98E0      		ldi r25,lo8(8)	 ;  D.1754,
+ 534               	.LBB72:
+ 535               	.LBB73:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 536               		.stabn	68,0,436,.LM48-.LFBB4
+ 537               	.LM48:
+ 538 00b6 36E0      		ldi r19,lo8(6)	 ;  tmp103,
+ 539               	.L29:
+ 540               	.LBE73:
+ 541               	.LBE72:
+ 512:i2c.c         **** unsigned char bit=0;
+ 513:i2c.c         **** unsigned int timeout = 0;
+ 514:i2c.c         **** 
+ 515:i2c.c         **** 
+ 516:i2c.c         **** #if I2C_WILL_USE_A_TIMER == 1
+ 517:i2c.c         ****         I2C_TCCR = I2C_TIMER_PRESCALER_BITS;
+ 518:i2c.c         **** #endif	
+ 519:i2c.c         **** 
+ 520:i2c.c         **** 
+ 521:i2c.c         **** 	for(bit=0; bit<=7; bit++)
+ 522:i2c.c         **** 	  {
+ 523:i2c.c         **** 	      if( data & 0x80 ) { SDA_1(); } else { SDA_0(); }
+GAS LISTING /tmp/ccJZdU2W.s 			page 20
+
+
+ 542               		.stabn	68,0,523,.LM49-.LFBB4
+ 543               	.LM49:
+ 544 00b8 87FF      		sbrs r24,7	 ;  data,
+ 545 00ba 00C0      		rjmp .L27	 ; 
+ 546               		.stabn	68,0,523,.LM50-.LFBB4
+ 547               	.LM50:
+ 548 00bc 3C98      		cbi 0x7,4	 ; ,
+ 549 00be 00C0      		rjmp .L28	 ; 
+ 550               	.L27:
+ 551               		.stabn	68,0,523,.LM51-.LFBB4
+ 552               	.LM51:
+ 553 00c0 3C9A      		sbi 0x7,4	 ; ,
+ 554               	.L28:
+ 524:i2c.c         ****               TOGGLE_SCL();
+ 555               		.stabn	68,0,524,.LM52-.LFBB4
+ 556               	.LM52:
+ 557 00c2 3D98      		cbi 0x7,5	 ; ,
+ 558               	.LBB75:
+ 559               	.LBB74:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 560               		.stabn	68,0,436,.LM53-.LFBB4
+ 561               	.LM53:
+ 562 00c4 232F      		mov r18,r19	 ;  __count, tmp103
+ 563               	/* #APP */
+ 564               	 ;  436 "i2c.c" 1
+ 565 00c6 2A95      		1: dec r18	 ;  __count
+ 566 00c8 01F4      		brne 1b
+ 567               	 ;  0 "" 2
+ 568               	/* #NOAPP */
+ 569               	.LBE74:
+ 570               	.LBE75:
+ 571               		.stabn	68,0,524,.LM54-.LFBB4
+ 572               	.LM54:
+ 573               	/* #APP */
+ 574               	 ;  524 "i2c.c" 1
+ 575 00ca 0000      		nop
+ 576               	 ;  0 "" 2
+ 577               	 ;  524 "i2c.c" 1
+ 578 00cc 0000      		nop
+ 579               	 ;  0 "" 2
+ 580               	/* #NOAPP */
+ 581 00ce 3D9A      		sbi 0x7,5	 ; ,
+ 582               	.LBB76:
+ 583               	.LBB77:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 584               		.stabn	68,0,436,.LM55-.LFBB4
+ 585               	.LM55:
+ 586 00d0 232F      		mov r18,r19	 ;  __count, tmp103
+ 587               	/* #APP */
+ 588               	 ;  436 "i2c.c" 1
+ 589 00d2 2A95      		1: dec r18	 ;  __count
+ 590 00d4 01F4      		brne 1b
+ 591               	 ;  0 "" 2
+ 592               	/* #NOAPP */
+ 593               	.LBE77:
+ 594               	.LBE76:
+ 595               		.stabn	68,0,524,.LM56-.LFBB4
+GAS LISTING /tmp/ccJZdU2W.s 			page 21
+
+
+ 596               	.LM56:
+ 597               	/* #APP */
+ 598               	 ;  524 "i2c.c" 1
+ 599 00d6 0000      		nop
+ 600               	 ;  0 "" 2
+ 601               	 ;  524 "i2c.c" 1
+ 602 00d8 0000      		nop
+ 603               	 ;  0 "" 2
+ 525:i2c.c         **** 	      data = (data<<1);
+ 604               		.stabn	68,0,525,.LM57-.LFBB4
+ 605               	.LM57:
+ 606               	/* #NOAPP */
+ 607 00da 880F      		lsl r24	 ;  data
+ 608 00dc 9150      		subi r25,lo8(-(-1))	 ;  D.1754,
+ 521:i2c.c         **** 	  {
+ 609               		.stabn	68,0,521,.LM58-.LFBB4
+ 610               	.LM58:
+ 611 00de 01F4      		brne .L29	 ; ,
+ 526:i2c.c         **** 	  }
+ 527:i2c.c         **** 
+ 528:i2c.c         ****         /* Now set SDA to high and wait for the aknowledge. */  
+ 529:i2c.c         ****         SDA_1();
+ 612               		.stabn	68,0,529,.LM59-.LFBB4
+ 613               	.LM59:
+ 614 00e0 3C98      		cbi 0x7,4	 ; ,
+ 615               	.LBB78:
+ 616               	.LBB79:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 617               		.stabn	68,0,436,.LM60-.LFBB4
+ 618               	.LM60:
+ 619 00e2 86E0      		ldi r24,lo8(6)	 ;  __count,
+ 620               	/* #APP */
+ 621               	 ;  436 "i2c.c" 1
+ 622 00e4 8A95      		1: dec r24	 ;  __count
+ 623 00e6 01F4      		brne 1b
+ 624               	 ;  0 "" 2
+ 625               	/* #NOAPP */
+ 626               	.LBE79:
+ 627               	.LBE78:
+ 530:i2c.c         ****         DELAY();
+ 628               		.stabn	68,0,530,.LM61-.LFBB4
+ 629               	.LM61:
+ 630               	/* #APP */
+ 631               	 ;  530 "i2c.c" 1
+ 632 00e8 0000      		nop
+ 633               	 ;  0 "" 2
+ 634               	 ;  530 "i2c.c" 1
+ 635 00ea 0000      		nop
+ 636               	 ;  0 "" 2
+ 531:i2c.c         ****  
+ 532:i2c.c         ****        /* Wait for the SDA line to go low (Ack) with a timeout. */
+ 533:i2c.c         ****         while( bit_is_set(I2C_SDA_PIN_REG, SDA_PIN) )
+ 637               		.stabn	68,0,533,.LM62-.LFBB4
+ 638               	.LM62:
+ 639               	/* #NOAPP */
+ 640 00ec 85E6      		ldi r24,lo8(101)	 ;  D.1755,
+ 641 00ee 90E0      		ldi r25,0	 ;  D.1755
+GAS LISTING /tmp/ccJZdU2W.s 			page 22
+
+
+ 642               	.LBB80:
+ 643               	.LBB81:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 644               		.stabn	68,0,436,.LM63-.LFBB4
+ 645               	.LM63:
+ 646 00f0 26E0      		ldi r18,lo8(6)	 ;  tmp102,
+ 647               	.L30:
+ 648               	.LBE81:
+ 649               	.LBE80:
+ 650               		.stabn	68,0,533,.LM64-.LFBB4
+ 651               	.LM64:
+ 652 00f2 349B      		sbis 0x6,4	 ; ,
+ 653 00f4 00C0      		rjmp .L35	 ; 
+ 654               	.LBB83:
+ 655               	.LBB82:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 656               		.stabn	68,0,436,.LM65-.LFBB4
+ 657               	.LM65:
+ 658 00f6 322F      		mov r19,r18	 ;  __count, tmp102
+ 659               	/* #APP */
+ 660               	 ;  436 "i2c.c" 1
+ 661 00f8 3A95      		1: dec r19	 ;  __count
+ 662 00fa 01F4      		brne 1b
+ 663               	 ;  0 "" 2
+ 664               	/* #NOAPP */
+ 665               	.LBE82:
+ 666               	.LBE83:
+ 534:i2c.c         ****             {    
+ 535:i2c.c         ****                DELAY();
+ 667               		.stabn	68,0,535,.LM66-.LFBB4
+ 668               	.LM66:
+ 669               	/* #APP */
+ 670               	 ;  535 "i2c.c" 1
+ 671 00fc 0000      		nop
+ 672               	 ;  0 "" 2
+ 673               	 ;  535 "i2c.c" 1
+ 674 00fe 0000      		nop
+ 675               	 ;  0 "" 2
+ 676               	/* #NOAPP */
+ 677               	.LBB84:
+ 678               	.LBB85:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 679               		.stabn	68,0,436,.LM67-.LFBB4
+ 680               	.LM67:
+ 681 0100 322F      		mov r19,r18	 ;  __count, tmp102
+ 682               	/* #APP */
+ 683               	 ;  436 "i2c.c" 1
+ 684 0102 3A95      		1: dec r19	 ;  __count
+ 685 0104 01F4      		brne 1b
+ 686               	 ;  0 "" 2
+ 687               	/* #NOAPP */
+ 688               	.LBE85:
+ 689               	.LBE84:
+ 536:i2c.c         ****                DELAY();
+ 690               		.stabn	68,0,536,.LM68-.LFBB4
+ 691               	.LM68:
+ 692               	/* #APP */
+GAS LISTING /tmp/ccJZdU2W.s 			page 23
+
+
+ 693               	 ;  536 "i2c.c" 1
+ 694 0106 0000      		nop
+ 695               	 ;  0 "" 2
+ 696               	 ;  536 "i2c.c" 1
+ 697 0108 0000      		nop
+ 698               	 ;  0 "" 2
+ 699               	/* #NOAPP */
+ 700 010a 0197      		sbiw r24,1	 ;  D.1755,
+ 537:i2c.c         ****                timeout++;
+ 538:i2c.c         ****                if( timeout > I2C_TIMEOUT ) { timeout=0; i2c_error=1; return; }
+ 701               		.stabn	68,0,538,.LM69-.LFBB4
+ 702               	.LM69:
+ 703 010c 01F4      		brne .L30	 ; ,
+ 704               		.stabn	68,0,538,.LM70-.LFBB4
+ 705               	.LM70:
+ 706 010e 81E0      		ldi r24,lo8(1)	 ;  tmp91,
+ 707 0110 8093 0000 		sts i2c_error,r24	 ;  i2c_error, tmp91
+ 708 0114 0895      		ret
+ 709               	.L35:
+ 539:i2c.c         ****             }   
+ 540:i2c.c         ****         
+ 541:i2c.c         ****         /* GIVE A CLOCK PULSE TO STATE THAT AKNOWLEDGE HAS BEEN RECEIVED */
+ 542:i2c.c         ****         TOGGLE_SCL();
+ 710               		.stabn	68,0,542,.LM71-.LFBB4
+ 711               	.LM71:
+ 712 0116 3D98      		cbi 0x7,5	 ; ,
+ 713               	.LBB86:
+ 714               	.LBB87:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 715               		.stabn	68,0,436,.LM72-.LFBB4
+ 716               	.LM72:
+ 717 0118 86E0      		ldi r24,lo8(6)	 ;  tmp97,
+ 718 011a 982F      		mov r25,r24	 ;  __count, tmp97
+ 719               	/* #APP */
+ 720               	 ;  436 "i2c.c" 1
+ 721 011c 9A95      		1: dec r25	 ;  __count
+ 722 011e 01F4      		brne 1b
+ 723               	 ;  0 "" 2
+ 724               	/* #NOAPP */
+ 725               	.LBE87:
+ 726               	.LBE86:
+ 727               		.stabn	68,0,542,.LM73-.LFBB4
+ 728               	.LM73:
+ 729               	/* #APP */
+ 730               	 ;  542 "i2c.c" 1
+ 731 0120 0000      		nop
+ 732               	 ;  0 "" 2
+ 733               	 ;  542 "i2c.c" 1
+ 734 0122 0000      		nop
+ 735               	 ;  0 "" 2
+ 736               	/* #NOAPP */
+ 737 0124 3D9A      		sbi 0x7,5	 ; ,
+ 738               	.LBB88:
+ 739               	.LBB89:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 740               		.stabn	68,0,436,.LM74-.LFBB4
+ 741               	.LM74:
+GAS LISTING /tmp/ccJZdU2W.s 			page 24
+
+
+ 742               	/* #APP */
+ 743               	 ;  436 "i2c.c" 1
+ 744 0126 8A95      		1: dec r24	 ;  __count
+ 745 0128 01F4      		brne 1b
+ 746               	 ;  0 "" 2
+ 747               	/* #NOAPP */
+ 748               	.LBE89:
+ 749               	.LBE88:
+ 750               		.stabn	68,0,542,.LM75-.LFBB4
+ 751               	.LM75:
+ 752               	/* #APP */
+ 753               	 ;  542 "i2c.c" 1
+ 754 012a 0000      		nop
+ 755               	 ;  0 "" 2
+ 756               	 ;  542 "i2c.c" 1
+ 757 012c 0000      		nop
+ 758               	 ;  0 "" 2
+ 759               	/* #NOAPP */
+ 760 012e 0895      		ret
+ 761               		.size	i2c_put_byte, .-i2c_put_byte
+ 762               	.Lscope4:
+ 763               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 764               		.stabd	78,0,0
+ 765               		.stabs	"i2c_get_byte:F(0,11)",36,0,550,i2c_get_byte
+ 766               		.stabs	"ack:P(0,11)",64,0,550,24
+ 767               	.global	i2c_get_byte
+ 768               		.type	i2c_get_byte, @function
+ 769               	i2c_get_byte:
+ 770               		.stabd	46,0,0
+ 543:i2c.c         **** 
+ 544:i2c.c         **** 
+ 545:i2c.c         **** return;
+ 546:i2c.c         **** 
+ 547:i2c.c         **** }
+ 548:i2c.c         **** /*#################################################################################################
+ 549:i2c.c         **** 
+ 550:i2c.c         **** unsigned char i2c_get_byte(unsigned char ack)
+ 551:i2c.c         **** {
+ 771               		.stabn	68,0,551,.LM76-.LFBB5
+ 772               	.LM76:
+ 773               	.LFBB5:
+ 774               	/* prologue: function */
+ 775               	/* frame size = 0 */
+ 776               	/* stack size = 0 */
+ 777               	.L__stack_usage = 0
+ 552:i2c.c         **** 
+ 553:i2c.c         **** register unsigned char bit=0, data=0;
+ 554:i2c.c         **** unsigned int timeout = 0;
+ 555:i2c.c         **** 
+ 556:i2c.c         **** #if I2C_WILL_USE_A_TIMER == 1
+ 557:i2c.c         ****         I2C_TCCR = I2C_TIMER_PRESCALER_BITS;
+ 558:i2c.c         **** #endif	
+ 559:i2c.c         **** 
+ 560:i2c.c         **** 
+ 561:i2c.c         **** 	RELEASE_I2C_BUS();
+ 778               		.stabn	68,0,561,.LM77-.LFBB5
+ 779               	.LM77:
+GAS LISTING /tmp/ccJZdU2W.s 			page 25
+
+
+ 780               	/* #APP */
+ 781               	 ;  561 "i2c.c" 1
+ 782 0130 F894      		cli
+ 783               	 ;  0 "" 2
+ 784               	/* #NOAPP */
+ 785 0132 3C98      		cbi 0x7,4	 ; ,
+ 786 0134 3D98      		cbi 0x7,5	 ; ,
+ 787               	/* #APP */
+ 788               	 ;  561 "i2c.c" 1
+ 789 0136 7894      		sei
+ 790               	 ;  0 "" 2
+ 791               	/* #NOAPP */
+ 792               	.LBB90:
+ 793               	.LBB91:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 794               		.stabn	68,0,436,.LM78-.LFBB5
+ 795               	.LM78:
+ 796 0138 96E0      		ldi r25,lo8(6)	 ;  __count,
+ 797               	/* #APP */
+ 798               	 ;  436 "i2c.c" 1
+ 799 013a 9A95      		1: dec r25	 ;  __count
+ 800 013c 01F4      		brne 1b
+ 801               	 ;  0 "" 2
+ 802               	/* #NOAPP */
+ 803               	.LBE91:
+ 804               	.LBE90:
+ 562:i2c.c         ****         DELAY();
+ 805               		.stabn	68,0,562,.LM79-.LFBB5
+ 806               	.LM79:
+ 807               	/* #APP */
+ 808               	 ;  562 "i2c.c" 1
+ 809 013e 0000      		nop
+ 810               	 ;  0 "" 2
+ 811               	 ;  562 "i2c.c" 1
+ 812 0140 0000      		nop
+ 813               	 ;  0 "" 2
+ 563:i2c.c         ****         while( bit_is_clear(I2C_SCL_PIN_REG, SCL_PIN) )
+ 814               		.stabn	68,0,563,.LM80-.LFBB5
+ 815               	.LM80:
+ 816               	/* #NOAPP */
+ 817 0142 25E6      		ldi r18,lo8(101)	 ;  D.1778,
+ 818 0144 30E0      		ldi r19,0	 ;  D.1778
+ 819               	.LBB92:
+ 820               	.LBB93:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 821               		.stabn	68,0,436,.LM81-.LFBB5
+ 822               	.LM81:
+ 823 0146 56E0      		ldi r21,lo8(6)	 ;  tmp115,
+ 824               	.L37:
+ 825               	.LBE93:
+ 826               	.LBE92:
+ 827               		.stabn	68,0,563,.LM82-.LFBB5
+ 828               	.LM82:
+ 829 0148 46B1      		in r20,0x6	 ;  D.1777, MEM[(volatile uint8_t *)38B]
+ 830 014a 942F      		mov r25,r20	 ;  D.1777, D.1777
+ 831 014c 9072      		andi r25,lo8(32)	 ;  D.1777,
+ 832 014e 45FD      		sbrc r20,5	 ;  D.1777,
+GAS LISTING /tmp/ccJZdU2W.s 			page 26
+
+
+ 833 0150 00C0      		rjmp .L49	 ; 
+ 834               	.LBB95:
+ 835               	.LBB94:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 836               		.stabn	68,0,436,.LM83-.LFBB5
+ 837               	.LM83:
+ 838 0152 452F      		mov r20,r21	 ;  __count, tmp115
+ 839               	/* #APP */
+ 840               	 ;  436 "i2c.c" 1
+ 841 0154 4A95      		1: dec r20	 ;  __count
+ 842 0156 01F4      		brne 1b
+ 843               	 ;  0 "" 2
+ 844               	/* #NOAPP */
+ 845               	.LBE94:
+ 846               	.LBE95:
+ 564:i2c.c         ****             {    
+ 565:i2c.c         ****                DELAY();
+ 847               		.stabn	68,0,565,.LM84-.LFBB5
+ 848               	.LM84:
+ 849               	/* #APP */
+ 850               	 ;  565 "i2c.c" 1
+ 851 0158 0000      		nop
+ 852               	 ;  0 "" 2
+ 853               	 ;  565 "i2c.c" 1
+ 854 015a 0000      		nop
+ 855               	 ;  0 "" 2
+ 856               	/* #NOAPP */
+ 857               	.LBB96:
+ 858               	.LBB97:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 859               		.stabn	68,0,436,.LM85-.LFBB5
+ 860               	.LM85:
+ 861 015c 452F      		mov r20,r21	 ;  __count, tmp115
+ 862               	/* #APP */
+ 863               	 ;  436 "i2c.c" 1
+ 864 015e 4A95      		1: dec r20	 ;  __count
+ 865 0160 01F4      		brne 1b
+ 866               	 ;  0 "" 2
+ 867               	/* #NOAPP */
+ 868               	.LBE97:
+ 869               	.LBE96:
+ 566:i2c.c         ****                DELAY();
+ 870               		.stabn	68,0,566,.LM86-.LFBB5
+ 871               	.LM86:
+ 872               	/* #APP */
+ 873               	 ;  566 "i2c.c" 1
+ 874 0162 0000      		nop
+ 875               	 ;  0 "" 2
+ 876               	 ;  566 "i2c.c" 1
+ 877 0164 0000      		nop
+ 878               	 ;  0 "" 2
+ 879               	/* #NOAPP */
+ 880 0166 2150      		subi r18,1	 ;  D.1778,
+ 881 0168 3109      		sbc r19,__zero_reg__	 ;  D.1778
+ 567:i2c.c         ****                timeout++;
+ 568:i2c.c         ****                if( timeout > I2C_TIMEOUT ) { timeout=0; i2c_error=1; return(0);  }
+ 882               		.stabn	68,0,568,.LM87-.LFBB5
+GAS LISTING /tmp/ccJZdU2W.s 			page 27
+
+
+ 883               	.LM87:
+ 884 016a 01F4      		brne .L37	 ; ,
+ 885               		.stabn	68,0,568,.LM88-.LFBB5
+ 886               	.LM88:
+ 887 016c 81E0      		ldi r24,lo8(1)	 ;  tmp87,
+ 888 016e 8093 0000 		sts i2c_error,r24	 ;  i2c_error, tmp87
+ 889 0172 00C0      		rjmp .L38	 ; 
+ 890               	.L49:
+ 891 0174 28E0      		ldi r18,lo8(8)	 ;  D.1777,
+ 892 0176 90E0      		ldi r25,0	 ;  data
+ 893               	.LBB98:
+ 894               	.LBB99:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 895               		.stabn	68,0,436,.LM89-.LFBB5
+ 896               	.LM89:
+ 897 0178 46E0      		ldi r20,lo8(6)	 ;  tmp114,
+ 898               	.L41:
+ 899               	.LBE99:
+ 900               	.LBE98:
+ 569:i2c.c         ****             }   
+ 570:i2c.c         **** 
+ 571:i2c.c         **** 	for(bit=0; bit<=7; bit++)
+ 572:i2c.c         **** 	  {
+ 573:i2c.c         **** 	      SCL_1();
+ 901               		.stabn	68,0,573,.LM90-.LFBB5
+ 902               	.LM90:
+ 903 017a 3D98      		cbi 0x7,5	 ; ,
+ 904               	.LBB101:
+ 905               	.LBB100:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 906               		.stabn	68,0,436,.LM91-.LFBB5
+ 907               	.LM91:
+ 908 017c 342F      		mov r19,r20	 ;  __count, tmp114
+ 909               	/* #APP */
+ 910               	 ;  436 "i2c.c" 1
+ 911 017e 3A95      		1: dec r19	 ;  __count
+ 912 0180 01F4      		brne 1b
+ 913               	 ;  0 "" 2
+ 914               	/* #NOAPP */
+ 915               	.LBE100:
+ 916               	.LBE101:
+ 574:i2c.c         **** 	      DELAY();
+ 917               		.stabn	68,0,574,.LM92-.LFBB5
+ 918               	.LM92:
+ 919               	/* #APP */
+ 920               	 ;  574 "i2c.c" 1
+ 921 0182 0000      		nop
+ 922               	 ;  0 "" 2
+ 923               	 ;  574 "i2c.c" 1
+ 924 0184 0000      		nop
+ 925               	 ;  0 "" 2
+ 575:i2c.c         **** 	      data = (data<<1);
+ 926               		.stabn	68,0,575,.LM93-.LFBB5
+ 927               	.LM93:
+ 928               	/* #NOAPP */
+ 929 0186 990F      		lsl r25	 ;  data
+ 576:i2c.c         **** 	      if( bit_is_set(I2C_SDA_PIN_REG, SDA_PIN) ) { data++; }
+GAS LISTING /tmp/ccJZdU2W.s 			page 28
+
+
+ 930               		.stabn	68,0,576,.LM94-.LFBB5
+ 931               	.LM94:
+ 932 0188 3499      		sbic 0x6,4	 ; ,
+ 933               		.stabn	68,0,576,.LM95-.LFBB5
+ 934               	.LM95:
+ 935 018a 9F5F      		subi r25,lo8(-(1))	 ;  data,
+ 936               	.L40:
+ 577:i2c.c         **** 	      SCL_0();
+ 937               		.stabn	68,0,577,.LM96-.LFBB5
+ 938               	.LM96:
+ 939 018c 3D9A      		sbi 0x7,5	 ; ,
+ 940               	.LBB102:
+ 941               	.LBB103:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 942               		.stabn	68,0,436,.LM97-.LFBB5
+ 943               	.LM97:
+ 944 018e 342F      		mov r19,r20	 ;  __count, tmp114
+ 945               	/* #APP */
+ 946               	 ;  436 "i2c.c" 1
+ 947 0190 3A95      		1: dec r19	 ;  __count
+ 948 0192 01F4      		brne 1b
+ 949               	 ;  0 "" 2
+ 950               	/* #NOAPP */
+ 951               	.LBE103:
+ 952               	.LBE102:
+ 578:i2c.c         **** 	      DELAY();
+ 953               		.stabn	68,0,578,.LM98-.LFBB5
+ 954               	.LM98:
+ 955               	/* #APP */
+ 956               	 ;  578 "i2c.c" 1
+ 957 0194 0000      		nop
+ 958               	 ;  0 "" 2
+ 959               	 ;  578 "i2c.c" 1
+ 960 0196 0000      		nop
+ 961               	 ;  0 "" 2
+ 962               	/* #NOAPP */
+ 963 0198 2150      		subi r18,lo8(-(-1))	 ;  D.1777,
+ 571:i2c.c         **** 	  {
+ 964               		.stabn	68,0,571,.LM99-.LFBB5
+ 965               	.LM99:
+ 966 019a 01F4      		brne .L41	 ; ,
+ 579:i2c.c         **** 	  }
+ 580:i2c.c         **** 
+ 581:i2c.c         ****         /* if CONTINUE then send AKNOWLEDGE else if QUIT do not send AKNOWLEDGE (send Nack) */	 
+ 582:i2c.c         **** 	if(ack==I2C_CONTINUE) { SDA_0(); } else{ SDA_1(); } 
+ 967               		.stabn	68,0,582,.LM100-.LFBB5
+ 968               	.LM100:
+ 969 019c 8130      		cpi r24,lo8(1)	 ;  ack,
+ 970 019e 01F4      		brne .L42	 ; ,
+ 971               		.stabn	68,0,582,.LM101-.LFBB5
+ 972               	.LM101:
+ 973 01a0 3C9A      		sbi 0x7,4	 ; ,
+ 974 01a2 00C0      		rjmp .L43	 ; 
+ 975               	.L42:
+ 976               		.stabn	68,0,582,.LM102-.LFBB5
+ 977               	.LM102:
+ 978 01a4 3C98      		cbi 0x7,4	 ; ,
+GAS LISTING /tmp/ccJZdU2W.s 			page 29
+
+
+ 979               	.L43:
+ 980               	.LBB104:
+ 981               	.LBB105:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 982               		.stabn	68,0,436,.LM103-.LFBB5
+ 983               	.LM103:
+ 984 01a6 86E0      		ldi r24,lo8(6)	 ;  tmp104,
+ 985 01a8 282F      		mov r18,r24	 ;  __count, tmp104
+ 986               	/* #APP */
+ 987               	 ;  436 "i2c.c" 1
+ 988 01aa 2A95      		1: dec r18	 ;  __count
+ 989 01ac 01F4      		brne 1b
+ 990               	 ;  0 "" 2
+ 991               	/* #NOAPP */
+ 992               	.LBE105:
+ 993               	.LBE104:
+ 583:i2c.c         ****         DELAY();
+ 994               		.stabn	68,0,583,.LM104-.LFBB5
+ 995               	.LM104:
+ 996               	/* #APP */
+ 997               	 ;  583 "i2c.c" 1
+ 998 01ae 0000      		nop
+ 999               	 ;  0 "" 2
+ 1000               	 ;  583 "i2c.c" 1
+ 1001 01b0 0000      		nop
+ 1002               	 ;  0 "" 2
+ 584:i2c.c         ****         TOGGLE_SCL();
+ 1003               		.stabn	68,0,584,.LM105-.LFBB5
+ 1004               	.LM105:
+ 1005               	/* #NOAPP */
+ 1006 01b2 3D98      		cbi 0x7,5	 ; ,
+ 1007               	.LBB106:
+ 1008               	.LBB107:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 1009               		.stabn	68,0,436,.LM106-.LFBB5
+ 1010               	.LM106:
+ 1011 01b4 282F      		mov r18,r24	 ;  __count, tmp104
+ 1012               	/* #APP */
+ 1013               	 ;  436 "i2c.c" 1
+ 1014 01b6 2A95      		1: dec r18	 ;  __count
+ 1015 01b8 01F4      		brne 1b
+ 1016               	 ;  0 "" 2
+ 1017               	/* #NOAPP */
+ 1018               	.LBE107:
+ 1019               	.LBE106:
+ 1020               		.stabn	68,0,584,.LM107-.LFBB5
+ 1021               	.LM107:
+ 1022               	/* #APP */
+ 1023               	 ;  584 "i2c.c" 1
+ 1024 01ba 0000      		nop
+ 1025               	 ;  0 "" 2
+ 1026               	 ;  584 "i2c.c" 1
+ 1027 01bc 0000      		nop
+ 1028               	 ;  0 "" 2
+ 1029               	/* #NOAPP */
+ 1030 01be 3D9A      		sbi 0x7,5	 ; ,
+ 1031               	.LBB108:
+GAS LISTING /tmp/ccJZdU2W.s 			page 30
+
+
+ 1032               	.LBB109:
+ 436:i2c.c         **** 		"1: dec %0" "\n\t"
+ 1033               		.stabn	68,0,436,.LM108-.LFBB5
+ 1034               	.LM108:
+ 1035               	/* #APP */
+ 1036               	 ;  436 "i2c.c" 1
+ 1037 01c0 8A95      		1: dec r24	 ;  __count
+ 1038 01c2 01F4      		brne 1b
+ 1039               	 ;  0 "" 2
+ 1040               	/* #NOAPP */
+ 1041               	.LBE109:
+ 1042               	.LBE108:
+ 1043               		.stabn	68,0,584,.LM109-.LFBB5
+ 1044               	.LM109:
+ 1045               	/* #APP */
+ 1046               	 ;  584 "i2c.c" 1
+ 1047 01c4 0000      		nop
+ 1048               	 ;  0 "" 2
+ 1049               	 ;  584 "i2c.c" 1
+ 1050 01c6 0000      		nop
+ 1051               	 ;  0 "" 2
+ 1052               	/* #NOAPP */
+ 1053               	.L38:
+ 585:i2c.c         ****         
+ 586:i2c.c         **** 
+ 587:i2c.c         **** return(data);
+ 588:i2c.c         **** }
+ 1054               		.stabn	68,0,588,.LM110-.LFBB5
+ 1055               	.LM110:
+ 1056 01c8 892F      		mov r24,r25	 ; , D.1777
+ 1057 01ca 0895      		ret
+ 1058               		.size	i2c_get_byte, .-i2c_get_byte
+ 1059               		.stabs	"data:r(0,11)",64,0,553,25
+ 1060               		.stabn	192,0,0,.LFBB5-.LFBB5
+ 1061               		.stabn	224,0,0,.Lscope5-.LFBB5
+ 1062               	.Lscope5:
+ 1063               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 1064               		.stabd	78,0,0
+ 1065               		.local	i2c_error
+ 1066               		.comm	i2c_error,1,1
+ 1067               		.stabs	"i2c_error:S(0,11)",38,0,429,i2c_error
+ 1068               		.stabs	"",100,0,0,.Letext0
+ 1069               	.Letext0:
+ 1070               		.ident	"GCC: (GNU) 4.9.2"
+ 1071               	.global __do_clear_bss
+GAS LISTING /tmp/ccJZdU2W.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 i2c.c
+     /tmp/ccJZdU2W.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccJZdU2W.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccJZdU2W.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccJZdU2W.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccJZdU2W.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccJZdU2W.s:148    .text:0000000000000000 i2c_get_error
+                             .bss:0000000000000000 i2c_error
+     /tmp/ccJZdU2W.s:168    .text:0000000000000006 i2c_start
+     /tmp/ccJZdU2W.s:334    .text:000000000000005a i2c_stop
+     /tmp/ccJZdU2W.s:522    .text:00000000000000b4 i2c_put_byte
+     /tmp/ccJZdU2W.s:769    .text:0000000000000130 i2c_get_byte
+
+UNDEFINED SYMBOLS
+__do_clear_bss

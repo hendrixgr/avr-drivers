@@ -1,0 +1,620 @@
+GAS LISTING /tmp/ccQLo6GQ.s 			page 1
+
+
+   1               		.file	"test_lcd.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               	 ;  GNU C (GCC) version 4.9.2 (avr)
+   8               	 ; 	compiled by GNU C version 5.3.1 20151206, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.
+   9               	 ;  warning: MPFR header version 3.1.3 differs from library version 3.1.4.
+  10               	 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  11               	 ;  options passed:  -imultilib avr5 -D__AVR_ATmega328P__
+  12               	 ;  -D__AVR_DEVICE_NAME__=atmega328p -D F_CPU=16000000UL test_lcd.c
+  13               	 ;  -mn-flash=1 -mno-skip-bug -mmcu=avr5 -auxbase-strip test_lcd.o -g -Os
+  14               	 ;  -Wall -Wstrict-prototypes -fverbose-asm -funsigned-char
+  15               	 ;  -funsigned-bitfields -fpack-struct -fshort-enums
+  16               	 ;  options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
+  17               	 ;  -fbranch-count-reg -fcaller-saves -fcombine-stack-adjustments -fcommon
+  18               	 ;  -fcompare-elim -fcprop-registers -fcrossjumping -fcse-follow-jumps
+  19               	 ;  -fdefer-pop -fdevirtualize -fdevirtualize-speculatively
+  20               	 ;  -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  21               	 ;  -fexpensive-optimizations -fforward-propagate -ffunction-cse -fgcse
+  22               	 ;  -fgcse-lm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+  23               	 ;  -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+  24               	 ;  -findirect-inlining -finline -finline-atomics -finline-functions
+  25               	 ;  -finline-functions-called-once -finline-small-functions -fipa-cp
+  26               	 ;  -fipa-profile -fipa-pure-const -fipa-reference -fipa-sra
+  27               	 ;  -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+  28               	 ;  -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+  29               	 ;  -fleading-underscore -fmath-errno -fmerge-constants
+  30               	 ;  -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  31               	 ;  -foptimize-sibling-calls -fpack-struct -fpartial-inlining -fpeephole
+  32               	 ;  -fpeephole2 -fprefetch-loop-arrays -freg-struct-return -freorder-blocks
+  33               	 ;  -freorder-functions -frerun-cse-after-loop
+  34               	 ;  -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  35               	 ;  -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  36               	 ;  -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
+  37               	 ;  -fsched-stalled-insns-dep -fshow-column -fshrink-wrap -fsigned-zeros
+  38               	 ;  -fsplit-ivs-in-unroller -fsplit-wide-types -fstrict-aliasing
+  39               	 ;  -fstrict-overflow -fstrict-volatile-bitfields -fsync-libcalls
+  40               	 ;  -fthread-jumps -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp
+  41               	 ;  -ftree-builtin-call-dce -ftree-ccp -ftree-ch -ftree-coalesce-vars
+  42               	 ;  -ftree-copy-prop -ftree-copyrename -ftree-dce -ftree-dominator-opts
+  43               	 ;  -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
+  44               	 ;  -ftree-loop-im -ftree-loop-ivcanon -ftree-loop-optimize
+  45               	 ;  -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
+  46               	 ;  -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
+  47               	 ;  -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
+  48               	 ;  -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  49               	
+  50               		.stabs	"/home/hendrix/Desktop/ACTIVE_306_PROJECTS/general_drivers_project_54/lcd_io/",100,0,2,.Lte
+  51               		.stabs	"test_lcd.c",100,0,2,.Ltext0
+  52               		.text
+  53               	.Ltext0:
+  54               		.stabs	"gcc2_compiled.",60,0,0,0
+  55               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  56               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  57               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+GAS LISTING /tmp/ccQLo6GQ.s 			page 2
+
+
+  58               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  59               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  60               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  61               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  62               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  63               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  64               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  65               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  66               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  67               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  68               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  69               		.stabs	"short _Fract:t(0,15)=r(0,1);1;0;",128,0,0,0
+  70               		.stabs	"_Fract:t(0,16)=r(0,1);2;0;",128,0,0,0
+  71               		.stabs	"long _Fract:t(0,17)=r(0,1);4;0;",128,0,0,0
+  72               		.stabs	"long long _Fract:t(0,18)=r(0,1);8;0;",128,0,0,0
+  73               		.stabs	"unsigned short _Fract:t(0,19)=r(0,1);1;0;",128,0,0,0
+  74               		.stabs	"unsigned _Fract:t(0,20)=r(0,1);2;0;",128,0,0,0
+  75               		.stabs	"unsigned long _Fract:t(0,21)=r(0,1);4;0;",128,0,0,0
+  76               		.stabs	"unsigned long long _Fract:t(0,22)=r(0,1);8;0;",128,0,0,0
+  77               		.stabs	"_Sat short _Fract:t(0,23)=r(0,1);1;0;",128,0,0,0
+  78               		.stabs	"_Sat _Fract:t(0,24)=r(0,1);2;0;",128,0,0,0
+  79               		.stabs	"_Sat long _Fract:t(0,25)=r(0,1);4;0;",128,0,0,0
+  80               		.stabs	"_Sat long long _Fract:t(0,26)=r(0,1);8;0;",128,0,0,0
+  81               		.stabs	"_Sat unsigned short _Fract:t(0,27)=r(0,1);1;0;",128,0,0,0
+  82               		.stabs	"_Sat unsigned _Fract:t(0,28)=r(0,1);2;0;",128,0,0,0
+  83               		.stabs	"_Sat unsigned long _Fract:t(0,29)=r(0,1);4;0;",128,0,0,0
+  84               		.stabs	"_Sat unsigned long long _Fract:t(0,30)=r(0,1);8;0;",128,0,0,0
+  85               		.stabs	"short _Accum:t(0,31)=r(0,1);2;0;",128,0,0,0
+  86               		.stabs	"_Accum:t(0,32)=r(0,1);4;0;",128,0,0,0
+  87               		.stabs	"long _Accum:t(0,33)=r(0,1);8;0;",128,0,0,0
+  88               		.stabs	"long long _Accum:t(0,34)=r(0,1);8;0;",128,0,0,0
+  89               		.stabs	"unsigned short _Accum:t(0,35)=r(0,1);2;0;",128,0,0,0
+  90               		.stabs	"unsigned _Accum:t(0,36)=r(0,1);4;0;",128,0,0,0
+  91               		.stabs	"unsigned long _Accum:t(0,37)=r(0,1);8;0;",128,0,0,0
+  92               		.stabs	"unsigned long long _Accum:t(0,38)=r(0,1);8;0;",128,0,0,0
+  93               		.stabs	"_Sat short _Accum:t(0,39)=r(0,1);2;0;",128,0,0,0
+  94               		.stabs	"_Sat _Accum:t(0,40)=r(0,1);4;0;",128,0,0,0
+  95               		.stabs	"_Sat long _Accum:t(0,41)=r(0,1);8;0;",128,0,0,0
+  96               		.stabs	"_Sat long long _Accum:t(0,42)=r(0,1);8;0;",128,0,0,0
+  97               		.stabs	"_Sat unsigned short _Accum:t(0,43)=r(0,1);2;0;",128,0,0,0
+  98               		.stabs	"_Sat unsigned _Accum:t(0,44)=r(0,1);4;0;",128,0,0,0
+  99               		.stabs	"_Sat unsigned long _Accum:t(0,45)=r(0,1);8;0;",128,0,0,0
+ 100               		.stabs	"_Sat unsigned long long _Accum:t(0,46)=r(0,1);8;0;",128,0,0,0
+ 101               		.stabs	"void:t(0,47)=(0,47)",128,0,0,0
+ 102               		.stabs	"/usr/lib/avr/include/avr/io.h",130,0,0,0
+ 103               		.stabs	"/usr/lib/avr/include/avr/sfr_defs.h",130,0,0,0
+ 104               		.stabs	"/usr/lib/avr/include/inttypes.h",130,0,0,0
+ 105               		.stabs	"/usr/lib/gcc/avr/4.9.2/include/stdint.h",130,0,0,0
+ 106               		.stabs	"/usr/lib/avr/include/stdint.h",130,0,0,0
+ 107               		.stabs	"int8_t:t(5,1)=(0,10)",128,0,121,0
+ 108               		.stabs	"uint8_t:t(5,2)=(0,11)",128,0,122,0
+ 109               		.stabs	"int16_t:t(5,3)=(0,1)",128,0,123,0
+ 110               		.stabs	"uint16_t:t(5,4)=(0,4)",128,0,124,0
+ 111               		.stabs	"int32_t:t(5,5)=(0,3)",128,0,125,0
+ 112               		.stabs	"uint32_t:t(5,6)=(0,5)",128,0,126,0
+ 113               		.stabs	"int64_t:t(5,7)=(0,6)",128,0,128,0
+ 114               		.stabs	"uint64_t:t(5,8)=(0,7)",128,0,129,0
+GAS LISTING /tmp/ccQLo6GQ.s 			page 3
+
+
+ 115               		.stabs	"intptr_t:t(5,9)=(5,3)",128,0,142,0
+ 116               		.stabs	"uintptr_t:t(5,10)=(5,4)",128,0,147,0
+ 117               		.stabs	"int_least8_t:t(5,11)=(5,1)",128,0,159,0
+ 118               		.stabs	"uint_least8_t:t(5,12)=(5,2)",128,0,164,0
+ 119               		.stabs	"int_least16_t:t(5,13)=(5,3)",128,0,169,0
+ 120               		.stabs	"uint_least16_t:t(5,14)=(5,4)",128,0,174,0
+ 121               		.stabs	"int_least32_t:t(5,15)=(5,5)",128,0,179,0
+ 122               		.stabs	"uint_least32_t:t(5,16)=(5,6)",128,0,184,0
+ 123               		.stabs	"int_least64_t:t(5,17)=(5,7)",128,0,192,0
+ 124               		.stabs	"uint_least64_t:t(5,18)=(5,8)",128,0,199,0
+ 125               		.stabs	"int_fast8_t:t(5,19)=(5,1)",128,0,213,0
+ 126               		.stabs	"uint_fast8_t:t(5,20)=(5,2)",128,0,218,0
+ 127               		.stabs	"int_fast16_t:t(5,21)=(5,3)",128,0,223,0
+ 128               		.stabs	"uint_fast16_t:t(5,22)=(5,4)",128,0,228,0
+ 129               		.stabs	"int_fast32_t:t(5,23)=(5,5)",128,0,233,0
+ 130               		.stabs	"uint_fast32_t:t(5,24)=(5,6)",128,0,238,0
+ 131               		.stabs	"int_fast64_t:t(5,25)=(5,7)",128,0,246,0
+ 132               		.stabs	"uint_fast64_t:t(5,26)=(5,8)",128,0,253,0
+ 133               		.stabs	"intmax_t:t(5,27)=(5,7)",128,0,273,0
+ 134               		.stabs	"uintmax_t:t(5,28)=(5,8)",128,0,278,0
+ 135               		.stabn	162,0,0,0
+ 136               		.stabn	162,0,0,0
+ 137               		.stabs	"int_farptr_t:t(3,1)=(5,5)",128,0,77,0
+ 138               		.stabs	"uint_farptr_t:t(3,2)=(5,6)",128,0,81,0
+ 139               		.stabn	162,0,0,0
+ 140               		.stabn	162,0,0,0
+ 141               		.stabs	"/usr/lib/avr/include/avr/fuse.h",130,0,0,0
+ 142               		.stabs	"__fuse_t:t(6,1)=(6,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+ 143               		.stabn	162,0,0,0
+ 144               		.stabn	162,0,0,0
+ 145               		.stabs	"/usr/lib/avr/include/avr/eeprom.h",130,0,0,0
+ 146               		.stabs	"/usr/lib/gcc/avr/4.9.2/include/stddef.h",130,0,0,0
+ 147               		.stabs	"ptrdiff_t:t(8,1)=(0,1)",128,0,147,0
+ 148               		.stabs	"size_t:t(8,2)=(0,4)",128,0,212,0
+ 149               		.stabs	"wchar_t:t(8,3)=(0,1)",128,0,324,0
+ 150               		.stabn	162,0,0,0
+ 151               		.stabn	162,0,0,0
+ 152               		.stabs	"double_byte_union:T(0,48)=u2integer:(0,4),0,16;byte:(0,49)=ar(0,50)=r(0,50);0;0177777;;0;1
+ 153               		.section	.rodata.str1.1,"aMS",@progbits,1
+ 154               	.LC0:
+ 155 0000 444F 4E45 		.string	"DONE TESTING..."
+ 155      2054 4553 
+ 155      5449 4E47 
+ 155      2E2E 2E00 
+ 156               		.section	.text.startup,"ax",@progbits
+ 157               		.stabs	"main:F(0,47)",36,0,71,main
+ 158               	.global	main
+ 159               		.type	main, @function
+ 160               	main:
+ 161               		.stabd	46,0,0
+   1:test_lcd.c    **** /****************************************************************************
+   2:test_lcd.c    ****  Title  :   C Test program for the LCD FUNCTIONS library (test_lcd.c)
+   3:test_lcd.c    ****  Author:    Chris efstathiou hendrix@otenet.gr
+   4:test_lcd.c    ****  Date:      19/Jan/2003
+   5:test_lcd.c    ****  Software:  AVR-GCC with AVR-AS
+   6:test_lcd.c    ****  Target:    any AVR device
+   7:test_lcd.c    ****  Comments:  This software is FREE.
+GAS LISTING /tmp/ccQLo6GQ.s 			page 4
+
+
+   8:test_lcd.c    **** 
+   9:test_lcd.c    **** *****************************************************************************/
+  10:test_lcd.c    **** #include <avr/io.h>
+  11:test_lcd.c    **** #include <avr/eeprom.h>
+  12:test_lcd.c    **** #include <avr/pgmspace.h>
+  13:test_lcd.c    **** 
+  14:test_lcd.c    **** #include "lcd_hd44780_avr.h"
+  15:test_lcd.c    **** 
+  16:test_lcd.c    **** 
+  17:test_lcd.c    **** #ifndef DELAY_L_ACCURATE
+  18:test_lcd.c    **** /* 6 cpu cycles per loop + 3 overhead when a constant is passed. */
+  19:test_lcd.c    **** #define DELAY_L_ACCURATE(x)  ({ unsigned long number_of_loops=(unsigned long)x;   \
+  20:test_lcd.c    ****                                 __asm__ volatile ( "L_%=: \n\t"                   \
+  21:test_lcd.c    ****                                                    "subi %A0,lo8(-(-1)) \n\t"     \
+  22:test_lcd.c    ****                                                    "sbci %B0,hi8(-(-1)) \n\t"     \
+  23:test_lcd.c    ****                                                    "sbci %C0,hlo8(-(-1)) \n\t"    \
+  24:test_lcd.c    ****                                                    "sbci %D0,hhi8(-(-1)) \n\t"    \
+  25:test_lcd.c    ****                                                    "brne L_%= \n\t"               \
+  26:test_lcd.c    ****                                                    : /* NO OUTPUT */              \
+  27:test_lcd.c    ****                                                    : "w" (number_of_loops)        \
+  28:test_lcd.c    ****                                                  );                               \
+  29:test_lcd.c    ****                              })                                      
+  30:test_lcd.c    **** 
+  31:test_lcd.c    **** 
+  32:test_lcd.c    **** 
+  33:test_lcd.c    **** 
+  34:test_lcd.c    **** #define TIME_L1_MS      ( 1*(F_CPU/6000) )     /* 1 MILLISECOND  */
+  35:test_lcd.c    **** 
+  36:test_lcd.c    **** #define TIME_L100_US    ( 1*(F_CPU/60000) )    /* 100 MICROSECONDS  */
+  37:test_lcd.c    **** 
+  38:test_lcd.c    **** #define DELAY_MS(ms)    DELAY_L_ACCURATE( (TIME_L1_MS*(ms)) )
+  39:test_lcd.c    **** 
+  40:test_lcd.c    **** #define DELAY_L_US(us)  DELAY_L_ACCURATE( (TIME_L100_US*((us)/100))+1 )
+  41:test_lcd.c    **** 
+  42:test_lcd.c    **** #endif /* #ifndef DELAY_L_ACCURATE */
+  43:test_lcd.c    **** 
+  44:test_lcd.c    **** 
+  45:test_lcd.c    ****   /* USER DEFINED CHARS ARRAY's */
+  46:test_lcd.c    **** static const unsigned char user_char1[8]__attribute__((progmem)) = {0x0E,0x11,0x0E,0x04,0x1F,0x04,0
+  47:test_lcd.c    **** 
+  48:test_lcd.c    **** static const unsigned char user_char2[8]__attribute__((progmem)) = {0x11,0x0A,0x04,0x1F,0x04,0x0E,0
+  49:test_lcd.c    **** 
+  50:test_lcd.c    **** /*
+  51:test_lcd.c    **** You could also define a char array like this:
+  52:test_lcd.c    **** static const unsigned char user_chars[2][8]__attribute__((progmem))={
+  53:test_lcd.c    ****                                                                       {0x0E,0x11,0x0E,0x04,0x1F,0x0
+  54:test_lcd.c    ****                                                                       {0x11,0x0A,0x04,0x1F,0x04,0x0
+  55:test_lcd.c    ****                                                                     };
+  56:test_lcd.c    **** or                                                 
+  57:test_lcd.c    **** 
+  58:test_lcd.c    **** static const unsigned char user_chars[]__attribute__((progmem))={
+  59:test_lcd.c    ****                                                                   0x0E,0x11,0x0E,0x04,0x1F,0x04,0x0
+  60:test_lcd.c    ****                                                                   0x11,0x0A,0x04,0x1F,0x04,0x0E,0x1
+  61:test_lcd.c    ****                                                                 };
+  62:test_lcd.c    ****     
+  63:test_lcd.c    ****     and use the macro "lcd_fill_cgram(user_chars);"  instead of uploading each char separately.
+  64:test_lcd.c    ****     The array can have from 1 up to 8 used defined chars (max 64 bytes) but the macro will upload o
+GAS LISTING /tmp/ccQLo6GQ.s 			page 5
+
+
+  65:test_lcd.c    ****     as much as the array size so in the above example it will fill user defined char positions 0 an
+  66:test_lcd.c    ****     and will not overwrite user defined chars that might exist located at position 2 to 7.
+  67:test_lcd.c    ****     However it will always start uploading at position 0.
+  68:test_lcd.c    **** 
+  69:test_lcd.c    **** */
+  70:test_lcd.c    **** 
+  71:test_lcd.c    **** void main(void)
+  72:test_lcd.c    **** {
+ 162               		.stabn	68,0,72,.LM0-.LFBB1
+ 163               	.LM0:
+ 164               	.LFBB1:
+ 165 0000 1F93      		push r17	 ; 
+ 166 0002 CF93      		push r28	 ; 
+ 167 0004 DF93      		push r29	 ; 
+ 168 0006 CDB7      		in r28,__SP_L__	 ; 
+ 169 0008 DEB7      		in r29,__SP_H__	 ; 
+ 170 000a 6097      		sbiw r28,16	 ; ,
+ 171 000c 0FB6      		in __tmp_reg__,__SREG__
+ 172 000e F894      		cli
+ 173 0010 DEBF      		out __SP_H__,r29	 ; ,
+ 174 0012 0FBE      		out __SREG__,__tmp_reg__
+ 175 0014 CDBF      		out __SP_L__,r28	 ; ,
+ 176               	/* prologue: function */
+ 177               	/* frame size = 16 */
+ 178               	/* stack size = 19 */
+ 179               	.L__stack_usage = 19
+  73:test_lcd.c    **** 
+  74:test_lcd.c    **** /*
+  75:test_lcd.c    ****     Since we also test the eeprom DONT! forget to write the test_lcd.eep to AVR's eeprom 
+  76:test_lcd.c    ****     otherwise the lcd will not show the eeprom_string
+  77:test_lcd.c    **** */
+  78:test_lcd.c    **** unsigned char ram_string[]={"DONE TESTING..."};
+ 180               		.stabn	68,0,78,.LM1-.LFBB1
+ 181               	.LM1:
+ 182 0016 80E1      		ldi r24,lo8(16)	 ;  tmp47,
+ 183 0018 E0E0      		ldi r30,lo8(.LC0)	 ; ,
+ 184 001a F0E0      		ldi r31,hi8(.LC0)	 ; ,
+ 185 001c DE01      		movw r26,r28	 ; ,
+ 186 001e 1196      		adiw r26,1	 ; ,
+ 187               		0:
+ 188 0020 0190      		ld r0,Z+	 ; 
+ 189 0022 0D92      		st X+,r0	 ; 
+ 190 0024 8A95      		dec r24	 ;  tmp47
+ 191 0026 01F4      		brne 0b
+  79:test_lcd.c    **** 
+  80:test_lcd.c    **** static  unsigned char eeprom_string[]__attribute__((section(".eeprom")))={"lcd_puts_e testing"};
+  81:test_lcd.c    **** 
+  82:test_lcd.c    **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+  83:test_lcd.c    **** /*1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+  84:test_lcd.c    **** /* It may seems strange that i use a union but this approach saves a lot of code space */
+  85:test_lcd.c    **** union double_byte_union {
+  86:test_lcd.c    ****                            unsigned int  integer; 
+  87:test_lcd.c    ****                            unsigned char byte[2];
+  88:test_lcd.c    ****                          } word;
+  89:test_lcd.c    **** 
+  90:test_lcd.c    **** /* 
+  91:test_lcd.c    ****     MANUAL LCD INITIALIZATION IS NOT NEEDED ANYMORE. IT IS DONE AUTOMATICALLY! 
+GAS LISTING /tmp/ccQLo6GQ.s 			page 6
+
+
+  92:test_lcd.c    ****     lcd(s) is(are) automatically initialized and if more than 1, lcd unit 0 gets active.
+  93:test_lcd.c    ****     You can always call "lcd_init()" if you wish.
+  94:test_lcd.c    ****     An exception is when "LCD_ABSOLUTELY_MINIMUM == 1". Then a call to "lcd_init()" is needed.
+  95:test_lcd.c    ****  
+  96:test_lcd.c    **** */
+  97:test_lcd.c    **** 
+  98:test_lcd.c    **** /* 
+  99:test_lcd.c    ****    UPLOAD USER DEFINED CHARS TO LCD's CGRAM AND THEN RETURN TO THE PREVIUS DDRAM CURSOR POSITION
+ 100:test_lcd.c    ****    (It can be made anywhere as long you upload them before you use them)
+ 101:test_lcd.c    **** */
+ 102:test_lcd.c    **** 
+ 103:test_lcd.c    **** 
+ 104:test_lcd.c    ****    lcd_putc_cgram(user_char1,0);
+ 192               		.stabn	68,0,104,.LM2-.LFBB1
+ 193               	.LM2:
+ 194 0028 60E0      		ldi r22,0	 ; 
+ 195 002a 80E0      		ldi r24,lo8(user_char1)	 ; ,
+ 196 002c 90E0      		ldi r25,hi8(user_char1)	 ; ,
+ 197 002e 0E94 0000 		call lcd_putc_cgram	 ; 
+ 105:test_lcd.c    ****    lcd_putc_cgram(user_char2,1);
+ 198               		.stabn	68,0,105,.LM3-.LFBB1
+ 199               	.LM3:
+ 200 0032 61E0      		ldi r22,lo8(1)	 ; ,
+ 201 0034 80E0      		ldi r24,lo8(user_char2)	 ; ,
+ 202 0036 90E0      		ldi r25,hi8(user_char2)	 ; ,
+ 203 0038 0E94 0000 		call lcd_putc_cgram	 ; 
+ 106:test_lcd.c    **** 
+ 107:test_lcd.c    ****    lcd_gotoxy(0,1);
+ 204               		.stabn	68,0,107,.LM4-.LFBB1
+ 205               	.LM4:
+ 206 003c 61E0      		ldi r22,lo8(1)	 ; ,
+ 207 003e 80E0      		ldi r24,0	 ; 
+ 208 0040 0E94 0000 		call lcd_gotoxy	 ; 
+ 108:test_lcd.c    ****    lcd_clrscr(); lcd_puts_P( "Hello World\nthis is line 2 " );
+ 209               		.stabn	68,0,108,.LM5-.LFBB1
+ 210               	.LM5:
+ 211 0044 81E0      		ldi r24,lo8(1)	 ; ,
+ 212 0046 0E94 0000 		call lcd_command	 ; 
+ 213 004a 80E0      		ldi r24,lo8(c.1774)	 ; ,
+ 214 004c 90E0      		ldi r25,hi8(c.1774)	 ; ,
+ 215 004e 0E94 0000 		call lcd_puts_p	 ; 
+ 109:test_lcd.c    **** 
+ 110:test_lcd.c    **** 
+ 111:test_lcd.c    ****    /* DISPLAY USER DEFINED CHARS */
+ 112:test_lcd.c    ****    lcd_putc(0);
+ 216               		.stabn	68,0,112,.LM6-.LFBB1
+ 217               	.LM6:
+ 218 0052 80E0      		ldi r24,0	 ; 
+ 219 0054 0E94 0000 		call lcd_putc	 ; 
+ 113:test_lcd.c    ****    lcd_putc(1);
+ 220               		.stabn	68,0,113,.LM7-.LFBB1
+ 221               	.LM7:
+ 222 0058 81E0      		ldi r24,lo8(1)	 ; ,
+ 223 005a 0E94 0000 		call lcd_putc	 ; 
+ 114:test_lcd.c    **** 
+ 115:test_lcd.c    **** /*
+ 116:test_lcd.c    ****     The return value of the "lcd_getxy()" function is an integer,
+GAS LISTING /tmp/ccQLo6GQ.s 			page 7
+
+
+ 117:test_lcd.c    ****     with the high byte containing the current line number (y) and the low byte 
+ 118:test_lcd.c    ****     containing the char position in that line (x).
+ 119:test_lcd.c    ****     If the lower byte has a value of 20 that means that you filled that line.
+ 120:test_lcd.c    ****     This position result can only happen when no lcd reading is available.
+ 121:test_lcd.c    ****     When lcd reading is available the maximum x == 19. 
+ 122:test_lcd.c    **** */
+ 123:test_lcd.c    **** 
+ 124:test_lcd.c    ****    lcd_gotoxy(19,3); 
+ 224               		.stabn	68,0,124,.LM8-.LFBB1
+ 225               	.LM8:
+ 226 005e 63E0      		ldi r22,lo8(3)	 ; ,
+ 227 0060 83E1      		ldi r24,lo8(19)	 ; ,
+ 228 0062 0E94 0000 		call lcd_gotoxy	 ; 
+ 125:test_lcd.c    ****    word.integer=lcd_getxy(); 
+ 229               		.stabn	68,0,125,.LM9-.LFBB1
+ 230               	.LM9:
+ 231 0066 0E94 0000 		call lcd_getxy	 ; 
+ 232 006a 182F      		mov r17,r24	 ;  D.1789,
+ 126:test_lcd.c    ****    lcd_gotoxy(16,3);
+ 233               		.stabn	68,0,126,.LM10-.LFBB1
+ 234               	.LM10:
+ 235 006c 63E0      		ldi r22,lo8(3)	 ; ,
+ 236 006e 80E1      		ldi r24,lo8(16)	 ; ,
+ 237 0070 0E94 0000 		call lcd_gotoxy	 ; 
+ 127:test_lcd.c    ****    lcd_putc(',');
+ 238               		.stabn	68,0,127,.LM11-.LFBB1
+ 239               	.LM11:
+ 240 0074 8CE2      		ldi r24,lo8(44)	 ; ,
+ 241 0076 0E94 0000 		call lcd_putc	 ; 
+ 128:test_lcd.c    ****    lcd_put_i(*(word.byte),0,(2|LCD_LJUST));
+ 242               		.stabn	68,0,128,.LM12-.LFBB1
+ 243               	.LM12:
+ 244 007a 42E0      		ldi r20,lo8(2)	 ; ,
+ 245 007c 60E0      		ldi r22,0	 ; 
+ 246 007e 812F      		mov r24,r17	 ; , D.1789
+ 247 0080 90E0      		ldi r25,0	 ; 
+ 248 0082 0E94 0000 		call lcd_put_i	 ; 
+ 129:test_lcd.c    **** 
+ 130:test_lcd.c    **** 
+ 131:test_lcd.c    **** #if LCD_READ_REQUIRED == 1 && LCD_BACKUP_REQUIRED == 1
+ 132:test_lcd.c    ****    /* Take a snapshot of the display and save it to EEPROM (defined in the lcd_io.h) */
+ 133:test_lcd.c    ****    lcd_backup_scr();
+ 134:test_lcd.c    **** #endif
+ 135:test_lcd.c    **** /*-------------------------------------------------------------------------------------------------
+ 136:test_lcd.c    **** 
+ 137:test_lcd.c    **** #if LCD_AUTO_LINE_FEED == 1
+ 138:test_lcd.c    ****   lcd_puts_e(eeprom_string); lcd_puts(ram_string);  
+ 139:test_lcd.c    **** #elif LCD_AUTO_LINE_FEED == 0
+ 140:test_lcd.c    **** /*-------------------------------------------------------------------------------------------------
+ 141:test_lcd.c    **** /*
+ 142:test_lcd.c    ****    I positioned this command here to test the correct saving of the lcd x,y coordinates
+ 143:test_lcd.c    ****    between lcd unit switching, if you select mode 7 
+ 144:test_lcd.c    **** */
+ 145:test_lcd.c    **** 
+ 146:test_lcd.c    **** 
+ 147:test_lcd.c    ****    lcd_gotoxy(0,2); lcd_puts_P("NOT VISIBLE LINE");
+ 249               		.stabn	68,0,147,.LM13-.LFBB1
+GAS LISTING /tmp/ccQLo6GQ.s 			page 8
+
+
+ 250               	.LM13:
+ 251 0086 62E0      		ldi r22,lo8(2)	 ; ,
+ 252 0088 80E0      		ldi r24,0	 ; 
+ 253 008a 0E94 0000 		call lcd_gotoxy	 ; 
+ 254 008e 80E0      		ldi r24,lo8(c.1776)	 ; ,
+ 255 0090 90E0      		ldi r25,hi8(c.1776)	 ; ,
+ 256 0092 0E94 0000 		call lcd_puts_p	 ; 
+ 148:test_lcd.c    ****    lcd_clrline(2);  lcd_puts_e(eeprom_string);
+ 257               		.stabn	68,0,148,.LM14-.LFBB1
+ 258               	.LM14:
+ 259 0096 82E0      		ldi r24,lo8(2)	 ; ,
+ 260 0098 0E94 0000 		call lcd_clrline	 ; 
+ 261 009c 80E0      		ldi r24,lo8(eeprom_string.1769)	 ; ,
+ 262 009e 90E0      		ldi r25,hi8(eeprom_string.1769)	 ; ,
+ 263 00a0 0E94 0000 		call lcd_puts_e	 ; 
+ 149:test_lcd.c    ****    lcd_gotoxy(0,3); lcd_puts(ram_string);  
+ 264               		.stabn	68,0,149,.LM15-.LFBB1
+ 265               	.LM15:
+ 266 00a4 63E0      		ldi r22,lo8(3)	 ; ,
+ 267 00a6 80E0      		ldi r24,0	 ; 
+ 268 00a8 0E94 0000 		call lcd_gotoxy	 ; 
+ 269 00ac CE01      		movw r24,r28	 ; ,
+ 270 00ae 0196      		adiw r24,1	 ; ,
+ 271 00b0 0E94 0000 		call lcd_puts	 ; 
+ 150:test_lcd.c    **** #endif /* #elif LCD_AUTO_LINE_FEED == 0 */
+ 151:test_lcd.c    **** 
+ 152:test_lcd.c    **** #if LCD_READ_REQUIRED == 1 
+ 153:test_lcd.c    **** 
+ 154:test_lcd.c    **** /*
+ 155:test_lcd.c    ****    Read a char from the lcd DDRAM at the selected position and then display the read char to anothe
+ 156:test_lcd.c    ****    When using the lcd_getc() function the Address Counter (AC) is auto incremented or decremented
+ 157:test_lcd.c    ****    according to the ENTRY MODE selected during initialization, just like the lcd_putc() function wo
+ 158:test_lcd.c    ****    so when doing a sequential read, there is no need to reposition the cursor each time a read is p
+ 159:test_lcd.c    ****    EXAMPLE: To backup line 1 only of the lcd, the below code works fine.
+ 160:test_lcd.c    **** 
+ 161:test_lcd.c    ****             unsigned char lcd_backup[LCD_CHARS_PER_LINE];
+ 162:test_lcd.c    ****             unsigned char x=0;
+ 163:test_lcd.c    ****             lcd_gotoxy(0,1); 
+ 164:test_lcd.c    ****             for(x=0; x<LCD_CHARS_PER_LINE; x++)
+ 165:test_lcd.c    ****               {
+ 166:test_lcd.c    ****                 *(lcd_backup+x)=lcd_getc();
+ 167:test_lcd.c    ****               }
+ 168:test_lcd.c    **** */
+ 169:test_lcd.c    **** 
+ 170:test_lcd.c    **** 
+ 171:test_lcd.c    **** unsigned char  x=0;
+ 172:test_lcd.c    **** lcd_gotoxy(0,0);
+ 272               		.stabn	68,0,172,.LM16-.LFBB1
+ 273               	.LM16:
+ 274 00b4 60E0      		ldi r22,0	 ; 
+ 275 00b6 80E0      		ldi r24,0	 ; 
+ 276 00b8 0E94 0000 		call lcd_gotoxy	 ; 
+ 173:test_lcd.c    **** x=lcd_getc();
+ 277               		.stabn	68,0,173,.LM17-.LFBB1
+ 278               	.LM17:
+ 279 00bc 0E94 0000 		call lcd_getc	 ; 
+ 280 00c0 182F      		mov r17,r24	 ;  x,
+GAS LISTING /tmp/ccQLo6GQ.s 			page 9
+
+
+ 174:test_lcd.c    **** lcd_gotoxy(19,1); lcd_putc(x);
+ 281               		.stabn	68,0,174,.LM18-.LFBB1
+ 282               	.LM18:
+ 283 00c2 61E0      		ldi r22,lo8(1)	 ; ,
+ 284 00c4 83E1      		ldi r24,lo8(19)	 ; ,
+ 285 00c6 0E94 0000 		call lcd_gotoxy	 ; 
+ 286 00ca 812F      		mov r24,r17	 ; , x
+ 287 00cc 0E94 0000 		call lcd_putc	 ; 
+ 288               	/* epilogue start */
+ 175:test_lcd.c    **** 
+ 176:test_lcd.c    **** 
+ 177:test_lcd.c    **** 
+ 178:test_lcd.c    **** 
+ 179:test_lcd.c    **** #endif
+ 180:test_lcd.c    **** 
+ 181:test_lcd.c    **** #if LCD_READ_REQUIRED == 1 && LCD_BACKUP_REQUIRED == 1
+ 182:test_lcd.c    **** /* Delay in order to see the lcd screen before the restore function alter it. */
+ 183:test_lcd.c    **** DELAY_MS(5000);
+ 184:test_lcd.c    **** 
+ 185:test_lcd.c    **** /* Restore the lcd display using the earlier saved image. */
+ 186:test_lcd.c    **** lcd_restore_scr(); 
+ 187:test_lcd.c    **** #endif
+ 188:test_lcd.c    **** 
+ 189:test_lcd.c    **** 
+ 190:test_lcd.c    **** 
+ 191:test_lcd.c    **** 
+ 192:test_lcd.c    **** return;
+ 193:test_lcd.c    **** }
+ 289               		.stabn	68,0,193,.LM19-.LFBB1
+ 290               	.LM19:
+ 291 00d0 6096      		adiw r28,16	 ; ,
+ 292 00d2 0FB6      		in __tmp_reg__,__SREG__
+ 293 00d4 F894      		cli
+ 294 00d6 DEBF      		out __SP_H__,r29	 ; ,
+ 295 00d8 0FBE      		out __SREG__,__tmp_reg__
+ 296 00da CDBF      		out __SP_L__,r28	 ; ,
+ 297 00dc DF91      		pop r29	 ; 
+ 298 00de CF91      		pop r28	 ; 
+ 299 00e0 1F91      		pop r17	 ; 
+ 300 00e2 0895      		ret
+ 301               		.size	main, .-main
+ 302               		.stabs	"ram_string:(0,51)=ar(0,50);0;15;(0,11)",128,0,78,1
+ 303               		.stabs	"eeprom_string:V(0,52)=ar(0,50);0;18;(0,11)",38,0,80,eeprom_string.1769
+ 304               		.stabs	"x:r(0,11)",64,0,171,17
+ 305               		.stabn	192,0,0,.LFBB1-.LFBB1
+ 306               		.stabn	224,0,0,.Lscope1-.LFBB1
+ 307               	.Lscope1:
+ 308               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 309               		.stabd	78,0,0
+ 310               		.section	.eeprom,"aw",@progbits
+ 311               		.type	eeprom_string.1769, @object
+ 312               		.size	eeprom_string.1769, 19
+ 313               	eeprom_string.1769:
+ 314 0000 6C63 645F 		.string	"lcd_puts_e testing"
+ 314      7075 7473 
+ 314      5F65 2074 
+ 314      6573 7469 
+GAS LISTING /tmp/ccQLo6GQ.s 			page 10
+
+
+ 314      6E67 00
+ 315               		.section	.progmem.data,"a",@progbits
+ 316               		.type	c.1776, @object
+ 317               		.size	c.1776, 17
+ 318               	c.1776:
+ 319 0000 4E4F 5420 		.string	"NOT VISIBLE LINE"
+ 319      5649 5349 
+ 319      424C 4520 
+ 319      4C49 4E45 
+ 319      00
+ 320               		.type	c.1774, @object
+ 321               		.size	c.1774, 28
+ 322               	c.1774:
+ 323 0011 4865 6C6C 		.string	"Hello World\nthis is line 2 "
+ 323      6F20 576F 
+ 323      726C 640A 
+ 323      7468 6973 
+ 323      2069 7320 
+ 324               		.type	user_char2, @object
+ 325               		.size	user_char2, 8
+ 326               	user_char2:
+ 327 002d 11        		.byte	17
+ 328 002e 0A        		.byte	10
+ 329 002f 04        		.byte	4
+ 330 0030 1F        		.byte	31
+ 331 0031 04        		.byte	4
+ 332 0032 0E        		.byte	14
+ 333 0033 11        		.byte	17
+ 334 0034 0E        		.byte	14
+ 335               		.type	user_char1, @object
+ 336               		.size	user_char1, 8
+ 337               	user_char1:
+ 338 0035 0E        		.byte	14
+ 339 0036 11        		.byte	17
+ 340 0037 0E        		.byte	14
+ 341 0038 04        		.byte	4
+ 342 0039 1F        		.byte	31
+ 343 003a 04        		.byte	4
+ 344 003b 0A        		.byte	10
+ 345 003c 11        		.byte	17
+ 346               		.stabs	"user_char1:S(0,53)=ar(0,50);0;7;(0,54)=k(0,11)",38,0,46,user_char1
+ 347               		.stabs	"user_char2:S(0,53)",38,0,48,user_char2
+ 348               		.text
+ 349               		.stabs	"",100,0,0,.Letext0
+ 350               	.Letext0:
+ 351               		.ident	"GCC: (GNU) 4.9.2"
+ 352               	.global __do_copy_data
+GAS LISTING /tmp/ccQLo6GQ.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 test_lcd.c
+     /tmp/ccQLo6GQ.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccQLo6GQ.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccQLo6GQ.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccQLo6GQ.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccQLo6GQ.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccQLo6GQ.s:160    .text.startup:0000000000000000 main
+     /tmp/ccQLo6GQ.s:337    .progmem.data:0000000000000035 user_char1
+     /tmp/ccQLo6GQ.s:326    .progmem.data:000000000000002d user_char2
+     /tmp/ccQLo6GQ.s:322    .progmem.data:0000000000000011 c.1774
+     /tmp/ccQLo6GQ.s:318    .progmem.data:0000000000000000 c.1776
+     /tmp/ccQLo6GQ.s:313    .eeprom:0000000000000000 eeprom_string.1769
+
+UNDEFINED SYMBOLS
+lcd_putc_cgram
+lcd_gotoxy
+lcd_command
+lcd_puts_p
+lcd_putc
+lcd_getxy
+lcd_put_i
+lcd_clrline
+lcd_puts_e
+lcd_puts
+lcd_getc
+__do_copy_data

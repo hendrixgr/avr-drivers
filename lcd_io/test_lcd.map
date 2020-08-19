@@ -1,0 +1,637 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+                              lcd_hd44780_avr.o (__udivmodhi4)
+/usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+                              lcd_hd44780_avr.o (__divmodhi4)
+/usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o (exit)
+/usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+                              test_lcd.o (__do_copy_data)
+/usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+                              lcd_hd44780_avr.o (__do_clear_bss)
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+                              lcd_hd44780_avr.o (eeprom_read_byte)
+/usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+                              lcd_hd44780_avr.o (eeprom_write_byte)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000020000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+LOAD test_lcd.o
+LOAD lcd_hd44780_avr.o
+LOAD i2c.o
+START GROUP
+LOAD /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libc.a
+LOAD /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a
+END GROUP
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000      0xbac
+ *(.vectors)
+ .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x0000000000000068                . = ALIGN (0x2)
+                0x0000000000000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000000000000068        0x0 linker stubs
+ *(.trampolines*)
+                0x0000000000000068                __trampolines_end = .
+ *(.progmem*)
+ .progmem.data  0x0000000000000068       0x3d test_lcd.o
+                0x00000000000000a6                . = ALIGN (0x2)
+ *fill*         0x00000000000000a5        0x1 
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000000000000a6                __ctors_start = .
+ *(.ctors)
+                0x00000000000000a6                __ctors_end = .
+                0x00000000000000a6                __dtors_start = .
+ *(.dtors)
+                0x00000000000000a6                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000000000000a6        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+                0x00000000000000a6                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000000000000a6        0xc /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000000000000b2       0x16 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+                0x00000000000000b2                __do_copy_data
+ .init4         0x00000000000000c8       0x10 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+                0x00000000000000c8                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000000000000d8        0x8 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+ *(.init9)
+ *(.text)
+ .text          0x00000000000000e0        0x4 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+                0x00000000000000e0                __vector_22
+                0x00000000000000e0                __vector_1
+                0x00000000000000e0                __vector_24
+                0x00000000000000e0                __vector_12
+                0x00000000000000e0                __bad_interrupt
+                0x00000000000000e0                __vector_6
+                0x00000000000000e0                __vector_3
+                0x00000000000000e0                __vector_23
+                0x00000000000000e0                __vector_25
+                0x00000000000000e0                __vector_11
+                0x00000000000000e0                __vector_13
+                0x00000000000000e0                __vector_17
+                0x00000000000000e0                __vector_19
+                0x00000000000000e0                __vector_7
+                0x00000000000000e0                __vector_5
+                0x00000000000000e0                __vector_4
+                0x00000000000000e0                __vector_9
+                0x00000000000000e0                __vector_2
+                0x00000000000000e0                __vector_21
+                0x00000000000000e0                __vector_15
+                0x00000000000000e0                __vector_8
+                0x00000000000000e0                __vector_14
+                0x00000000000000e0                __vector_10
+                0x00000000000000e0                __vector_16
+                0x00000000000000e0                __vector_18
+                0x00000000000000e0                __vector_20
+ .text          0x00000000000000e4        0x0 test_lcd.o
+ .text          0x00000000000000e4      0x798 lcd_hd44780_avr.o
+                0x00000000000002e8                lcd_command
+                0x0000000000000316                lcd_gotoxy
+                0x0000000000000354                lcd_putc
+                0x000000000000038a                lcd_putc_cgram
+                0x0000000000000412                lcd_put_i
+                0x000000000000058e                lcd_clrline
+                0x00000000000005bc                lcd_getxy
+                0x00000000000005f8                lcd_backlight_off
+                0x000000000000061c                lcd_backlight_on
+                0x0000000000000644                lcd_puts
+                0x000000000000065c                lcd_puts_p
+                0x000000000000067a                lcd_puts_e
+                0x000000000000069c                lcd_getc
+                0x00000000000006a2                lcd_get_error
+                0x00000000000006a8                lcd_get_line
+                0x0000000000000714                lcd_backup_scr
+                0x0000000000000788                lcd_restore_scr
+                0x0000000000000804                lcd_init
+ .text          0x000000000000087c      0x1cc i2c.o
+                0x000000000000087c                i2c_get_error
+                0x0000000000000882                i2c_start
+                0x00000000000008d6                i2c_stop
+                0x0000000000000930                i2c_put_byte
+                0x00000000000009ac                i2c_get_byte
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+ .text          0x0000000000000a48        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+                0x0000000000000a48                . = ALIGN (0x2)
+ *(.text.*)
+ .text.startup  0x0000000000000a48       0xe4 test_lcd.o
+                0x0000000000000a48                main
+ .text.libgcc.mul
+                0x0000000000000b2c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.div
+                0x0000000000000b2c       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000000000000b2c                __udivmodhi4
+ .text.libgcc   0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000b54        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.div
+                0x0000000000000b54       0x28 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000000b54                __divmodhi4
+                0x0000000000000b54                _div
+ .text.libgcc   0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x0000000000000b7c        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x0000000000000b7c       0x10 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+                0x0000000000000b7c                eeprom_read_byte
+ .text.avr-libc
+                0x0000000000000b8c       0x1c /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+                0x0000000000000b8c                eeprom_write_byte
+                0x0000000000000b8e                eeprom_write_r18
+                0x0000000000000ba8                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000000000000ba8        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+                0x0000000000000ba8                exit
+                0x0000000000000ba8                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000000000000ba8        0x4 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000000000000bac                _etext = .
+
+.data           0x0000000000800100       0x20 load address 0x0000000000000bac
+                0x0000000000800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+ .data          0x0000000000800100        0x0 test_lcd.o
+ .data          0x0000000000800100        0x2 lcd_hd44780_avr.o
+                0x0000000000800100                backlight
+                0x0000000000800101                lcd_i2c_address
+ .data          0x0000000000800102        0x0 i2c.o
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+ .data          0x0000000000800102        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+ *(.data*)
+ *(.rodata)
+ .rodata        0x0000000000800102        0xd lcd_hd44780_avr.o
+ *(.rodata*)
+ .rodata.str1.1
+                0x000000000080010f       0x10 test_lcd.o
+ *(.gnu.linkonce.d*)
+                0x0000000000800120                . = ALIGN (0x2)
+ *fill*         0x000000000080011f        0x1 
+                0x0000000000800120                _edata = .
+                0x0000000000800120                PROVIDE (__data_end, .)
+
+.bss            0x0000000000800120        0x6
+                0x0000000000800120                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0000000000800120        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+ .bss           0x0000000000800120        0x0 test_lcd.o
+ .bss           0x0000000000800120        0x5 lcd_hd44780_avr.o
+                0x0000000000800120                lcd_error_detected
+ .bss           0x0000000000800125        0x1 i2c.o
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+ .bss           0x0000000000800126        0x0 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+ *(.bss*)
+ *(COMMON)
+                0x0000000000800126                PROVIDE (__bss_end, .)
+                0x0000000000000bac                __data_load_start = LOADADDR (.data)
+                0x0000000000000bcc                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000800126        0x0
+                0x0000000000800126                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0000000000800126                PROVIDE (__noinit_end, .)
+                0x0000000000800126                _end = .
+                0x0000000000800126                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000       0x63
+ *(.eeprom*)
+ .eeprom        0x0000000000810000       0x13 test_lcd.o
+ .eeprom        0x0000000000810013       0x50 lcd_hd44780_avr.o
+                0x0000000000810063                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x0000000000000000     0x2640
+ *(.stab)
+ .stab          0x0000000000000000      0x648 test_lcd.o
+ .stab          0x0000000000000648     0x16bc lcd_hd44780_avr.o
+                                       0x18c0 (size before relaxing)
+ .stab          0x0000000000001d04      0x93c i2c.o
+                                        0xb04 (size before relaxing)
+
+.stabstr        0x0000000000000000     0x1273
+ *(.stabstr)
+ .stabstr       0x0000000000000000     0x1273 test_lcd.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 test_lcd.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 lcd_hd44780_avr.o
+ .comment       0x0000000000000011       0x12 i2c.o
+
+.note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(test_lcd.elf elf32-avr)
+LOAD linker stubs
+
+Cross Reference Table
+
+Symbol                                            File
+__bad_interrupt                                   /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__bss_end                                         /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+__bss_start                                       /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+__data_end                                        /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+__data_load_start                                 /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+__data_start                                      /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+__divmodhi4                                       /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+                                                  lcd_hd44780_avr.o
+__do_clear_bss                                    /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_clear_bss.o)
+                                                  i2c.o
+                                                  lcd_hd44780_avr.o
+__do_copy_data                                    /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_copy_data.o)
+                                                  lcd_hd44780_avr.o
+                                                  test_lcd.o
+__heap_end                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__init                                            /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__stack                                           /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__udivmodhi4                                      /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_udivmodhi4.o)
+                                                  /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+                                                  lcd_hd44780_avr.o
+__vector_1                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_10                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_11                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_12                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_13                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_14                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_15                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_16                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_17                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_18                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_19                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_2                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_20                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_21                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_22                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_23                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_24                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_25                                       /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_3                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_4                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_5                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_6                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_7                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_8                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_9                                        /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vector_default                                  /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+__vectors                                         /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+_div                                              /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_divmodhi4.o)
+_exit                                             /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+backlight                                         lcd_hd44780_avr.o
+eeprom_read_byte                                  /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eerd_byte.o)
+                                                  lcd_hd44780_avr.o
+eeprom_write_byte                                 /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+                                                  lcd_hd44780_avr.o
+eeprom_write_r18                                  /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/libatmega328p.a(eewr_byte.o)
+exit                                              /usr/lib/gcc/avr/4.9.2/avr5/libgcc.a(_exit.o)
+                                                  /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
+i2c_get_byte                                      i2c.o
+                                                  lcd_hd44780_avr.o
+i2c_get_error                                     i2c.o
+i2c_put_byte                                      i2c.o
+                                                  lcd_hd44780_avr.o
+i2c_start                                         i2c.o
+                                                  lcd_hd44780_avr.o
+i2c_stop                                          i2c.o
+                                                  lcd_hd44780_avr.o
+lcd_backlight_off                                 lcd_hd44780_avr.o
+lcd_backlight_on                                  lcd_hd44780_avr.o
+lcd_backup_scr                                    lcd_hd44780_avr.o
+lcd_clrline                                       lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_command                                       lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_error_detected                                lcd_hd44780_avr.o
+lcd_get_error                                     lcd_hd44780_avr.o
+lcd_get_line                                      lcd_hd44780_avr.o
+lcd_getc                                          lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_getxy                                         lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_gotoxy                                        lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_i2c_address                                   lcd_hd44780_avr.o
+lcd_init                                          lcd_hd44780_avr.o
+lcd_put_i                                         lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_putc                                          lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_putc_cgram                                    lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_puts                                          lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_puts_e                                        lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_puts_p                                        lcd_hd44780_avr.o
+                                                  test_lcd.o
+lcd_restore_scr                                   lcd_hd44780_avr.o
+main                                              test_lcd.o
+                                                  /usr/lib/gcc/avr/4.9.2/../../../avr/lib/avr5/crtatmega328p.o
